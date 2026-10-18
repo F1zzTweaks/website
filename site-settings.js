@@ -29,6 +29,7 @@ window.SITE = {
   //   poster: optional cover picture (.jpg / .png / .webp), such as "showcase/tour.jpg"
   // Big videos: upload them to YouTube ("Unlisted" is fine) and use the link. Files on this site must stay under 25 MB.
   videos: [
+    { title: "Quick tour", text: "Flip a tweak on, then restore your original settings in one click.", src: "promo.mp4", poster: "promo.jpg" },
     // { title: "Quick tour",       text: "Everything in 60 seconds.",           src: "showcase/tour.mp4", poster: "showcase/tour.jpg" },
     // { title: "One-click suite",  text: "Optimize and undo it again.",         src: "https://youtu.be/XXXXXXXXXXX" },
     // { title: "F1zz Bot",         text: "Ask it what to turn on.",             src: "showcase/bot.mp4" }
