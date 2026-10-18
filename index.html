@@ -793,7 +793,7 @@ document.getElementById("yr").textContent = new Date().getFullYear();
   list.forEach(function (v) {
     if (!v) return;
     var id = typeof v.src === "string" ? ytId(v.src.trim()) : "";
-    cards.push({ id: id, title: String(v.title || "Tutorial").slice(0, 60), text: String(v.text || "").slice(0, 160) });
+    cards.push({ id: id, title: String(v.title || "Tutorial").slice(0, 100), text: String(v.text || "").slice(0, 160) });
   });
   while (cards.length < 2) cards.push({ id: "", title: "Tutorial " + (cards.length + 1), text: "Video coming soon." });
   cards.forEach(function (c, i) {

@@ -30,9 +30,10 @@ window.SITE = {
   // Big videos: upload them to YouTube ("Unlisted" is fine) and use the link. Files on this site must stay under 25 MB.
   // TUTORIAL VIDEOS (the "Tutorials" tab). Paste your YouTube links here, remove the // at the start of each line:
   tutorials: [
-    // { title: "The BEST Tweaks..", text: "Download, open and turn on your first tweaks.", src: "https://youtu.be/XXXXXXXXXXX" },
-    // { title: "The NEW best tweaks", text: "Undo everything with one click.",          src: "https://youtu.be/2l6aqOmxwdw" }
+    { title: "Tutorial 1", text: "Video coming soon.", src: "" },   // slot 1: add a YouTube link in src when ready
+    { title: "The NEW best tweaks to optimize your PC for Gaming in 2026. ( F1zz Tweaks )", text: "", src: "https://youtu.be/2l6aqOmxwdw" }
   ],
+
 
   videos: [
     { title: "Quick tour", text: "Flip a tweak on, then restore your original settings in one click.", src: "promo.mp4", poster: "promo.jpg" },
