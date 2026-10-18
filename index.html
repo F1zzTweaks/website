@@ -72,6 +72,7 @@
   .btn.small{padding:9px 16px;font-size:.9rem;border-radius:11px}
   .btn.block{width:100%}
   .btn.disabled,a[data-need]:not([data-ready]){opacity:.45;pointer-events:none;filter:grayscale(.4)}
+  .btn.soon{opacity:.8!important;filter:none!important;letter-spacing:2px;font-weight:800;font-size:.85rem;cursor:default}
 
   /* ---------- hero ---------- */
   .hero{padding:78px 0 54px;display:grid;grid-template-columns:1.02fr 1fr;gap:54px;align-items:center}
@@ -326,6 +327,19 @@
     .nav-cta .btn:not(.primary){display:none}
   }
   @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.app{transform:none}}
+  /* ═════════════ tutorials ═════════════ */
+  .tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:22px;margin-top:38px}
+  .tcard{border:1px solid var(--stroke);border-radius:22px;overflow:hidden;background:linear-gradient(180deg,var(--panel2),var(--panel));box-shadow:0 30px 70px -40px rgba(0,0,0,.9)}
+  .tstage{position:relative;aspect-ratio:16/9;background:radial-gradient(500px 260px at 30% 20%,#2a1a5c,#0a0710 70%);display:grid;place-items:center}
+  .tstage iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .tsoon{display:grid;gap:10px;place-items:center;text-align:center;color:#c9c2e2;font-weight:800;letter-spacing:3px;font-size:.8rem;text-transform:uppercase}
+  .tsoon .pbtn{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:var(--grad);opacity:.55}
+  .tsoon svg{width:26px;height:26px;fill:#fff;margin-left:3px}
+  .tinfo{padding:18px 22px 22px}
+  .tinfo .n{font-size:.75rem;font-weight:800;letter-spacing:2px;color:var(--blue2);text-transform:uppercase}
+  .tinfo h3{font-size:1.15rem;margin:4px 0 4px}
+  .tinfo p{color:#aaa6c2;font-size:.95rem}
+
   /* ═════════════ video showcase ═════════════ */
   #showcase[hidden],[data-showcase-link][hidden]{display:none}
   .vshow{margin-top:38px;position:relative}
@@ -395,6 +409,7 @@
     <nav class="nav-links">
       <a href="#features">Features</a>
       <a href="#showcase" data-showcase-link hidden>Showcase</a>
+      <a href="#tutorials">Tutorials</a>
       <a href="#bot">F1zz Bot</a>
       <a href="#premium">Premium</a>
       <a href="#how">How to buy</a>
@@ -506,6 +521,15 @@
   </section>
 
   <!-- ===================== F1ZZ BOT ===================== -->
+  <section id="tutorials">
+    <div class="wrap">
+      <div class="eyebrow">Tutorials</div>
+      <h2>Learn it <span class="grad-text">step by step.</span></h2>
+      <p class="sec-lead">Short how-to videos: set up the app, turn tweaks on, and put everything back with one click.</p>
+      <div class="tgrid" id="t-grid"></div>
+    </div>
+  </section>
+
   <section id="bot">
     <div class="wrap bot-grid">
       <div>
@@ -692,6 +716,7 @@ document.querySelectorAll("[data-need]").forEach(function (el) {
     el.removeAttribute("href");
     el.setAttribute("aria-disabled", "true");
     el.title = "Coming soon";
+    if (/^buy/.test(el.dataset.need)) { el.textContent = "COMING SOON"; el.classList.add("soon"); }   // shop spot: no checkout link yet
   }
 });
 document.querySelectorAll("[data-price]").forEach(function (el) { el.textContent = SITE[el.dataset.price]; });
@@ -753,6 +778,44 @@ document.getElementById("yr").textContent = new Date().getFullYear();
       show(n);
     })
     .catch(function () {});                                                // GitHub busy or offline: just don't show the number
+})();
+
+/* ─── tutorials: add YouTube links in site-settings.js (tutorials: [...]); empty slots show "Coming soon" ─── */
+(function () {
+  var grid = document.getElementById("t-grid");
+  if (!grid) return;
+  var list = Array.isArray(SITE.tutorials) ? SITE.tutorials : [];
+  function ytId(url) {
+    var m = /^https:\/\/(?:www\.|m\.)?(?:youtube\.com\/(?:watch\?(?:[^#]*&)?v=|shorts\/|embed\/)|youtu\.be\/)([A-Za-z0-9_-]{11})(?![A-Za-z0-9_-])/i.exec(url);
+    return m ? m[1] : "";
+  }
+  var cards = [];
+  list.forEach(function (v) {
+    if (!v) return;
+    var id = typeof v.src === "string" ? ytId(v.src.trim()) : "";
+    cards.push({ id: id, title: String(v.title || "Tutorial").slice(0, 60), text: String(v.text || "").slice(0, 160) });
+  });
+  while (cards.length < 2) cards.push({ id: "", title: "Tutorial " + (cards.length + 1), text: "Video coming soon." });
+  cards.forEach(function (c, i) {
+    var card = document.createElement("div"); card.className = "tcard";
+    var stage = document.createElement("div"); stage.className = "tstage";
+    if (c.id) {
+      var f = document.createElement("iframe");
+      f.src = "https://www.youtube-nocookie.com/embed/" + c.id + "?rel=0";
+      f.title = c.title; f.loading = "lazy"; f.allowFullscreen = true;
+      f.allow = "accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen";
+      f.referrerPolicy = "strict-origin-when-cross-origin";
+      stage.appendChild(f);
+    } else {
+      stage.innerHTML = '<div class="tsoon"><div class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>Coming soon</div>';
+    }
+    var info = document.createElement("div"); info.className = "tinfo";
+    var n = document.createElement("div"); n.className = "n"; n.textContent = "Tutorial " + (i + 1);
+    var h = document.createElement("h3"); h.textContent = c.title;
+    var p = document.createElement("p"); p.textContent = c.text;
+    info.appendChild(n); info.appendChild(h); info.appendChild(p);
+    card.appendChild(stage); card.appendChild(info); grid.appendChild(card);
+  });
 })();
 
 /* ─── video showcase: shows up only when you list videos in site-settings.js ─── */
@@ -970,7 +1033,7 @@ document.getElementById("yr").textContent = new Date().getFullYear();
   var groups = [
     ".hero .pill", ".hero h1", ".hero .lead", ".hero .hero-cta", ".hero .fine", ".hero .stats", ".hero .stage",
     ".eyebrow", "section h2", ".sec-lead", ".feat", ".plan", ".step", ".callout", ".faq details", ".cta",
-    ".chat-mock", ".perks li", ".marquee", ".vframe", ".vtab"
+    ".chat-mock", ".perks li", ".marquee", ".vframe", ".vtab", ".tcard"
   ];
   var els = [];
   groups.forEach(function (sel) {

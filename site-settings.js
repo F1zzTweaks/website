@@ -28,6 +28,12 @@ window.SITE = {
   //   src:    a YouTube link (https://youtu.be/XXXXXXXXXXX)  OR  a video file (.mp4 / .webm) such as "showcase/tour.mp4"
   //   poster: optional cover picture (.jpg / .png / .webp), such as "showcase/tour.jpg"
   // Big videos: upload them to YouTube ("Unlisted" is fine) and use the link. Files on this site must stay under 25 MB.
+  // TUTORIAL VIDEOS (the "Tutorials" tab). Paste your YouTube links here, remove the // at the start of each line:
+  tutorials: [
+    // { title: "The BEST Tweaks..", text: "Download, open and turn on your first tweaks.", src: "https://youtu.be/XXXXXXXXXXX" },
+    // { title: "The NEW best tweaks", text: "Undo everything with one click.",          src: "https://youtu.be/2l6aqOmxwdw" }
+  ],
+
   videos: [
     { title: "Quick tour", text: "Flip a tweak on, then restore your original settings in one click.", src: "promo.mp4", poster: "promo.jpg" },
     // { title: "Quick tour",       text: "Everything in 60 seconds.",           src: "showcase/tour.mp4", poster: "showcase/tour.jpg" },
