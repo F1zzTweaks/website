@@ -7,7 +7,7 @@
 window.SITE = {
   discordInvite:   "https://discord.gg/UBAZsf2PHt",   // your Discord invite, e.g. "https://discord.gg/abc123"
   downloadUrl:     "https://github.com/F1zzTweaks/F1zzTweaks/releases/download/v3.0/F1zzTweaks.exe",   // the FILE itself (must end in .zip or .exe). See the setup guide. Two good choices:
-                         //   GitHub Releases:  "https://github.com/YOU/REPO/releases/latest/download/F1zzTweaks.zip"
+                         //   GitHub Releases:  "https://github.com/F1zzTweaks/F1zzTweaks/releases/download/v3.0/F1zzTweaks.exe"
                          //   Same website:     "F1zzTweaks.zip"   (put the zip next to index.html. Max 25 MB through GitHub's website)
                          // Do NOT use the link to the release PAGE. That one opens GitHub instead of downloading.
   buy30Url:        "",   // checkout link for "30 days of Premium"
