@@ -12,9 +12,21 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="F1zz Tweaks">
 <meta property="og:url" content="https://f1zztweaks.com/">
-<meta property="og:image" content="https://f1zztweaks.com/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<!-- Link preview picture. og-card.gif is the moving one. To go back to a still picture,
+     swap og-card.gif for og-image.png below and change the width/height to 1200 x 630. -->
+<meta property="og:image" content="https://f1zztweaks.com/og-card.gif">
+<meta property="og:image:type" content="image/gif">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="420">
+<meta property="og:image:alt" content="F1zz Tweaks">
+<!-- Want a play-button video embed instead of the moving picture? Delete the four lines
+     above that start with og:image, then remove the <!- - and - -> around the block below.
+<meta property="og:video" content="https://f1zztweaks.com/og-card.mp4">
+<meta property="og:video:secure_url" content="https://f1zztweaks.com/og-card.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1200">
+<meta property="og:video:height" content="630">
+-->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="F1zz Tweaks">
 <meta name="twitter:description" content="Clean, reversible Windows tweaks for gaming and everyday speed.">
@@ -428,13 +440,18 @@
   .eyebrow{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.3em;font-weight:500}
 
   /* ---------- hero ---------- */
-  .hero2{position:relative;overflow:hidden;isolation:isolate;background:var(--ink);
+  .hero2{position:relative;overflow:hidden;isolation:isolate;
+    background:
+      radial-gradient(64% 82% at 73% 46%, rgba(124,92,255,.30), transparent 70%),
+      radial-gradient(54% 72% at 93% 80%, rgba(255,92,200,.20), transparent 70%),
+      radial-gradient(46% 60% at 6% 18%, rgba(45,107,255,.16), transparent 70%),
+      var(--ink);
     border-bottom:1px solid var(--line);display:block;min-height:min(82vh,730px)}
   .hero2 canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
   .hero2::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
     background:
-      linear-gradient(90deg, rgba(7,6,13,.80) 0%, rgba(7,6,13,.52) 30%, rgba(7,6,13,0) 56%),
-      radial-gradient(95% 105% at 70% 50%, transparent 0%, rgba(7,6,13,.30) 58%, rgba(7,6,13,.88) 92%)}
+      linear-gradient(90deg, rgba(7,6,13,.70) 0%, rgba(7,6,13,.42) 30%, rgba(7,6,13,0) 58%),
+      radial-gradient(98% 108% at 70% 50%, transparent 0%, rgba(7,6,13,.18) 60%, rgba(7,6,13,.74) 94%)}
   .hero2::after{content:"";position:absolute;left:0;right:0;bottom:0;height:200px;z-index:1;pointer-events:none;
     background:linear-gradient(180deg,transparent,var(--ink))}
   .hero2-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.14fr .86fr;gap:44px;
@@ -1018,11 +1035,19 @@ document.getElementById("yr").textContent = new Date().getFullYear();
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   var W = 0, H = 0, dpr = 1, ox = 0, oy = 0, reach = 0;
 
-  // the two spears: where each one starts, how fast it turns, its colour, how thick
+  // the two spears. Each one flicks round quickly, slows almost to a stop, then goes again.
+  //   turns = how far it swings each time   cycle = how many seconds one swing takes
   var SPEARS = [
-    { a: -0.60, v:  0.135, c: [150, 110, 255], w: 1.00 },
-    { a:  2.30, v: -0.095, c: [255, 92, 200],  w: 0.74 }
+    { a: -0.60, turns:  1, cycle: 5.0, c: [150, 110, 255], w: 1.00 },
+    { a:  2.30, turns: -1, cycle: 6.5, c: [255, 92, 200],  w: 0.74 }
   ];
+
+  // 0 at the start of a swing, 1 at the end. Most of the turn happens in the first moment,
+  // then it drifts the rest of the way round. Raise the 5.5 for an even harder snap.
+  function swing(t, cycle) {
+    var n = Math.floor(t / cycle), k = (t % cycle) / cycle;
+    return n + (1 - Math.pow(1 - k, 5.5));
+  }
 
   function resize() {
     var r = box.getBoundingClientRect();
@@ -1065,16 +1090,16 @@ document.getElementById("yr").textContent = new Date().getFullYear();
     var grow = Math.min(1, t / 1.1);                       // slides out when the page opens
     for (var i = 0; i < SPEARS.length; i++) {
       var s = SPEARS[i];
-      var ang = s.a + s.v * t;
+      var ang = s.a + s.turns * Math.PI * 2 * swing(t, s.cycle);
       var len = reach * grow * (1 + 0.06 * Math.sin(t * 0.5 + i * 2.1));
       var wide = Math.max(30, Math.min(W, H) * 0.135) * s.w;
 
-      spear(ang, len, wide * 2.4, s.c, 0.075);             // soft halo
-      spear(ang, len, wide, s.c, 0.34);                    // body
-      spear(ang, len * 0.97, wide * 0.26, [238, 230, 255], 0.5);   // bright core
+      spear(ang, len, wide * 2.4, s.c, 0.115);            // soft halo
+      spear(ang, len, wide, s.c, 0.47);                    // body
+      spear(ang, len * 0.97, wide * 0.26, [238, 230, 255], 0.66);  // bright core
 
-      spear(ang + Math.PI, len * 0.66, wide * 0.78, s.c, 0.22);    // the short half, so it runs through the logo
-      spear(ang + Math.PI, len * 0.63, wide * 0.20, [238, 230, 255], 0.34);
+      spear(ang + Math.PI, len * 0.66, wide * 0.78, s.c, 0.31);    // the short half, so it runs through the logo
+      spear(ang + Math.PI, len * 0.63, wide * 0.20, [238, 230, 255], 0.45);
     }
     ctx.globalCompositeOperation = "source-over";
   }
