@@ -175,5 +175,30 @@
   setTimeout(function(){els.forEach(function(e){e.classList.add('in')})},2500);
 })();
 </script>
+<script>
+/* LED light that drives around the edge of the page (skipped for people who prefer reduced motion) */
+(function(){
+  if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  var NS="http://www.w3.org/2000/svg",svg=document.createElementNS(NS,"svg");
+  svg.setAttribute("aria-hidden","true");
+  svg.style.cssText="position:fixed;left:0;top:0;width:100%;height:100%;z-index:9999;pointer-events:none;overflow:visible;filter:drop-shadow(0 0 5px #8d6bff) drop-shadow(0 0 12px #ff5cc8)";
+  var layers=[{L:26,o:.16,c:"#7c5cff"},{L:17,o:.35,c:"#a35cff"},{L:9,o:.7,c:"#ff5cc8"},{L:3,o:1,c:"#ffffff"}],rects=[];
+  layers.forEach(function(l){
+    var r=document.createElementNS(NS,"rect");
+    r.setAttribute("pathLength","100");r.setAttribute("fill","none");r.setAttribute("stroke",l.c);
+    r.setAttribute("stroke-width","3");r.setAttribute("stroke-linecap","round");r.setAttribute("stroke-opacity",l.o);
+    r.setAttribute("stroke-dasharray",l.L+" "+(100-l.L));r.setAttribute("rx","20");
+    svg.appendChild(r);rects.push(r);
+  });
+  document.body.appendChild(svg);
+  function size(){var w=document.documentElement.clientWidth,h=window.innerHeight;
+    rects.forEach(function(r){r.setAttribute("x","2");r.setAttribute("y","2");r.setAttribute("width",Math.max(10,w-4));r.setAttribute("height",Math.max(10,h-4))})}
+  size();addEventListener("resize",size);
+  var head=0,last=performance.now(),LAP=10; /* seconds per lap */
+  (function tick(t){head=(head+(t-last)/1000/LAP*100)%100;last=t;
+    for(var i=0;i<rects.length;i++)rects[i].setAttribute("stroke-dashoffset",(layers[i].L-head).toFixed(2));
+    requestAnimationFrame(tick)})(last);
+})();
+</script>
 </body>
 </html>
