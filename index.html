@@ -522,6 +522,25 @@
   @media (prefers-reduced-motion:reduce){
     .hero2-mark::before,.hero2-mark img{animation:none}
   }
+
+  /* ===== Downloads ===== */
+  #downloads .dlgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:22px;margin-top:34px}
+  #downloads .dlcard{display:flex;flex-direction:column;padding:28px 26px 26px;border:1px solid var(--stroke);border-radius:22px;
+    background:linear-gradient(180deg,rgba(22,16,34,.9),rgba(15,11,24,.9));
+    box-shadow:0 36px 80px -48px rgba(0,0,0,.95);transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s}
+  #downloads .dlcard:hover{transform:translateY(-4px);border-color:#4a3c78}
+  #downloads .dlcard[hidden]{display:none}
+  #downloads .dlcard.feature{border-color:#4b3b8f;background:linear-gradient(165deg,rgba(124,92,255,.16),rgba(255,92,200,.05) 55%,rgba(15,11,24,.92))}
+  #downloads .dlicon{width:54px;height:54px;border-radius:15px;display:grid;place-items:center;margin-bottom:16px;
+    border:1px solid #473780;background:linear-gradient(160deg,#2a1f52,#140f20)}
+  #downloads .dlicon img{width:30px;height:30px;display:block}
+  #downloads .dlicon svg{width:26px;height:26px;fill:none;stroke:#c8b4ff;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  #downloads .dlcard h3{font-size:1.18rem;letter-spacing:-.3px;margin:0 0 4px}
+  #downloads .dlcard .dlfor{font-size:.76rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--blue2);margin-bottom:10px}
+  #downloads .dlcard p{color:#aaa6c2;font-size:.95rem;margin:0 0 18px}
+  #downloads .dlcard .dlbtns{margin-top:auto;display:flex;flex-wrap:wrap;gap:10px}
+  #downloads .dlmeta{margin-top:14px;font-size:.78rem;color:#6f6b8c;
+    font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em}
 </style>
 </head>
 <body>
@@ -535,6 +554,7 @@
       <a href="#features">Features</a>
       <a href="#showcase" data-showcase-link hidden>Showcase</a>
       <a href="tutorials.html">Tutorials</a>
+      <a href="#downloads">Downloads</a>
       <a href="#bot">F1zz Bot</a>
       <a href="premium.html">Premium</a>
       <a href="premium.html#how">How to buy</a>
@@ -739,6 +759,52 @@
     </div>
   </section>
 
+  <!-- ===================== DOWNLOADS ===================== -->
+  <section id="downloads">
+    <div class="wrap">
+      <div class="eyebrow">Downloads</div>
+      <h2>Everything, <span class="grad-text">free to grab</span>.</h2>
+      <p class="sec-lead">The app, the guides and the press kit. No sign-up, no email, no launcher &mdash; just the file.</p>
+
+      <div class="dlgrid">
+
+        <div class="dlcard feature">
+          <div class="dlicon"><img src="logo.png" alt=""></div>
+          <div class="dlfor">Windows 10 &amp; 11</div>
+          <h3>F1zz Tweaks</h3>
+          <p>339 clean, reversible tweaks, a live hardware dashboard and one click to put your original settings back. Free to use &mdash; Premium is optional.</p>
+          <div class="dlbtns">
+            <a class="btn primary" data-need="downloadUrl" data-download href="#">Download for Windows</a>
+          </div>
+          <div class="dlmeta">.EXE &middot; no installer &middot; runs as admin</div>
+        </div>
+
+        <div class="dlcard">
+          <div class="dlicon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path><path d="M9 13h6M9 17h4"></path></svg></div>
+          <div class="dlfor">PS4 &middot; PS4 Pro &middot; PS5</div>
+          <h3>PlayStation Optimization Guide</h3>
+          <p>A console can't be tweaked like a PC, but plenty of it is still on the default setting. Every real change worth making &mdash; plus an honest list of the ones that do nothing.</p>
+          <div class="dlbtns">
+            <a class="btn primary" href="F1zz-Tweaks-PlayStation-Guide.pdf" download>Download the PDF</a>
+          </div>
+          <div class="dlmeta">PDF &middot; 11 pages &middot; 621 KB &middot; <a href="F1zz-Tweaks-PlayStation-Guide.pdf" target="_blank" rel="noopener">read it online</a></div>
+        </div>
+
+        <div class="dlcard" data-opt="creatorKitUrl" hidden>
+          <div class="dlicon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8"></path><path d="M2 4h20v4H2zM12 4v17"></path></svg></div>
+          <div class="dlfor">For creators</div>
+          <h3>Creator Kit</h3>
+          <p>The animated watermark, still logos and everything else you need if you're covering F1zz Tweaks on YouTube, TikTok or a stream.</p>
+          <div class="dlbtns">
+            <a class="btn primary" data-need="creatorKitUrl" data-download href="#">Download the kit</a>
+          </div>
+          <div class="dlmeta">.ZIP &middot; watermark, logos, read-me</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== PREMIUM TEASER (full plans are on premium.html) ===================== -->
   <section id="premium-teaser">
     <div class="wrap">
@@ -795,6 +861,7 @@
         <a href="#features">Features</a>
         <a href="premium.html">Premium</a>
         <a href="tutorials.html">Tutorials</a>
+        <a href="#downloads">Downloads</a>
         <a href="terms.html#terms">Terms</a>
         <a href="terms.html#refunds">Refunds</a>
         <a href="terms.html#privacy">Privacy</a>
@@ -858,6 +925,9 @@ document.querySelectorAll("[data-need]").forEach(function (el) {
     el.title = "Coming soon";
     if (/^buy/.test(el.dataset.need)) { el.textContent = "COMING SOON"; el.classList.add("soon"); }   // shop spot: no checkout link yet
   }
+});
+document.querySelectorAll("[data-opt]").forEach(function (el) {
+  if ((SITE[el.dataset.opt] || "").trim()) el.hidden = false;
 });
 document.querySelectorAll("[data-price]").forEach(function (el) { el.textContent = SITE[el.dataset.price]; });
 if (SITE.sha256) {
@@ -1133,7 +1203,7 @@ document.getElementById("yr").textContent = new Date().getFullYear();
   var groups = [
     ".hero .pill", ".hero h1", ".hero .lead", ".hero .hero-cta", ".hero .fine", ".hero .stats", ".hero .stage",
     ".eyebrow", "section h2", ".sec-lead", ".feat", ".plan", ".step", ".callout", ".faq details", ".cta",
-    ".chat-mock", ".perks li", ".marquee", ".vframe", ".vtab", ".vs", ".peek-stage"
+    ".chat-mock", ".perks li", ".marquee", ".vframe", ".vtab", ".vs", ".peek-stage", ".dlcard"
   ];
   var els = [];
   groups.forEach(function (sel) {
