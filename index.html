@@ -977,9 +977,10 @@ document.getElementById("yr").textContent = new Date().getFullYear();
 })();
 
 /* ─── live download counter ───
-   The number is GitHub's own count of downloads of your release files (all versions added up),
-   so it can't be faked. Clicking Download adds 1 straight away, and the page checks GitHub
-   again every 2 minutes while it's open, so the number keeps climbing on its own. ─── */
+   The number is GitHub's own count of downloads of your release files (all versions added up).
+   Clicking Download shows +1 straight away, but only once per visitor, and only until GitHub's
+   real number catches up, so spamming the button does nothing. The page checks GitHub again
+   every 2 minutes while it's open, so the number keeps climbing on its own. ─── */
 (function () {
   var repo = (SITE.githubRepo || "").trim();
   if (!repo) {
@@ -990,7 +991,7 @@ document.getElementById("yr").textContent = new Date().getFullYear();
 
   var min = typeof SITE.showDownloadsFrom === "number" ? SITE.showDownloadsFrom : 25;
   var box = document.getElementById("stat-dl"), out = document.getElementById("dl-count");
-  var KEY = "f1zz_dl_count", REFRESH = 2 * 60 * 1000;
+  var KEY = "f1zz_dl_count", CLICK = "f1zz_dl_click", REFRESH = 2 * 60 * 1000, CLICK_LIFE = 15 * 60 * 1000;
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   var shown = 0, anim = 0;
 
@@ -1005,10 +1006,23 @@ document.getElementById("yr").textContent = new Date().getFullYear();
     try { var c = JSON.parse(localStorage.getItem(KEY) || "null"); return c && c.repo === repo ? c : null; } catch (e) { return null; }
   }
 
+  // this visitor's one pending click: {base: GitHub's number when they clicked, t: when}
+  function pendingClick() {
+    try {
+      var c = JSON.parse(localStorage.getItem(CLICK) || "null");
+      return c && c.repo === repo && Date.now() - c.t < CLICK_LIFE ? c : null;
+    } catch (e) { return null; }
+  }
+  function withClick(real) {                                               // real GitHub number, +1 if our click isn't in it yet
+    var c = pendingClick();
+    if (c && real <= c.base) return real + 1;
+    if (c) { try { localStorage.removeItem(CLICK); } catch (e) {} }         // GitHub has counted it: stop adding
+    return real;
+  }
+
   // counts up (or jumps, for people who prefer less motion) from what's on screen to n
   function show(n, pop) {
     if (!(n >= Math.max(1, min))) return;                                  // too few to look good: stay hidden
-    if (n < shown) n = shown;                                              // GitHub can lag a click: never count down
     box.hidden = false;
     var week = document.getElementById("stat-week");                     // the live total replaces the week-one number
     if (week) week.hidden = true;
@@ -1036,16 +1050,16 @@ document.getElementById("yr").textContent = new Date().getFullYear();
             if (/\.(zip|exe|msi|7z)$/i.test(a.name || "")) n += Number(a.download_count) || 0;
           });
         });
-        n = Math.max(n, shown);
-        save(n);
-        show(n, n > shown && shown > 0);
+        save(n);                                                           // always GitHub's real number
+        var d = withClick(n);
+        show(d, d > shown && shown > 0);
       })
       .catch(function () {});                                              // GitHub busy or offline: keep what's showing
   }
 
   // first paint: a recent number from this browser, then ask GitHub if it's older than 2 minutes
   var c = cached();
-  if (c) show(c.n);
+  if (c) show(withClick(c.n));
   if (!c || Date.now() - c.t > REFRESH) load();
 
   // keep it live while the page is open (paused in background tabs to stay inside GitHub's limits)
@@ -1055,13 +1069,14 @@ document.getElementById("yr").textContent = new Date().getFullYear();
     if (!document.hidden && (!c2 || Date.now() - c2.t > REFRESH)) load();
   });
 
-  // someone pressed Download: +1 right away (GitHub's count catches up a moment later)
+  // someone pressed Download: +1 right away, once. More clicks change nothing.
   document.addEventListener("click", function (e) {
     var a = e.target && e.target.closest && e.target.closest("[data-download]");
-    if (!a || a.getAttribute("aria-disabled") === "true") return;
-    var n = Math.max(shown, (cached() || {}).n || 0) + 1;
-    save(n);
-    show(n, true);
+    if (!a || a.getAttribute("aria-disabled") === "true" || pendingClick()) return;
+    var base = (cached() || {}).n;
+    if (typeof base !== "number") return;                                  // no real number yet: nothing to add to
+    try { localStorage.setItem(CLICK, JSON.stringify({ repo: repo, base: base, t: Date.now() })); } catch (e) { return; }
+    show(base + 1, true);
   }, true);
 })();
 
