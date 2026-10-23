@@ -546,6 +546,12 @@
   #downloads .dlcard .dlbtns{margin-top:auto;display:flex;flex-wrap:wrap;gap:10px}
   #downloads .dlmeta{margin-top:14px;font-size:.78rem;color:#6f6b8c;
     font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em}
+  .live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#54d696;margin-right:7px;vertical-align:1px;box-shadow:0 0 0 0 rgba(84,214,150,.6);animation:livepulse 2s ease-out infinite}
+  @keyframes livepulse{0%{box-shadow:0 0 0 0 rgba(84,214,150,.55)}70%{box-shadow:0 0 0 7px rgba(84,214,150,0)}100%{box-shadow:0 0 0 0 rgba(84,214,150,0)}}
+  #stat-dl.dl-pop b{animation:dlpop .6s cubic-bezier(.2,1.6,.4,1)}
+  @keyframes dlpop{0%{transform:scale(1)}35%{transform:scale(1.18);color:#54d696}100%{transform:scale(1)}}
+  #stat-dl b{transform-origin:left center}
+  @media (prefers-reduced-motion: reduce){.live-dot{animation:none}#stat-dl.dl-pop b{animation:none}}
 </style>
 <script src="season.js"></script>
 </head>
@@ -594,7 +600,7 @@
           <div class="stat"><b>9</b><span>categories</span></div>
           <div class="stat"><b>1-click</b><span>restore</span></div>
           <div class="stat" id="stat-week"><b id="week-count">20+</b><span>downloads in week one</span></div>
-          <div class="stat" id="stat-dl" hidden><b id="dl-count">0</b><span>downloads</span></div>
+          <div class="stat" id="stat-dl" hidden><b id="dl-count">0</b><span><i class="live-dot" aria-hidden="true"></i>downloads</span></div>
         </div>
       </div>
 
@@ -970,7 +976,10 @@ document.getElementById("yr").textContent = new Date().getFullYear();
   else document.getElementById("week-count").textContent = SITE.firstWeekDownloads.trim();
 })();
 
-/* ─── download counter: adds up the real download counts GitHub keeps for your release files ─── */
+/* ─── live download counter ───
+   The number is GitHub's own count of downloads of your release files (all versions added up),
+   so it can't be faked. Clicking Download adds 1 straight away, and the page checks GitHub
+   again every 2 minutes while it's open, so the number keeps climbing on its own. ─── */
 (function () {
   var repo = (SITE.githubRepo || "").trim();
   if (!repo) {
@@ -981,7 +990,9 @@ document.getElementById("yr").textContent = new Date().getFullYear();
 
   var min = typeof SITE.showDownloadsFrom === "number" ? SITE.showDownloadsFrom : 25;
   var box = document.getElementById("stat-dl"), out = document.getElementById("dl-count");
-  var KEY = "f1zz_dl_count", reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var KEY = "f1zz_dl_count", REFRESH = 2 * 60 * 1000;
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var shown = 0, anim = 0;
 
   function fmt(n) {
     if (n < 1000) return String(n);
@@ -989,41 +1000,69 @@ document.getElementById("yr").textContent = new Date().getFullYear();
     if (n < 1000000) return Math.floor(n / 1000) + "K";
     return (Math.floor(n / 100000) / 10).toFixed(1).replace(/\.0$/, "") + "M";
   }
+  function save(n) { try { localStorage.setItem(KEY, JSON.stringify({ repo: repo, n: n, t: Date.now() })); } catch (e) {} }
+  function cached() {
+    try { var c = JSON.parse(localStorage.getItem(KEY) || "null"); return c && c.repo === repo ? c : null; } catch (e) { return null; }
+  }
 
-  function show(n) {
+  // counts up (or jumps, for people who prefer less motion) from what's on screen to n
+  function show(n, pop) {
     if (!(n >= Math.max(1, min))) return;                                  // too few to look good: stay hidden
+    if (n < shown) n = shown;                                              // GitHub can lag a click: never count down
     box.hidden = false;
     var week = document.getElementById("stat-week");                     // the live total replaces the week-one number
     if (week) week.hidden = true;
-    if (reduce) { out.textContent = fmt(n); return; }
-    var t0 = null, dur = 1400;
+    var from = shown; shown = n;
+    if (pop) { box.classList.remove("dl-pop"); void box.offsetWidth; box.classList.add("dl-pop"); }
+    if (reduce || from === n) { out.textContent = fmt(n); return; }
+    var t0 = null, dur = from === 0 ? 1400 : 700, id = ++anim;
     function step(t) {
+      if (id !== anim) return;
       if (t0 === null) t0 = t;
       var p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3);
-      out.textContent = fmt(Math.round(n * e));
+      out.textContent = fmt(Math.round(from + (n - from) * e));
       if (p < 1) requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
   }
 
-  try {                                                                    // reuse a recent answer so GitHub isn't asked on every page view
-    var c = JSON.parse(localStorage.getItem(KEY) || "null");
-    if (c && c.repo === repo && Date.now() - c.t < 30 * 60 * 1000) { show(c.n); return; }
-  } catch (e) {}
-
-  fetch("https://api.github.com/repos/" + repo + "/releases?per_page=100", { headers: { Accept: "application/vnd.github+json" } })
-    .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
-    .then(function (list) {
-      var n = 0;
-      (Array.isArray(list) ? list : []).forEach(function (rel) {
-        (rel.assets || []).forEach(function (a) {
-          if (/\.(zip|exe|msi|7z)$/i.test(a.name || "")) n += Number(a.download_count) || 0;
+  function load() {
+    fetch("https://api.github.com/repos/" + repo + "/releases?per_page=100", { headers: { Accept: "application/vnd.github+json" } })
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+      .then(function (list) {
+        var n = 0;
+        (Array.isArray(list) ? list : []).forEach(function (rel) {
+          (rel.assets || []).forEach(function (a) {
+            if (/\.(zip|exe|msi|7z)$/i.test(a.name || "")) n += Number(a.download_count) || 0;
+          });
         });
-      });
-      try { localStorage.setItem(KEY, JSON.stringify({ repo: repo, n: n, t: Date.now() })); } catch (e) {}
-      show(n);
-    })
-    .catch(function () {});                                                // GitHub busy or offline: just don't show the number
+        n = Math.max(n, shown);
+        save(n);
+        show(n, n > shown && shown > 0);
+      })
+      .catch(function () {});                                              // GitHub busy or offline: keep what's showing
+  }
+
+  // first paint: a recent number from this browser, then ask GitHub if it's older than 2 minutes
+  var c = cached();
+  if (c) show(c.n);
+  if (!c || Date.now() - c.t > REFRESH) load();
+
+  // keep it live while the page is open (paused in background tabs to stay inside GitHub's limits)
+  setInterval(function () { if (!document.hidden) load(); }, REFRESH);
+  document.addEventListener("visibilitychange", function () {
+    var c2 = cached();
+    if (!document.hidden && (!c2 || Date.now() - c2.t > REFRESH)) load();
+  });
+
+  // someone pressed Download: +1 right away (GitHub's count catches up a moment later)
+  document.addEventListener("click", function (e) {
+    var a = e.target && e.target.closest && e.target.closest("[data-download]");
+    if (!a || a.getAttribute("aria-disabled") === "true") return;
+    var n = Math.max(shown, (cached() || {}).n || 0) + 1;
+    save(n);
+    show(n, true);
+  }, true);
 })();
 
 /* ─── video showcase: shows up only when you list videos in site-settings.js ─── */
