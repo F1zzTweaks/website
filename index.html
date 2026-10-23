@@ -991,7 +991,7 @@ document.getElementById("yr").textContent = new Date().getFullYear();
 
   var min = typeof SITE.showDownloadsFrom === "number" ? SITE.showDownloadsFrom : 25;
   var box = document.getElementById("stat-dl"), out = document.getElementById("dl-count");
-  var KEY = "f1zz_dl_count", CLICK = "f1zz_dl_click", REFRESH = 2 * 60 * 1000, CLICK_LIFE = 15 * 60 * 1000;
+  var KEY = "f1zz_dl_real", CLICK = "f1zz_dl_click1", REFRESH = 2 * 60 * 1000, CLICK_LIFE = 15 * 60 * 1000;
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   var shown = 0, anim = 0;
 
@@ -1057,10 +1057,11 @@ document.getElementById("yr").textContent = new Date().getFullYear();
       .catch(function () {});                                              // GitHub busy or offline: keep what's showing
   }
 
-  // first paint: a recent number from this browser, then ask GitHub if it's older than 2 minutes
+  // first paint: the last real number this browser saw, then always ask GitHub straight away
+  try { localStorage.removeItem("f1zz_dl_count"); localStorage.removeItem("f1zz_dl_click"); } catch (e) {}   // left over from the first version
   var c = cached();
   if (c) show(withClick(c.n));
-  if (!c || Date.now() - c.t > REFRESH) load();
+  load();
 
   // keep it live while the page is open (paused in background tabs to stay inside GitHub's limits)
   setInterval(function () { if (!document.hidden) load(); }, REFRESH);
