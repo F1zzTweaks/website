@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>F1zz Tweaks · Clean, reversible Windows tweaks</title>
 <link rel="canonical" href="https://f1zztweaks.com/">
-<meta name="description" content="F1zz Tweaks is a Windows tweak app with 541 reversible tweaks, a live CPU/GPU dashboard and one-click restore of your original settings. No account needed.">
+<meta name="description" content="F1zz Tweaks is a free Windows app with 695 reversible tweaks, Game Boost, a Game Library with one-click BOOST and PLAY, a live CPU/GPU dashboard and one-click restore.">
 <meta name="theme-color" content="#7c5cff">
 <meta property="og:title" content="F1zz Tweaks">
 <meta property="og:description" content="Clean, reversible Windows tweaks for gaming and everyday speed.">
@@ -292,7 +292,7 @@
   @keyframes scrollx{to{transform:translateX(-50%)}}
 
   /* bento features + spotlight cards */
-  .grid3 .feat:nth-child(1),.grid3 .feat:nth-child(4),.grid3 .feat:nth-child(6){grid-column:span 2}
+  .grid3 .feat:nth-child(1),.grid3 .feat:nth-child(4),.grid3 .feat:nth-child(8){grid-column:span 2}
   .feat,.plan,.step,.opt{--mx:50%;--my:-40%}
   .feat::after,.step::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(280px circle at var(--mx) var(--my),rgba(190,160,255,.12),transparent 62%);opacity:0;transition:opacity .3s;pointer-events:none}
   .feat:hover::after,.step:hover::after{opacity:1}
@@ -583,16 +583,17 @@
       <div class="hero2-copy">
         <div class="kicker">Clean &middot; Reversible &middot; Windows tweaks</div>
         <h1>Make your PC<br>feel <em>yours</em><span class="dot">.</span></h1>
-        <p class="lead">Clean, reversible Windows tweaks for gaming and everyday speed. 541 tweaks, a live CPU and graphics dashboard, and one click to put your original settings back.</p>
+        <p class="lead">Clean, reversible Windows tweaks for gaming and everyday speed. 695 tweaks, Game Boost, a Game Library that tunes and launches your games, and one click to put your original settings back.</p>
         <div class="hero-cta">
           <a class="btn primary" data-need="downloadUrl" data-download href="#">Download for Windows</a>
           <a class="btn" href="premium.html">See Premium</a>
         </div>
         <p class="fine">Windows 10 and 11 &middot; Nothing is applied until you ask &middot; Results vary by PC</p>
         <div class="stats hstats">
-          <div class="stat"><b>541</b><span>tweaks</span></div>
+          <div class="stat"><b>695</b><span>tweaks</span></div>
           <div class="stat"><b>9</b><span>categories</span></div>
           <div class="stat"><b>1-click</b><span>restore</span></div>
+          <div class="stat" id="stat-week"><b id="week-count">20+</b><span>downloads in week one</span></div>
           <div class="stat" id="stat-dl" hidden><b id="dl-count">0</b><span>downloads</span></div>
         </div>
       </div>
@@ -608,7 +609,7 @@
     <div class="wrap vs-grid">
       <div class="vs"><b>01</b><div><h4>Built to undo</h4><p>Every tweak remembers what your PC had before, and puts it back in one click.</p></div></div>
       <div class="vs"><b>02</b><div><h4>Instant download</h4><p>One file, no account and no installer. Open it and the catalog is right there.</p></div></div>
-      <div class="vs"><b>03</b><div><h4>434 free tweaks</h4><p>Most of the catalog costs nothing. Premium adds 107 more and every theme.</p></div></div>
+      <div class="vs"><b>03</b><div><h4>588 free tweaks</h4><p>Most of the catalog costs nothing. Premium adds 107 more and every theme.</p></div></div>
       <div class="vs"><b>04</b><div><h4>Real support</h4><p>Questions, bug reports and tweak requests all get answered in the Discord.</p></div></div>
     </div>
   </section>
@@ -678,16 +679,19 @@
   <section id="features">
     <div class="wrap">
       <div class="eyebrow">Features</div>
-      <h2>Built to be safe, clear and easy to undo.</h2>
+      <h2>Built for gaming. Safe, clear and easy to undo.</h2>
       <p class="sec-lead">Every tweak is explained in plain words, marked if it needs administrator rights, and can be switched back off.</p>
 
       <div class="grid3">
-        <div class="feat"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div><h3>541 tweaks, 9 categories</h3><p>Performance, Gaming, Windows, Visual, Input, Network, Privacy, Security and Advanced, all searchable and filterable.</p></div>
+        <div class="feat"><div class="ico"><svg viewBox="0 0 24 24"><path d="M6 12h4M8 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="17.5" cy="13.5" r="1"/><path d="M7 6h10a4 4 0 014 4v4a4 4 0 01-7.2 2.4L13 15h-2l-.8 1.4A4 4 0 013 14v-4a4 4 0 014-4z"/></svg></div><h3>Game Boost</h3><p>One button before you play: the best power plan, Windows Update and OneDrive paused, your game given priority. Everything goes back when you stop.</p></div>
+        <div class="feat"><div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="7" rx="2"/><rect x="14" y="4" width="7" height="7" rx="2"/><rect x="3" y="15" width="7" height="5" rx="2"/><rect x="14" y="15" width="7" height="5" rx="2"/></svg></div><h3>Game Library</h3><p>Finds Fortnite, Valorant, Rocket League, CS2 and more on your PC. PLAY launches them, BOOST also gives them your fast graphics card and true fullscreen.</p></div>
+        <div class="feat"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg></div><h3>Discord status</h3><p>Shows "Playing F1zz Tweaks" on your Discord profile, with a lightning badge while Game Boost is on. Turn it off any time in Settings.</p></div>
+        <div class="feat"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div><h3>695 tweaks, 9 categories</h3><p>Performance, Gaming, Windows, Visual, Input, Network, Privacy, Security and Advanced, all searchable and filterable.</p></div>
         <div class="feat"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 109-9"/><path d="M3 4v5h5"/></svg></div><h3>Undo everything</h3><p>The original value is saved before every change. Restore puts back exactly what you had, and never touches settings you changed yourself.</p></div>
         <div class="feat"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 13h4l3-8 4 14 3-6h4"/></svg></div><h3>Live dashboard</h3><p>CPU, graphics, memory and display stats at a glance, including a tip when your monitor isn't running at its top refresh rate.</p></div>
-        <div class="feat"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Safe by default</h3><p>Risky tweaks are left out of the recommended packs. System-wide tweaks are clearly labeled, and a Windows restore point is one click away.</p></div>
         <div class="feat"><div class="ico"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div><h3>One-click packs</h3><p>Gaming, Performance, Privacy, Security and Clean UI packs apply a sensible set of tweaks together. Plus cleanup tools for temp files and DNS.</p></div>
-        <div class="feat"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></div><h3>No account, no tracking</h3><p>The app needs no sign-up and no email. It only goes online to check whether a Premium license has been refunded.</p></div>
+        <div class="feat"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Safe by default</h3><p>Risky tweaks are left out of the recommended packs. System-wide tweaks are clearly labeled, and a Windows restore point is one click away.</p></div>
+        <div class="feat"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></div><h3>No account, no tracking</h3><p>The app needs no sign-up and no email. It only goes online to check for updates and to check your Premium license.</p></div>
       </div>
     </div>
   </section>
@@ -733,7 +737,7 @@
     <div class="wrap">
       <div class="eyebrow">A peek inside</div>
       <h2>Plain-English tweaks you can <span class="grad-text">switch on and off.</span></h2>
-      <p class="sec-lead">A few of the 541 tweaks in the app. Every one is explained in plain words and can be reversed. Results vary by PC.</p>
+      <p class="sec-lead">A few of the 695 tweaks in the app. Every one is explained in plain words and can be reversed. Results vary by PC.</p>
       <div class="tkgrid">
         <div class="tk"><div><b>Disable Game DVR</b><p>Disables background Game DVR capture.</p><span class="tkt">Gaming</span></div><i class="sw on"></i></div>
         <div class="tk"><div><b>Hardware GPU Scheduling</b><p>Lets the GPU manage its own memory scheduling.</p><span class="tkt">Gaming</span></div><i class="sw on"></i></div>
@@ -778,7 +782,7 @@
           <div class="dlicon"><img src="logo.png" alt=""></div>
           <div class="dlfor">Windows 10 &amp; 11</div>
           <h3>F1zz Tweaks</h3>
-          <p>541 clean, reversible tweaks, a live hardware dashboard and one click to put your original settings back. Free to use &mdash; Premium is optional.</p>
+          <p>695 clean, reversible tweaks, a live hardware dashboard and one click to put your original settings back. Free to use &mdash; Premium is optional.</p>
           <div class="dlbtns">
             <a class="btn primary" data-need="downloadUrl" data-download href="#">Download for Windows</a>
           </div>
@@ -829,7 +833,7 @@
         <div>
           <div class="eyebrow">Premium</div>
           <h2>Want to go further? <span class="grad-text">Go Premium.</span></h2>
-          <p class="sec-lead">107 advanced tweaks, unlimited F1zz Bot chats and 25 extra themes. If Premium ends, the Premium tweaks go back to your original settings.</p>
+          <p class="sec-lead">107 advanced tweaks, 5 more games to BOOST, unlimited F1zz Bot chats and 25 extra themes. If Premium ends, the Premium tweaks go back to your original settings.</p>
         </div>
         <div class="teaser-side">
           <div class="tprices"><div><b data-price="price30">$5</b><small>30 days</small></div><div><b data-price="priceLifetime">$15</b><small>lifetime</small></div></div>
@@ -845,6 +849,10 @@
       <div class="eyebrow">FAQ</div>
       <h2>Good questions.</h2>
       <div class="faq">
+        <details><summary>Will it give me more FPS?</summary><p>It depends on your PC. Tweaks and Game Boost help most when lots of apps run in the background or Windows settings hold your games back. No app can promise a set number of FPS, and we won't. Your results are your own.</p></details>
+        <details><summary>Can it lower my ping?</summary><p>Not your base ping: that comes from the distance to the game server and your internet. Game Boost pauses Windows Update and cloud syncing, which cause lag spikes. A network cable and picking the closest server region help most.</p></details>
+        <details><summary>Is the Game Library safe with anti-cheat?</summary><p>Yes. BOOST only sets Windows' own options for the game (which graphics card it uses and fullscreen optimizations). It never touches game files, and UNDO puts both settings back.</p></details>
+        <details><summary>Windows says Smart App Control blocked it. What now?</summary><p>Smart App Control blocks apps it doesn't know yet. Open Windows Security, go to App &amp; browser control, then Smart App Control settings, and turn it off. On up-to-date Windows 11 you can turn it back on afterwards.</p></details>
         <details><summary>Is it safe to use?</summary><p>F1zz Tweaks only changes settings that Windows already has. It saves the original value before each change and can restore it. Tweaks that affect the whole PC are marked ADMIN, and you can create a Windows restore point from inside the app first. Still, tweaking always carries some risk, so read what each tweak does.</p></details>
         <details><summary>Will Windows or my antivirus warn me?</summary><p>Possibly. Apps from small publishers often show a Windows SmartScreen "unknown publisher" warning, and some security tools are cautious about programs that change system settings. Only download F1zz Tweaks from this website. If you're unsure, create a restore point first.</p></details>
         <details><summary>Do I need to run it as administrator?</summary><p>Many tweaks work without it. Tweaks that change settings for the whole PC are marked ADMIN and need the app to be run as administrator.</p></details>
@@ -894,7 +902,7 @@
   <span>If nothing happens, <a id="dl-retry" href="#" download>click here</a>. Windows may ask you to confirm it.</span>
 </div>
 
-<script src="site-settings.js"></script>
+<script>/* always load the newest site-settings.js, never a cached copy */document.write('<script src="site-settings.js?v='+Date.now()+'"><\/script>')</script>
 <script>
 var SITE = window.SITE || {};
 
@@ -953,6 +961,15 @@ if (SITE.sha256) {
 }
 document.getElementById("yr").textContent = new Date().getFullYear();
 
+/* ─── "20+ downloads in week one": change it with  firstWeekDownloads: "50+"  in site-settings.js,
+       or hide it with  firstWeekDownloads: ""  ─── */
+(function () {
+  if (typeof SITE.firstWeekDownloads !== "string") return;
+  var box = document.getElementById("stat-week");
+  if (!SITE.firstWeekDownloads.trim()) box.hidden = true;
+  else document.getElementById("week-count").textContent = SITE.firstWeekDownloads.trim();
+})();
+
 /* ─── download counter: adds up the real download counts GitHub keeps for your release files ─── */
 (function () {
   var repo = (SITE.githubRepo || "").trim();
@@ -976,6 +993,8 @@ document.getElementById("yr").textContent = new Date().getFullYear();
   function show(n) {
     if (!(n >= Math.max(1, min))) return;                                  // too few to look good: stay hidden
     box.hidden = false;
+    var week = document.getElementById("stat-week");                     // the live total replaces the week-one number
+    if (week) week.hidden = true;
     if (reduce) { out.textContent = fmt(n); return; }
     var t0 = null, dur = 1400;
     function step(t) {

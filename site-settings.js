@@ -38,7 +38,7 @@ window.SITE = {
 
 
   videos: [
-    { title: "Quick tour", text: "Flip a tweak on, then restore your original settings in one click.", src: "promo.mp4", poster: "promo.jpg" },
+    { title: "V3.1 tour", text: "Game Boost, the Game Library, Discord status and 695 tweaks.", src: "promo.mp4", poster: "promo.jpg" },
     // { title: "Quick tour",       text: "Everything in 60 seconds.",           src: "showcase/tour.mp4", poster: "showcase/tour.jpg" },
     // { title: "One-click suite",  text: "Optimize and undo it again.",         src: "https://youtu.be/XXXXXXXXXXX" },
     // { title: "F1zz Bot",         text: "Ask it what to turn on.",             src: "showcase/bot.mp4" }
