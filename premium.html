@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Premium · F1zz Tweaks</title>
 <link rel="canonical" href="https://f1zztweaks.com/premium.html">
-<meta name="description" content="F1zz Tweaks Premium: 107 advanced Windows tweaks, 5 more games to BOOST, unlimited F1zz Bot chats and 25 extra themes. See the plans and how to get Premium.">
+<meta name="description" content="F1zz Tweaks Premium: 278 advanced Windows tweaks, Tweak Guard that keeps them on after Windows updates, saved profiles, setup sharing, history with undo, unlimited F1zz Bot and every theme.">
 <meta name="theme-color" content="#7c5cff">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
@@ -422,6 +422,36 @@
   header{background:rgba(7,6,13,.88);border-bottom:1px solid #1b1630}
   header .wrap.nav{background:transparent;border:0;border-radius:0;box-shadow:none}
   .aurora{opacity:.42}
+
+  /* ══════════════════════ premium page v3.2 ══════════════════════ */
+  .plan h3 .grad-text{font-size:inherit}
+  .plan.pro .list li b{color:#fff}
+  .plan.pro .list{margin-bottom:18px}
+  .opt{position:relative;transition:border-color .2s,transform .2s}
+  .opt:hover{transform:translateY(-2px);border-color:#6a4fb0}
+  .opt.best{border-color:#8a5fe0;background:linear-gradient(160deg,rgba(124,92,255,.22),rgba(255,92,200,.10) 70%),rgba(12,9,22,.55);box-shadow:0 18px 44px -24px rgba(170,110,255,.8)}
+  .ribbon{position:absolute;top:-11px;right:14px;font-size:.66rem;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;padding:4px 10px;border-radius:99px;background:var(--grad);color:#fff;box-shadow:0 6px 18px -6px rgba(255,92,200,.7)}
+  #tools .feat p{font-size:.94rem}
+  .cmp{margin-top:34px;border:1px solid var(--stroke2);border-radius:22px;overflow:hidden;background:linear-gradient(180deg,var(--panel2),var(--panel));backdrop-filter:blur(6px)}
+  .cmp-row{display:grid;grid-template-columns:1.1fr 1fr 1.5fr;gap:16px;align-items:center;padding:15px 26px;border-top:1px solid rgba(255,255,255,.05)}
+  .cmp-row:first-child{border-top:0}
+  .cmp-row span:first-child{font-weight:600;color:var(--text)}
+  .cmp-row span{color:#aaa6c2;font-size:.95rem}
+  .cmp-row span:last-child{color:#e6defa}
+  .cmp-row span:last-child b{color:#fff}
+  .cmp-row .no{color:#5d5876}
+  .cmp-head{background:rgba(255,255,255,.02)}
+  .cmp-head span{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.74rem!important;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)!important}
+  .cmp-head span:last-child{color:var(--blue2)!important}
+  .cmp-row span:last-child{position:relative}
+  .cmp{position:relative}
+  .cmp::before{content:"";position:absolute;top:0;bottom:0;right:0;width:calc((100% - 52px - 32px) * 1.5 / 3.6 + 26px + 8px);background:linear-gradient(180deg,rgba(124,92,255,.10),rgba(255,92,200,.05));pointer-events:none}
+  @media (max-width:620px){
+    .cmp-row{grid-template-columns:1fr 1fr;padding:13px 18px;gap:6px 12px}
+    .cmp-row span:first-child{grid-column:1/-1}
+    .cmp-head span:first-child{display:none}
+    .cmp::before{display:none}
+  }
 </style>
 <script src="season.js"></script>
 </head>
@@ -452,23 +482,23 @@
   <section id="premium">
     <div class="wrap">
       <div class="eyebrow">Plans</div>
-      <h2>Free is already full. Premium goes further.</h2>
-      <p class="sec-lead">Everything in the free app stays free. Premium adds 107 advanced tweaks, 5 more games to BOOST, unlimited F1zz Bot chats and 25 extra themes for people who want to dig deeper.</p>
+      <h2>Free is already great. <span class="grad-text">Premium goes all the way.</span></h2>
+      <p class="sec-lead">Everything in the free app stays free. Premium unlocks the other 278 tweaks and adds tools that keep your setup the way you left it: Tweak Guard, saved profiles, setup sharing and a full history with undo.</p>
 
       <div class="plans">
         <div class="plan">
           <span class="tag">FREE</span>
-          <h3>588 tweaks</h3>
+          <h3>417 tweaks</h3>
           <p class="sub">Everything you need to get started.</p>
           <ul class="list">
             <li>All 9 categories and one-click packs</li>
+            <li>Game Boost, plus a Game Library with 12 games</li>
             <li>Live CPU, graphics, memory and display dashboard</li>
             <li>Restore original settings, any time</li>
             <li>Cleanup tools and Windows restore point</li>
-            <li>11 accent color themes</li>
+            <li>13 color themes, your own background and page animations</li>
             <li>F1zz Bot helper (5 messages a day)</li>
             <li>Clear SAFE and ADMIN labels on every tweak</li>
-            <li>Search and filter across all tweaks</li>
             <li>No account or email needed to use the app</li>
           </ul>
           <a class="btn block" data-need="downloadUrl" data-download href="#" style="margin-top:auto">Download free</a>
@@ -476,21 +506,70 @@
 
         <div class="plan pro">
           <span class="tag">PREMIUM</span>
-          <h3>+107 advanced tweaks</h3>
-          <p class="sub">Everything in Free, plus <b>unlimited F1zz Bot chats</b>, a full PC report from the bot, <b>25 extra themes</b>, <b>BOOST for Call of Duty, Rainbow Six Siege, Overwatch 2, Marvel Rivals and PUBG</b> and:</p>
-          <div class="pchips"><span>Disable Power Throttling</span><span>Optimize CPU Scheduling</span><span>Keep Kernel in RAM</span><span>Disable Search Indexing</span><span>Disable Multiplane Overlay (MPO)</span><span>Remove QoS Bandwidth Reservation</span><span>Disable Recall Snapshots</span><span>Disable Activity Feed</span><span>Disable Diagnostics Tracking Service</span><span>Block Potentially Unwanted Apps</span><span>Disable SMBv1 Server</span><span>Disable Widgets (Policy)</span><span>Stop Edge Running in Background</span><span>Disable Edge Startup Boost</span><span>Stop Chrome Running in Background</span><span>Disable CPU Core Parking</span></div>
+          <h3>All 695 tweaks <span class="grad-text">+ Premium tools</span></h3>
+          <p class="sub">Everything in Free, plus:</p>
+          <ul class="list">
+            <li><span><b>278 advanced tweaks</b> for CPU scheduling, latency, services, privacy and more</span></li>
+            <li><span><b>Tweak Guard</b> puts your tweaks back when a Windows update resets them</span></li>
+            <li><span><b>Profiles</b>: save setups like Gaming and School, switch in one click</span></li>
+            <li><span><b>Share setup</b>: export your setup to a file, import a friend's</span></li>
+            <li><span><b>History &amp; undo</b>: every change listed, undo the last one</span></li>
+            <li><span><b>Unlimited F1zz Bot</b> plus the full PC report</span></li>
+            <li><span><b>38 themes</b> and your own gradient</span></li>
+            <li><span><b>BOOST</b> for Call of Duty, Rainbow Six Siege, Overwatch 2, Marvel Rivals and PUBG</span></li>
+          </ul>
+          <p class="sub" style="margin-bottom:10px">A few of the Premium tweaks:</p>
+          <div class="pchips"><span>Disable Recall Snapshots</span><span>Optimize CPU Scheduling</span><span>Game Disk Priority</span><span>Instant Foreground Switching</span><span>Visual Effects: Best Performance</span><span>Disable Power Throttling</span><span>Disable CPU Core Parking</span><span>Disable Multiplane Overlay (MPO)</span><span>Remove QoS Bandwidth Reservation</span><span>Disable Start Recommendations</span><span>Stop Chrome Running in Background</span><span>Block Potentially Unwanted Apps</span></div>
           <div class="price-row">
             <div class="opt">
               <div><div class="p"><span data-price="price30">$5</span></div><div class="l">30 days of Premium</div></div>
               <a class="btn block" data-need="buy30Url" href="#">Buy 30 days</a>
             </div>
-            <div class="opt">
+            <div class="opt best">
+              <span class="ribbon">Best value</span>
               <div><div class="p"><span data-price="priceLifetime">$15</span> <small>one time</small></div><div class="l">Lifetime Premium</div></div>
               <a class="btn primary block" data-need="buyLifetimeUrl" href="#">Buy lifetime</a>
             </div>
           </div>
-          <p class="note"><span>ℹ</span><span><b>If Premium ends,</b> the Premium tweaks are automatically restored to your original settings. Your free tweaks stay exactly as they are.</span></p>
+          <p class="note"><span>ℹ</span><span><b>If Premium ends,</b> the Premium tweaks are automatically restored to your original settings and the Premium tools switch off. Your free tweaks stay exactly as they are.</span></p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PREMIUM TOOLS ===================== -->
+  <section id="tools">
+    <div class="wrap">
+      <div class="eyebrow">Premium tools</div>
+      <h2>More than extra tweaks. <span class="grad-text">Tools that look after them.</span></h2>
+      <p class="sec-lead">Free users can see all of these in the app, running on their own PC, before they decide.</p>
+      <div class="grid3">
+        <div class="feat"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Tweak Guard</h3><p>Big Windows updates quietly switch tweaks back to the default. Guard checks when the app opens and every 30 minutes, and puts yours back. It only touches tweaks F1zz Tweaks applied, and never anything you turned off yourself.</p></div>
+        <div class="feat"><div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="5" rx="2"/><rect x="3" y="11" width="18" height="5" rx="2"/><path d="M7 20h10"/></svg></div><h3>Profiles</h3><p>Save what's on right now into one of three slots, like Gaming, School or Streaming. Load one and F1zz Tweaks switches over, showing you exactly what will change first.</p></div>
+        <div class="feat"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 12v7a1 1 0 001 1h14a1 1 0 001-1v-7"/><path d="M12 3v12M7 8l5-5 5 5"/></svg></div><h3>Share setup</h3><p>Export everything you have on into a small .f1zz file. Send it to a friend or keep it for your next PC. Importing only turns things on, never off.</p></div>
+        <div class="feat"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 109-9"/><path d="M3 4v5h5"/><path d="M12 8v4l3 2"/></svg></div><h3>History &amp; undo</h3><p>Every tweak you turn on or off is recorded with the time. Undo your last change in one click, or open the full history to see what changed and when.</p></div>
+        <div class="feat"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg></div><h3>Unlimited F1zz Bot</h3><p>Ask as much as you like, typos and all, and get the full PC report: every category and how much of it you've tuned.</p></div>
+        <div class="feat"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 000 18c1.5 0 2-1 2-2s-1-1.5-1-2.5 1-1.5 2-1.5h2a4 4 0 004-4c0-4.4-4-8-9-8z"/><circle cx="7.5" cy="11" r="1"/><circle cx="11" cy="7.5" r="1"/><circle cx="15.5" cy="8.5" r="1"/></svg></div><h3>Every theme</h3><p>All 38 themes, plus a gradient builder for your own colors. Free users get 13 themes and can still set a custom background picture.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FREE VS PREMIUM ===================== -->
+  <section id="compare">
+    <div class="wrap">
+      <div class="eyebrow">Side by side</div>
+      <h2>Free vs Premium.</h2>
+      <div class="cmp" role="table" aria-label="Free and Premium compared">
+        <div class="cmp-row cmp-head" role="row"><span role="columnheader"></span><span role="columnheader">Free</span><span role="columnheader">Premium</span></div>
+        <div class="cmp-row" role="row"><span role="rowheader">Tweaks</span><span role="cell">417</span><span role="cell"><b>All 695</b></span></div>
+        <div class="cmp-row" role="row"><span role="rowheader">Tweak Guard</span><span role="cell" class="no">—</span><span role="cell"><b>✓</b> Puts tweaks back after Windows updates</span></div>
+        <div class="cmp-row" role="row"><span role="rowheader">Profiles</span><span role="cell" class="no">—</span><span role="cell"><b>✓</b> 3 saved setups</span></div>
+        <div class="cmp-row" role="row"><span role="rowheader">Share setup</span><span role="cell" class="no">—</span><span role="cell"><b>✓</b> Export and import</span></div>
+        <div class="cmp-row" role="row"><span role="rowheader">History &amp; undo</span><span role="cell" class="no">—</span><span role="cell"><b>✓</b> Every change, undo the last</span></div>
+        <div class="cmp-row" role="row"><span role="rowheader">F1zz Bot</span><span role="cell">5 messages a day</span><span role="cell"><b>Unlimited</b> + full PC report</span></div>
+        <div class="cmp-row" role="row"><span role="rowheader">Themes</span><span role="cell">13</span><span role="cell"><b>38</b> + your own gradient</span></div>
+        <div class="cmp-row" role="row"><span role="rowheader">Game Library BOOST</span><span role="cell">12 games</span><span role="cell"><b>17 games</b></span></div>
+        <div class="cmp-row" role="row"><span role="rowheader">Game Boost, dashboard, packs, restore</span><span role="cell">✓</span><span role="cell">✓</span></div>
       </div>
     </div>
   </section>
@@ -509,6 +588,21 @@
       <div class="hero-cta" style="margin-top:26px">
         <a class="btn primary" data-need="discordInvite" href="#">Join our Discord</a>
         <a class="btn" href="terms.html#refunds">Refund policy</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PREMIUM FAQ ===================== -->
+  <section id="premium-faq">
+    <div class="wrap">
+      <div class="eyebrow">Premium questions</div>
+      <h2>Before you buy.</h2>
+      <div class="faq">
+        <details><summary>Can I see Premium before I pay?</summary><p>Yes. The free app shows every Premium tweak with a description, the Premium tools running on your own PC (for example how many of your tweaks Windows has already reset) and your score with and without Premium.</p></details>
+        <details><summary>What does Tweak Guard actually do?</summary><p>F1zz Tweaks remembers which settings it changed. When the app is open, Guard checks every 30 minutes whether Windows (usually a big update) or another app has switched any of them back, and puts them back. Anything you turn off yourself in F1zz Tweaks is left alone, and you can switch Guard off in the Premium page.</p></details>
+        <details><summary>Is 30 days or lifetime better?</summary><p>If you just want to try the advanced tweaks, 30 days is enough. Lifetime costs about three months of the 30-day plan and never runs out, so it's the better deal if you'll keep using the app.</p></details>
+        <details><summary>What happens when my Premium ends?</summary><p>The app tells you, then restores the Premium tweaks it applied back to your original settings. Tweak Guard, profiles, setup sharing and undo from the history switch off, and the theme goes back to the default. Your free tweaks and your own settings are not touched.</p></details>
+        <details><summary>Can I get a refund?</summary><p>If Premium doesn't work on your PC, open a ticket within 7 days. Read the full <a href="terms.html#refunds" style="color:var(--blue2)">refund policy</a>.</p></details>
       </div>
     </div>
   </section>

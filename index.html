@@ -546,12 +546,6 @@
   #downloads .dlcard .dlbtns{margin-top:auto;display:flex;flex-wrap:wrap;gap:10px}
   #downloads .dlmeta{margin-top:14px;font-size:.78rem;color:#6f6b8c;
     font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em}
-  .live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#54d696;margin-right:7px;vertical-align:1px;box-shadow:0 0 0 0 rgba(84,214,150,.6);animation:livepulse 2s ease-out infinite}
-  @keyframes livepulse{0%{box-shadow:0 0 0 0 rgba(84,214,150,.55)}70%{box-shadow:0 0 0 7px rgba(84,214,150,0)}100%{box-shadow:0 0 0 0 rgba(84,214,150,0)}}
-  #stat-dl.dl-pop b{animation:dlpop .6s cubic-bezier(.2,1.6,.4,1)}
-  @keyframes dlpop{0%{transform:scale(1)}35%{transform:scale(1.18);color:#54d696}100%{transform:scale(1)}}
-  #stat-dl b{transform-origin:left center}
-  @media (prefers-reduced-motion: reduce){.live-dot{animation:none}#stat-dl.dl-pop b{animation:none}}
 </style>
 <script src="season.js"></script>
 </head>
@@ -600,7 +594,7 @@
           <div class="stat"><b>9</b><span>categories</span></div>
           <div class="stat"><b>1-click</b><span>restore</span></div>
           <div class="stat" id="stat-week"><b id="week-count">20+</b><span>downloads in week one</span></div>
-          <div class="stat" id="stat-dl" hidden><b id="dl-count">0</b><span><i class="live-dot" aria-hidden="true"></i>downloads</span></div>
+          <div class="stat" id="stat-dl" hidden><b id="dl-count">0</b><span>downloads</span></div>
         </div>
       </div>
 
@@ -615,7 +609,7 @@
     <div class="wrap vs-grid">
       <div class="vs"><b>01</b><div><h4>Built to undo</h4><p>Every tweak remembers what your PC had before, and puts it back in one click.</p></div></div>
       <div class="vs"><b>02</b><div><h4>Instant download</h4><p>One file, no account and no installer. Open it and the catalog is right there.</p></div></div>
-      <div class="vs"><b>03</b><div><h4>588 free tweaks</h4><p>Most of the catalog costs nothing. Premium adds 107 more and every theme.</p></div></div>
+      <div class="vs"><b>03</b><div><h4>417 free tweaks</h4><p>All the essentials cost nothing. Premium adds 278 more, Tweak Guard and every theme.</p></div></div>
       <div class="vs"><b>04</b><div><h4>Real support</h4><p>Questions, bug reports and tweak requests all get answered in the Discord.</p></div></div>
     </div>
   </section>
@@ -698,6 +692,7 @@
         <div class="feat"><div class="ico"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div><h3>One-click packs</h3><p>Gaming, Performance, Privacy, Security and Clean UI packs apply a sensible set of tweaks together. Plus cleanup tools for temp files and DNS.</p></div>
         <div class="feat"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Safe by default</h3><p>Risky tweaks are left out of the recommended packs. System-wide tweaks are clearly labeled, and a Windows restore point is one click away.</p></div>
         <div class="feat"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></div><h3>No account, no tracking</h3><p>The app needs no sign-up and no email. It only goes online to check for updates and to check your Premium license.</p></div>
+        <div class="feat"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 000 18c1.5 0 2-1 2-2s-1-1.5-1-2.5 1-1.5 2-1.5h2a4 4 0 004-4c0-4.4-4-8-9-8z"/><circle cx="7.5" cy="11" r="1"/><circle cx="11" cy="7.5" r="1"/><circle cx="15.5" cy="8.5" r="1"/></svg></div><h3>Make it yours</h3><p>Themes, your own background picture, smooth page transitions (fade, slide or zoom), the page it opens on and the clock style. Export your look and load it on another PC.</p></div>
       </div>
     </div>
   </section>
@@ -706,10 +701,11 @@
   <section id="bot">
     <div class="wrap bot-grid">
       <div>
-        <div class="eyebrow">New · F1zz Bot</div>
+        <div class="eyebrow">Smarter · F1zz Bot</div>
         <h2>Don't know what to turn on? <span class="grad-text">Just ask.</span></h2>
-        <p class="sec-lead">F1zz Bot is a helper built into the app. It looks at your tweaks and your PC, recommends what to enable first, and can optimize for you when you ask. It never changes anything without your OK.</p>
+        <p class="sec-lead">F1zz Bot is a helper built into the app. Ask it like you'd ask a friend, slang and typos included. It looks at your tweaks and your PC, recommends what to enable first, and can optimize for you when you ask. It never changes anything without your OK.</p>
         <ul class="perks">
+          <li><div class="pi"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg></div><div><b>Understands normal questions</b>"my laptop takes ages to turn on", "will this get me banned?", "how much ram do i have" all get a straight answer.</div></li>
           <li><div class="pi"><svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></div><div><b>Recommends the best tweaks</b>Picks from Performance, Gaming, Privacy and more, based on your PC.</div></li>
           <li><div class="pi"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div><div><b>Optimizes when you ask</b>Say "optimize my pc", confirm once, done. Undo it any time.</div></li>
           <li><div class="pi"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg></div><div><b>5 chats a day free, unlimited with Premium</b>Premium also adds the full PC report.</div></li>
@@ -717,8 +713,8 @@
       </div>
       <div class="chat-mock" aria-hidden="true">
         <div class="ch-head"><div class="ch-av">F1</div><div><b>F1zz Bot</b><small>● online</small></div></div>
-        <div class="bub me">I want more FPS in games</div>
-        <div class="bub bot">For games I'd turn on <b>6 tweaks</b>:<ul><li>Disable Game DVR</li><li>Game Network Priority</li><li>Optimize Windowed Games</li></ul></div>
+        <div class="bub me">will this get me banned in valorant??</div>
+        <div class="bub bot">No. F1zz Tweaks only changes <b>Windows settings</b>, never game files or anti-cheat. One tip: leave Memory Integrity on for Vanguard.</div>
         <div class="bub me">optimize my pc</div>
         <div class="bub bot">I picked <b>14 safe tweaks</b>. Everything can be undone later.<div class="ch-act" style="margin-top:12px"><span class="go">Apply</span><span>Not now</span></div></div>
       </div>
@@ -839,7 +835,7 @@
         <div>
           <div class="eyebrow">Premium</div>
           <h2>Want to go further? <span class="grad-text">Go Premium.</span></h2>
-          <p class="sec-lead">107 advanced tweaks, 5 more games to BOOST, unlimited F1zz Bot chats and 25 extra themes. If Premium ends, the Premium tweaks go back to your original settings.</p>
+          <p class="sec-lead">278 advanced tweaks, plus <b>Tweak Guard</b> that puts them back after Windows updates, saved <b>profiles</b>, setup sharing, a full history with undo, unlimited F1zz Bot, every theme and 5 more games to BOOST.</p>
         </div>
         <div class="teaser-side">
           <div class="tprices"><div><b data-price="price30">$5</b><small>30 days</small></div><div><b data-price="priceLifetime">$15</b><small>lifetime</small></div></div>
@@ -862,7 +858,8 @@
         <details><summary>Is it safe to use?</summary><p>F1zz Tweaks only changes settings that Windows already has. It saves the original value before each change and can restore it. Tweaks that affect the whole PC are marked ADMIN, and you can create a Windows restore point from inside the app first. Still, tweaking always carries some risk, so read what each tweak does.</p></details>
         <details><summary>Will Windows or my antivirus warn me?</summary><p>Possibly. Apps from small publishers often show a Windows SmartScreen "unknown publisher" warning, and some security tools are cautious about programs that change system settings. Only download F1zz Tweaks from this website. If you're unsure, create a restore point first.</p></details>
         <details><summary>Do I need to run it as administrator?</summary><p>Many tweaks work without it. Tweaks that change settings for the whole PC are marked ADMIN and need the app to be run as administrator.</p></details>
-        <details><summary>What happens when my Premium ends?</summary><p>When a Premium license expires, is refunded, or is removed, the app tells you and then restores the Premium tweaks it applied back to your original settings. Your free tweaks and your own settings are not touched.</p></details>
+        <details><summary>What's in Premium?</summary><p>All 695 tweaks (278 more than free), Tweak Guard, three saved profiles, setup sharing, a history of every change with undo, unlimited F1zz Bot with the full PC report, all 38 themes and 5 more games in the Game Library. <a href="premium.html#compare" style="color:var(--blue2)">See the full comparison</a>.</p></details>
+        <details><summary>What happens when my Premium ends?</summary><p>When a Premium license expires, is refunded, or is removed, the app tells you and then restores the Premium tweaks it applied back to your original settings. The Premium tools switch off. Your free tweaks and your own settings are not touched.</p></details>
         <details><summary>Can I use my code on another PC?</summary><p>Each code is locked to one PC. If you replace your PC, open a ticket in our Discord and we'll help you move it.</p></details>
         <details><summary>Does it work on Windows 10 and 11?</summary><p>Yes. A few tweaks only apply to Windows 11 and say so in their description.</p></details>
         <details><summary>What information do you collect?</summary><p>The app itself has no accounts and collects no email. The checkout provider shares your order details with us (such as the name and email you gave at checkout) so we can verify your purchase, and in a Discord ticket we see your Discord name and your Device ID so we can make your code. We never see your card details. Read the full <a href="terms.html#privacy" style="color:var(--blue2)">privacy section</a>.</p></details>
@@ -976,11 +973,7 @@ document.getElementById("yr").textContent = new Date().getFullYear();
   else document.getElementById("week-count").textContent = SITE.firstWeekDownloads.trim();
 })();
 
-/* ─── live download counter ───
-   The number is GitHub's own count of downloads of your release files (all versions added up).
-   Clicking Download shows +1 straight away, but only once per visitor, and only until GitHub's
-   real number catches up, so spamming the button does nothing. The page checks GitHub again
-   every 2 minutes while it's open, so the number keeps climbing on its own. ─── */
+/* ─── download counter: adds up the real download counts GitHub keeps for your release files ─── */
 (function () {
   var repo = (SITE.githubRepo || "").trim();
   if (!repo) {
@@ -991,9 +984,7 @@ document.getElementById("yr").textContent = new Date().getFullYear();
 
   var min = typeof SITE.showDownloadsFrom === "number" ? SITE.showDownloadsFrom : 25;
   var box = document.getElementById("stat-dl"), out = document.getElementById("dl-count");
-  var KEY = "f1zz_dl_real", CLICK = "f1zz_dl_click1", REFRESH = 2 * 60 * 1000, CLICK_LIFE = 15 * 60 * 1000;
-  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var shown = 0, anim = 0;
+  var KEY = "f1zz_dl_count", reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function fmt(n) {
     if (n < 1000) return String(n);
@@ -1001,84 +992,41 @@ document.getElementById("yr").textContent = new Date().getFullYear();
     if (n < 1000000) return Math.floor(n / 1000) + "K";
     return (Math.floor(n / 100000) / 10).toFixed(1).replace(/\.0$/, "") + "M";
   }
-  function save(n) { try { localStorage.setItem(KEY, JSON.stringify({ repo: repo, n: n, t: Date.now() })); } catch (e) {} }
-  function cached() {
-    try { var c = JSON.parse(localStorage.getItem(KEY) || "null"); return c && c.repo === repo ? c : null; } catch (e) { return null; }
-  }
 
-  // this visitor's one pending click: {base: GitHub's number when they clicked, t: when}
-  function pendingClick() {
-    try {
-      var c = JSON.parse(localStorage.getItem(CLICK) || "null");
-      return c && c.repo === repo && Date.now() - c.t < CLICK_LIFE ? c : null;
-    } catch (e) { return null; }
-  }
-  function withClick(real) {                                               // real GitHub number, +1 if our click isn't in it yet
-    var c = pendingClick();
-    if (c && real <= c.base) return real + 1;
-    if (c) { try { localStorage.removeItem(CLICK); } catch (e) {} }         // GitHub has counted it: stop adding
-    return real;
-  }
-
-  // counts up (or jumps, for people who prefer less motion) from what's on screen to n
-  function show(n, pop) {
+  function show(n) {
     if (!(n >= Math.max(1, min))) return;                                  // too few to look good: stay hidden
     box.hidden = false;
     var week = document.getElementById("stat-week");                     // the live total replaces the week-one number
     if (week) week.hidden = true;
-    var from = shown; shown = n;
-    if (pop) { box.classList.remove("dl-pop"); void box.offsetWidth; box.classList.add("dl-pop"); }
-    if (reduce || from === n) { out.textContent = fmt(n); return; }
-    var t0 = null, dur = from === 0 ? 1400 : 700, id = ++anim;
+    if (reduce) { out.textContent = fmt(n); return; }
+    var t0 = null, dur = 1400;
     function step(t) {
-      if (id !== anim) return;
       if (t0 === null) t0 = t;
       var p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3);
-      out.textContent = fmt(Math.round(from + (n - from) * e));
+      out.textContent = fmt(Math.round(n * e));
       if (p < 1) requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
   }
 
-  function load() {
-    fetch("https://api.github.com/repos/" + repo + "/releases?per_page=100", { headers: { Accept: "application/vnd.github+json" } })
-      .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
-      .then(function (list) {
-        var n = 0;
-        (Array.isArray(list) ? list : []).forEach(function (rel) {
-          (rel.assets || []).forEach(function (a) {
-            if (/\.(zip|exe|msi|7z)$/i.test(a.name || "")) n += Number(a.download_count) || 0;
-          });
+  try {                                                                    // reuse a recent answer so GitHub isn't asked on every page view
+    var c = JSON.parse(localStorage.getItem(KEY) || "null");
+    if (c && c.repo === repo && Date.now() - c.t < 30 * 60 * 1000) { show(c.n); return; }
+  } catch (e) {}
+
+  fetch("https://api.github.com/repos/" + repo + "/releases?per_page=100", { headers: { Accept: "application/vnd.github+json" } })
+    .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+    .then(function (list) {
+      var n = 0;
+      (Array.isArray(list) ? list : []).forEach(function (rel) {
+        (rel.assets || []).forEach(function (a) {
+          if (/\.(zip|exe|msi|7z)$/i.test(a.name || "")) n += Number(a.download_count) || 0;
         });
-        save(n);                                                           // always GitHub's real number
-        var d = withClick(n);
-        show(d, d > shown && shown > 0);
-      })
-      .catch(function () {});                                              // GitHub busy or offline: keep what's showing
-  }
-
-  // first paint: the last real number this browser saw, then always ask GitHub straight away
-  try { localStorage.removeItem("f1zz_dl_count"); localStorage.removeItem("f1zz_dl_click"); } catch (e) {}   // left over from the first version
-  var c = cached();
-  if (c) show(withClick(c.n));
-  load();
-
-  // keep it live while the page is open (paused in background tabs to stay inside GitHub's limits)
-  setInterval(function () { if (!document.hidden) load(); }, REFRESH);
-  document.addEventListener("visibilitychange", function () {
-    var c2 = cached();
-    if (!document.hidden && (!c2 || Date.now() - c2.t > REFRESH)) load();
-  });
-
-  // someone pressed Download: +1 right away, once. More clicks change nothing.
-  document.addEventListener("click", function (e) {
-    var a = e.target && e.target.closest && e.target.closest("[data-download]");
-    if (!a || a.getAttribute("aria-disabled") === "true" || pendingClick()) return;
-    var base = (cached() || {}).n;
-    if (typeof base !== "number") return;                                  // no real number yet: nothing to add to
-    try { localStorage.setItem(CLICK, JSON.stringify({ repo: repo, base: base, t: Date.now() })); } catch (e) { return; }
-    show(base + 1, true);
-  }, true);
+      });
+      try { localStorage.setItem(KEY, JSON.stringify({ repo: repo, n: n, t: Date.now() })); } catch (e) {}
+      show(n);
+    })
+    .catch(function () {});                                                // GitHub busy or offline: just don't show the number
 })();
 
 /* ─── video showcase: shows up only when you list videos in site-settings.js ─── */

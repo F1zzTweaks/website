@@ -19,7 +19,7 @@ window.SITE = {
   // DOWNLOAD COUNTER. If downloadUrl is a GitHub release link, the page adds up GitHub's real download counts and shows
   // "downloads" next to the other numbers at the top. It stays hidden until the total reaches this number
   // (so a brand new site doesn't show "3 downloads"). Use 0 to show it as soon as there is at least 1.
-  showDownloadsFrom: 1,
+  showDownloadsFrom: 25,
    // optional: the download's SHA-256 checksum, so people can check the file
 
   // VIDEO SHOWCASE. Add your clips here and a "Watch it in action" section appears on the page.
