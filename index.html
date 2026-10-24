@@ -1007,26 +1007,78 @@ document.getElementById("yr").textContent = new Date().getFullYear();
       if (p < 1) requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
+    setTimeout(function () { out.textContent = fmt(total()); }, dur + 150);   // in case the tab was in the background
   }
 
-  try {                                                                    // reuse a recent answer so GitHub isn't asked on every page view
-    var c = JSON.parse(localStorage.getItem(KEY) || "null");
-    if (c && c.repo === repo && c.before === (Number(SITE.downloadsBefore) || 0) && Date.now() - c.t < 30 * 60 * 1000) { show(c.n); return; }
-  } catch (e) {}
+  /* GitHub only updates its download counts every so often, so a visitor who just pressed Download
+     wouldn't see the number move. Their own download is added on the spot instead, ONCE per browser
+     however many times they click, and dropped again as soon as GitHub's real count includes it. */
+  var MINE = "f1zz_dl_mine", before = Math.max(0, Number(SITE.downloadsBefore) || 0);
+  var gh = null, shown = false;
+
+  function load(k) { try { return JSON.parse(localStorage.getItem(k) || "null"); } catch (e) { return null; } }
+  function save(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+
+  // 1 while this browser's download isn't in GitHub's number yet (gave up after 6 hours)
+  function pending() {
+    var m = load(MINE);
+    if (!m || m.repo !== repo || Date.now() - m.t > 6 * 3600 * 1000) return 0;
+    return gh === null || m.gh === null || gh <= m.gh ? 1 : 0;
+  }
+  function total() { return before + (gh || 0) + pending(); }
+
+  function render(animate) {
+    var n = total();
+    if (!(n >= Math.max(1, min))) return;
+    if (!shown || !animate) { shown = true; show(n); return; }
+    out.textContent = fmt(n);                                              // already on screen: just tick up, with a little pop
+    if (!reduce && out.animate) out.animate([{ transform: "scale(1.25)", color: "#b096ff" }, { transform: "none" }], { duration: 450, easing: "ease-out" });
+  }
+
+  // called by the download buttons (first click only counts)
+  window.f1zzCountDownload = function () {
+    if (load(MINE)) return;
+    save(MINE, { repo: repo, gh: gh, t: Date.now() });
+    render(true);
+  };
+
+  var c = load(KEY);                                                       // reuse a recent answer so GitHub isn't asked on every page view
+  if (c && c.repo === repo && typeof c.gh === "number" && Date.now() - c.t < 30 * 60 * 1000) { gh = c.gh; render(false); return; }
 
   fetch("https://api.github.com/repos/" + repo + "/releases?per_page=100", { headers: { Accept: "application/vnd.github+json" } })
     .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
     .then(function (list) {
-      var n = Math.max(0, Number(SITE.downloadsBefore) || 0);            // downloads from releases deleted from GitHub
+      var n = 0;
       (Array.isArray(list) ? list : []).forEach(function (rel) {
         (rel.assets || []).forEach(function (a) {
           if (/\.(zip|exe|msi|7z)$/i.test(a.name || "")) n += Number(a.download_count) || 0;
         });
       });
-      try { localStorage.setItem(KEY, JSON.stringify({ repo: repo, n: n, before: Number(SITE.downloadsBefore) || 0, t: Date.now() })); } catch (e) {}
-      show(n);
+      gh = n;
+      save(KEY, { repo: repo, gh: n, t: Date.now() });
+      render(false);
     })
     .catch(function () {});                                                // GitHub busy or offline: just don't show the number
+})();
+
+/* ─── spam guard: clicking Download again within a minute doesn't start (and count) another download ─── */
+(function () {
+  var LAST = "f1zz_dl_last", WAIT = 60 * 1000;
+  document.querySelectorAll('[data-need="downloadUrl"][data-ready]').forEach(function (el) {
+    el.addEventListener("click", function (e) {
+      var last = 0;
+      try { last = Number(localStorage.getItem(LAST)) || 0; } catch (x) {}
+      if (Date.now() - last < WAIT) {
+        e.preventDefault();                                                // already downloading: don't fetch the file again
+        var n = document.getElementById("dl-notice");
+        n.querySelector("b").textContent = "Your download already started";
+        return;
+      }
+      try { localStorage.setItem(LAST, String(Date.now())); } catch (x) {}
+      document.querySelector("#dl-notice b").textContent = "Your download is starting…";
+      if (window.f1zzCountDownload) window.f1zzCountDownload();
+    });
+  });
 })();
 
 /* ─── video showcase: shows up only when you list videos in site-settings.js ─── */
