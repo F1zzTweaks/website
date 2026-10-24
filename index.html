@@ -1011,19 +1011,19 @@ document.getElementById("yr").textContent = new Date().getFullYear();
 
   try {                                                                    // reuse a recent answer so GitHub isn't asked on every page view
     var c = JSON.parse(localStorage.getItem(KEY) || "null");
-    if (c && c.repo === repo && Date.now() - c.t < 30 * 60 * 1000) { show(c.n); return; }
+    if (c && c.repo === repo && c.before === (Number(SITE.downloadsBefore) || 0) && Date.now() - c.t < 30 * 60 * 1000) { show(c.n); return; }
   } catch (e) {}
 
   fetch("https://api.github.com/repos/" + repo + "/releases?per_page=100", { headers: { Accept: "application/vnd.github+json" } })
     .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
     .then(function (list) {
-      var n = 0;
+      var n = Math.max(0, Number(SITE.downloadsBefore) || 0);            // downloads from releases deleted from GitHub
       (Array.isArray(list) ? list : []).forEach(function (rel) {
         (rel.assets || []).forEach(function (a) {
           if (/\.(zip|exe|msi|7z)$/i.test(a.name || "")) n += Number(a.download_count) || 0;
         });
       });
-      try { localStorage.setItem(KEY, JSON.stringify({ repo: repo, n: n, t: Date.now() })); } catch (e) {}
+      try { localStorage.setItem(KEY, JSON.stringify({ repo: repo, n: n, before: Number(SITE.downloadsBefore) || 0, t: Date.now() })); } catch (e) {}
       show(n);
     })
     .catch(function () {});                                                // GitHub busy or offline: just don't show the number
