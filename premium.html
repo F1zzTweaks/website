@@ -432,6 +432,13 @@
   .opt.best{border-color:#8a5fe0;background:linear-gradient(160deg,rgba(124,92,255,.22),rgba(255,92,200,.10) 70%),rgba(12,9,22,.55);box-shadow:0 18px 44px -24px rgba(170,110,255,.8)}
   .ribbon{position:absolute;top:-11px;right:14px;font-size:.66rem;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;padding:4px 10px;border-radius:99px;background:var(--grad);color:#fff;box-shadow:0 6px 18px -6px rgba(255,92,200,.7)}
   #tools .feat p{font-size:.94rem}
+  .wait-notice{margin-top:28px;display:flex;gap:22px;align-items:flex-start;padding:30px 32px;border-radius:24px;border:1px solid #6a4fb0;
+    background:linear-gradient(135deg,rgba(124,92,255,.20),rgba(255,92,200,.10));box-shadow:0 24px 60px -34px rgba(170,110,255,.8)}
+  .wait-ico{flex:none;width:54px;height:54px;border-radius:16px;display:grid;place-items:center;background:var(--grad)}
+  .wait-ico svg{width:28px;height:28px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .wait-big{font-family:"Archivo","Segoe UI",system-ui,sans-serif;font-size:clamp(1.3rem,2.6vw,1.8rem);font-weight:800;line-height:1.25;letter-spacing:-.4px;color:#fff}
+  .wait-small{margin:10px 0 18px;color:#c9c0e0;font-size:1.02rem}
+  @media (max-width:620px){.wait-notice{flex-direction:column;padding:24px 20px}}
   .cmp{margin-top:34px;border:1px solid var(--stroke2);border-radius:22px;overflow:hidden;background:linear-gradient(180deg,var(--panel2),var(--panel));backdrop-filter:blur(6px)}
   .cmp-row{display:grid;grid-template-columns:1.1fr 1fr 1.5fr;gap:16px;align-items:center;padding:15px 26px;border-top:1px solid rgba(255,255,255,.05)}
   .cmp-row:first-child{border-top:0}
@@ -534,6 +541,15 @@
           <p class="note"><span>ℹ</span><span><b>If Premium ends,</b> the Premium tweaks are automatically restored to your original settings and the Premium tools switch off. Your free tweaks stay exactly as they are.</span></p>
         </div>
       </div>
+
+      <div class="wait-notice" role="note">
+        <div class="wait-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <div>
+          <p class="wait-big">Once you order, make a ticket in the Discord server and wait up to <span class="grad-text">48 hours</span> to receive your order.</p>
+          <p class="wait-small">If it's past 48 hours, we're either on vacation or very busy with real-life things. Your order is safe, and we'll get to it as soon as we're back.</p>
+          <a class="btn primary" data-need="discordInvite" href="#">Open a ticket in Discord</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -582,7 +598,7 @@
       <div class="steps">
         <div class="step"><h3>Pay at checkout</h3><p>Choose a plan above and pay on the secure checkout page. You'll get an order number.</p></div>
         <div class="step"><h3>Open a ticket</h3><p>Join our Discord and open a ticket. Send your <b>order number</b> and your <b>Device ID</b> (in the app: Premium &rarr; Copy Device ID).</p></div>
-        <div class="step"><h3>Get your code</h3><p>A founder sends your code by Discord message. Paste it on the Premium page and press <b>Activate</b>. It works offline.</p></div>
+        <div class="step"><h3>Get your code</h3><p>Within 48 hours, a founder sends your code by Discord message. Paste it on the Premium page and press <b>Activate</b>. It works offline.</p></div>
       </div>
       <div class="callout"><b>Why the Device ID?</b> Your code is locked to your PC so it can't be shared or resold. If you get a new PC, just open a ticket and we'll move it.</div>
       <div class="hero-cta" style="margin-top:26px">
