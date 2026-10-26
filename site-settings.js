@@ -11,10 +11,10 @@ window.SITE = {
                          //   has a file named exactly F1zzTweaks.exe attached.
                          // Do NOT use the link to the release PAGE. That one opens GitHub instead of downloading.
 
-  // XENON CROSSHAIRS page (xenon.html). Upload the "xenon" folder with the site and these work as they are.
+  // XENON CROSSHAIRS page (xenon.html). The two Xenon files sit next to index.html, like the rest of the site.
   // You can also point them at GitHub release files instead (https://...).
-  xenonAddonUrl:      "xenon/XenonCrosshairs-for-F1zzTweaks.zip",   // switches Xenon on inside F1zz Tweaks (Premium)
-  xenonStandaloneUrl: "xenon/XenonCrosshairs.exe",         // the standalone app (unlocks with F1zz Tweaks Premium)
+  xenonAddonUrl:      "XenonCrosshairs-for-F1zzTweaks.zip",   // switches Xenon on inside F1zz Tweaks (Premium)
+  xenonStandaloneUrl: "XenonCrosshairs.exe",         // the standalone app (unlocks with F1zz Tweaks Premium)
 
   buy30Url:        "",   // checkout link for "30 days of Premium"
   buyLifetimeUrl:  "",   // checkout link for "Lifetime Premium"
