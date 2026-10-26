@@ -10,6 +10,12 @@ window.SITE = {
                          // ^ always the NEWEST release. Never needs changing again, as long as every release
                          //   has a file named exactly F1zzTweaks.exe attached.
                          // Do NOT use the link to the release PAGE. That one opens GitHub instead of downloading.
+
+  // XENON CROSSHAIRS page (xenon.html). Upload the "xenon" folder with the site and these work as they are.
+  // You can also point them at GitHub release files instead (https://...).
+  xenonAddonUrl:      "xenon/XenonCrosshairs-for-F1zzTweaks.zip",   // switches Xenon on inside F1zz Tweaks (Premium)
+  xenonStandaloneUrl: "xenon/XenonCrosshairs.exe",         // the standalone app (unlocks with F1zz Tweaks Premium)
+
   buy30Url:        "",   // checkout link for "30 days of Premium"
   buyLifetimeUrl:  "",   // checkout link for "Lifetime Premium"
   price30:         "$5", // price shown for 30 days   (change to what you really charge)
@@ -19,10 +25,10 @@ window.SITE = {
   // DOWNLOAD COUNTER. If downloadUrl is a GitHub release link, the page adds up GitHub's real download counts and shows
   // "downloads" next to the other numbers at the top. It stays hidden until the total reaches this number
   // (so a brand new site doesn't show "3 downloads"). Use 0 to show it as soon as there is at least 1.
-  showDownloadsFrom: 25,
+  showDownloadsFrom: 0,
   // Downloads from releases that were deleted from GitHub (their counts are gone from GitHub).
   // This number is added to the live total. Put your old total here, e.g. 340
-  downloadsBefore: 56,
+  downloadsBefore: 146,
    // optional: the download's SHA-256 checksum, so people can check the file
 
   // VIDEO SHOWCASE. Add your clips here and a "Watch it in action" section appears on the page.
