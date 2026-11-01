@@ -206,6 +206,29 @@
   .dl-notice span{color:var(--muted);font-size:.88rem}
   .dl-notice a{color:var(--blue2);text-decoration:underline}
 
+  /* ---------- before-you-buy step (Device ID + agreement) ---------- */
+  .buy-gate{position:fixed;inset:0;z-index:90;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(5,3,10,.78);backdrop-filter:blur(6px)}
+  .buy-gate.show{display:flex}
+  .bg-box{width:100%;max-width:520px;max-height:calc(100vh - 32px);overflow:auto;padding:28px 26px 24px;border-radius:20px;border:1px solid var(--stroke2);background:var(--panel);box-shadow:0 30px 80px -20px rgba(0,0,0,.9)}
+  .bg-box h3{font-size:1.35rem;margin-bottom:4px}
+  .bg-box .bg-plan{color:var(--blue2);font-weight:700;font-size:.9rem;margin-bottom:18px}
+  .bg-box ol{margin:0 0 18px 20px;color:var(--muted);font-size:.93rem}
+  .bg-box ol li{margin-bottom:4px}
+  .bg-box ol b{color:var(--text)}
+  .bg-box label.bg-lbl{display:block;font-weight:700;font-size:.85rem;margin-bottom:6px}
+  .bg-box input[type=text],.bg-box input[type=email]{width:100%;padding:13px 14px;border-radius:12px;border:1px solid var(--stroke2);background:#0c0914;color:var(--text);font:600 1.15rem "JetBrains Mono",ui-monospace,monospace;letter-spacing:3px;text-transform:uppercase}
+  .bg-box input[type=email]{font-family:inherit;font-size:1rem;font-weight:500;letter-spacing:0;text-transform:none}
+  .bg-box input:focus{outline:none;border-color:var(--blue2)}
+  .bg-box input.bad{border-color:#ff5c7a}
+  .bg-err{min-height:20px;margin:6px 0 12px;font-size:.84rem;color:#ff7d95}
+  .bg-agree{display:flex;gap:10px;align-items:flex-start;padding:13px 14px;border-radius:12px;border:1px solid var(--stroke);background:#0e0a17;font-size:.9rem;color:var(--muted);cursor:pointer}
+  .bg-agree input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:#9b7bff}
+  .bg-agree a{color:var(--blue2);text-decoration:underline}
+  .bg-btns{display:flex;gap:10px;margin-top:18px}
+  .bg-btns .btn{flex:1}
+  .bg-btns .btn[disabled]{opacity:.4;pointer-events:none}
+  .bg-after{margin-top:14px;font-size:.84rem;color:var(--muted)}
+
 
   /* ═════════════ v3 look: aurora, glass, motion ═════════════ */
   .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .75s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
@@ -522,7 +545,7 @@
             <li><span><b>Profiles</b>: save setups like Gaming and School, switch in one click</span></li>
             <li><span><b>Share setup</b>: export your setup to a file, import a friend's</span></li>
             <li><span><b><a href="xenon.html">Xenon Crosshairs</a></b>: 2,600+ crosshair overlays, inside F1zz Tweaks or as its own app</span></li>
-            <li><span><b>Fortnite Potato Mode</b>: Potato or Mega Potato, blurry textures, the lowest settings and Ultimate Performance power in one click, with an exact undo</span></li>
+            <li><span><b>Fortnite Potato Mode</b>: blurry textures, the lowest settings and Ultimate Performance power in one click, with an exact undo</span></li>
             <li><span><b>History &amp; undo</b>: every change listed, undo the last one</span></li>
             <li><span><b>Unlimited F1zz Bot</b> plus the full PC report</span></li>
             <li><span><b>36 themes</b> and your own gradient</span></li>
@@ -548,7 +571,8 @@
       <div class="wait-notice" role="note">
         <div class="wait-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
         <div>
-          <p class="wait-big">Once you order, make a ticket in the Discord server and wait up to <span class="grad-text">48 hours</span> to receive your order.</p>
+          <p class="wait-big">Once you order, wait up to <span class="grad-text">48 hours</span> for your code to be emailed to you.</p>
+          <p class="wait-big" style="font-size:1rem;margin-top:8px"><b>ONLY make a ticket in the Discord server if you were NOT emailed your code.</b> Check your spam folder first.</p>
           <p class="wait-small">If it's past 48 hours, we're either on vacation or very busy with real-life things. Your order is safe, and we'll get to it as soon as we're back.</p>
           <a class="btn primary" data-need="discordInvite" href="#">Open a ticket in Discord</a>
         </div>
@@ -599,9 +623,9 @@
       <div class="eyebrow">How to get Premium</div>
       <h2>Three steps. Usually just a few minutes.</h2>
       <div class="steps">
-        <div class="step"><h3>Pay at checkout</h3><p>Choose a plan above and pay on the secure checkout page. You'll get an order number.</p></div>
-        <div class="step"><h3>Open a ticket</h3><p>Join our Discord and open a ticket. Send your <b>order number</b> and your <b>Device ID</b> (in the app: Premium &rarr; Copy Device ID).</p></div>
-        <div class="step"><h3>Get your code</h3><p>Within 48 hours, a founder sends your code by Discord message. Paste it on the Premium page and press <b>Activate</b>. It works offline.</p></div>
+        <div class="step"><h3>Enter your details</h3><p>Choose a plan above, enter your <b>Device ID</b> (in the app: Premium &rarr; Copy Device ID) and your <b>email</b>, and agree to the <a href="terms.html#waiver" style="color:var(--blue2)">purchase terms</a>.</p></div>
+        <div class="step"><h3>Pay at checkout</h3><p>Pay on the secure checkout page with the <b>same email</b>. You'll get an order number.</p></div>
+        <div class="step"><h3>Get your code</h3><p>Within 48 hours, your code is emailed to you. Paste it on the Premium page and press <b>Activate</b>. It works offline. Not emailed? Open a Discord ticket with your order number.</p></div>
       </div>
       <div class="callout"><b>Why the Device ID?</b> Your code is locked to your PC so it can't be shared or resold. If you get a new PC, just open a ticket and we'll move it.</div>
       <div class="hero-cta" style="margin-top:26px">
@@ -650,6 +674,33 @@
 <div class="dl-notice" id="dl-notice" role="status" aria-live="polite">
   <b>Your download is starting&hellip;</b>
   <span>If nothing happens, <a id="dl-retry" href="#" download>click here</a>. Windows may ask you to confirm it.</span>
+</div>
+
+<div class="buy-gate" id="buy-gate" role="dialog" aria-modal="true" aria-labelledby="bg-title">
+  <div class="bg-box">
+    <h3 id="bg-title">Before you buy</h3>
+    <div class="bg-plan" id="bg-plan"></div>
+    <ol>
+      <li>Open <b>F1zz Tweaks</b> on the PC you want Premium on. Don't have it yet? <a data-need="downloadUrl" data-download href="#" style="color:var(--blue2);text-decoration:underline">Download it free</a>.</li>
+      <li>Go to the <b>Premium</b> page in the app.</li>
+      <li>Press <b>COPY DEVICE ID</b> and paste it below. It looks like <b>ABCD-EF01</b>.</li>
+    </ol>
+    <label class="bg-lbl" for="bg-id">Your Device ID</label>
+    <input type="text" id="bg-id" maxlength="9" placeholder="ABCD-EF01" autocomplete="off" spellcheck="false">
+    <div class="bg-err" id="bg-err" aria-live="polite"></div>
+    <label class="bg-lbl" for="bg-mail">Your email (where we send your code)</label>
+    <input type="email" id="bg-mail" maxlength="120" placeholder="you@example.com" autocomplete="email" spellcheck="false">
+    <div class="bg-err" id="bg-mail-err" aria-live="polite"></div>
+    <label class="bg-agree">
+      <input type="checkbox" id="bg-ok">
+      <span>I have read and agree to the <a href="terms.html#waiver" target="_blank" rel="noopener">Terms of Purchase &amp; Liability Waiver</a> and the <a href="terms.html#terms" target="_blank" rel="noopener">Terms of use</a>.</span>
+    </label>
+    <div class="bg-btns">
+      <button class="btn" type="button" id="bg-cancel">Cancel</button>
+      <button class="btn primary" type="button" id="bg-go" disabled>Continue to checkout</button>
+    </div>
+    <p class="bg-after">Your Device ID and email are sent to checkout for you. Keep the <b>same email</b> at checkout. Your code is emailed to you, usually within minutes, and is locked to this PC.</p>
+  </div>
 </div>
 
 
@@ -703,6 +754,72 @@ document.querySelectorAll("[data-need]").forEach(function (el) {
   }
 });
 document.querySelectorAll("[data-price]").forEach(function (el) { el.textContent = SITE[el.dataset.price]; });
+
+/* Buy buttons open the "Before you buy" step first: the Device ID and the agreement are required for checkout. */
+(function () {
+  var gate = document.getElementById("buy-gate"), idBox = document.getElementById("bg-id"),
+      mail = document.getElementById("bg-mail"), mailErr = document.getElementById("bg-mail-err"),
+      ok = document.getElementById("bg-ok"), go = document.getElementById("bg-go"),
+      err = document.getElementById("bg-err"), plan = document.getElementById("bg-plan"), target = "";
+  var ID = /^[0-9A-F]{4}-[0-9A-F]{4}$/, MAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  function clean(v) {                               // "abcdef01", "abcd ef01" or "ABCD-EF01" -> "ABCD-EF01"
+    var hex = v.toUpperCase().replace(/[^0-9A-F]/g, "").slice(0, 8);
+    return hex.length > 4 ? hex.slice(0, 4) + "-" + hex.slice(4) : hex;
+  }
+  function check(showError) {
+    var id = idBox.value, good = ID.test(id);
+    idBox.classList.toggle("bad", showError && id.length > 0 && !good);
+    err.textContent = showError && id.length > 0 && !good ? "That doesn't look right. A Device ID is 8 letters and numbers, like ABCD-EF01." : "";
+    var m = mail.value.trim(), mailGood = MAIL.test(m), showMail = mail.dataset.touched === "1" && m.length > 0 && !mailGood;
+    mail.classList.toggle("bad", showMail);
+    mailErr.textContent = showMail ? "Check your email. It should look like you@example.com." : "";
+    go.disabled = !(good && mailGood && ok.checked);
+    return good && mailGood;
+  }
+  function open(url, name) {
+    target = url;
+    plan.textContent = name;
+    try { idBox.value = clean(localStorage.getItem("f1zzDeviceId") || ""); } catch (e) {}
+    mail.value = "";                                // the email is never saved on this site
+    mail.dataset.touched = "";
+    ok.checked = false;
+    check(false);
+    gate.classList.add("show");
+    setTimeout(function () { idBox.focus(); }, 50);
+  }
+  function close() { gate.classList.remove("show"); }
+
+  document.querySelectorAll('a[data-need^="buy"][data-ready]').forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      open(a.href, a.dataset.need === "buyLifetimeUrl" ? "Lifetime Premium" : "30 days of Premium");
+    });
+  });
+  idBox.addEventListener("input", function () { idBox.value = clean(idBox.value); check(idBox.value.length >= 9); });
+  idBox.addEventListener("blur", function () { check(true); });
+  mail.addEventListener("input", function () { check(true); });
+  mail.addEventListener("blur", function () { mail.dataset.touched = "1"; check(true); });
+  ok.addEventListener("change", function () { check(true); });
+  document.getElementById("bg-cancel").addEventListener("click", close);
+  gate.addEventListener("click", function (e) { if (e.target === gate) close(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && gate.classList.contains("show")) close(); });
+  go.addEventListener("click", function () {
+    mail.dataset.touched = "1";
+    if (!check(true) || !ok.checked) return;
+    var id = idBox.value, url = target;
+    try { localStorage.setItem("f1zzDeviceId", id); } catch (e) {}
+    if (/^https:\/\/buy\.stripe\.com\//i.test(url)) {
+      // Stripe hands these to the order Worker, which emails the code locked to this Device ID
+      url += (url.indexOf("?") < 0 ? "?" : "&") + "client_reference_id=" + encodeURIComponent(id) +
+             "&prefilled_email=" + encodeURIComponent(mail.value.trim());
+    } else {
+      try { navigator.clipboard && navigator.clipboard.writeText("Device ID: " + id + "  |  Email: " + mail.value.trim()); } catch (e) {}
+    }
+    window.open(url, "_blank", "noopener");
+    close();
+  });
+})();
 document.getElementById("yr") && (document.getElementById("yr").textContent = new Date().getFullYear());
 </script>
 <script>
