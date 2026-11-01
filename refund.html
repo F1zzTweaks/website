@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Request a Refund · F1zz Tweaks</title>
+<link rel="canonical" href="https://f1zztweaks.com/refund.html">
+<meta name="description" content="Request a refund for F1zz Tweaks Premium.">
+<meta name="robots" content="noindex,follow">
+<meta name="theme-color" content="#09060f">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#09060f; --panel:#110d1a; --stroke:#271f38; --stroke2:#352c4c;
+    --text:#f1e7fa; --muted:#8e8ca6; --blue2:#b096ff; --violet:#ff5cc8; --red:#ff7a7a; --green:#54d696;
+    --grad:linear-gradient(135deg,#7c5cff 0%,#ff5cc8 100%);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{overflow-x:clip;font-family:"Archivo","Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue2);text-decoration:none}a:hover{text-decoration:underline}
+  .wrap{width:min(640px,92%);margin-inline:auto}
+
+  .aurora{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;opacity:.42}
+  .aurora i{position:absolute;border-radius:50%;filter:blur(100px)}
+  .aurora i:nth-child(1){width:640px;height:640px;left:-160px;top:-180px;background:#6a3dff;opacity:.5}
+  .aurora i:nth-child(2){width:560px;height:560px;right:-140px;top:4%;background:#ff3fb4;opacity:.28}
+
+  header{position:sticky;top:0;z-index:5;background:rgba(7,6,13,.88);border-bottom:1px solid #1b1630}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px;width:min(1120px,92%);margin-inline:auto}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--text)}
+  .brand:hover{text-decoration:none}
+  .brand img{width:36px;height:36px;border-radius:11px}
+  .back{font-size:.92rem;font-weight:600;padding:9px 16px;border-radius:11px;border:1px solid var(--stroke2);background:#1a1429;color:var(--text)}
+  .back:hover{text-decoration:none;border-color:#52467a;background:#241b3a}
+
+  h1{font-size:clamp(2rem,5vw,2.6rem);font-weight:800;letter-spacing:-1px;line-height:1.15;margin:48px 0 10px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}
+  .lead{color:#b9b3d0;margin-bottom:26px}
+  .card{padding:28px;border:1px solid var(--stroke);border-radius:22px;background:linear-gradient(180deg,rgba(22,16,34,.86),rgba(17,13,26,.86));margin-bottom:60px}
+  label.lbl{display:block;font-weight:700;font-size:.95rem;margin:18px 0 6px}
+  label.lbl:first-child{margin-top:0}
+  .lbl .req{color:var(--red);font-weight:800}
+  .hint{color:var(--muted);font-size:.86rem;margin-top:4px}
+  input[type=text],input[type=email],textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--stroke2);background:#120d1f;color:var(--text);font:inherit;font-size:1rem}
+  textarea{min-height:140px;resize:vertical}
+  input:focus,textarea:focus{outline:none;border-color:var(--blue2)}
+  .bad{border-color:var(--red)!important}
+  .why{color:var(--red);font-weight:800;letter-spacing:.2px}
+  .agree{display:flex;gap:10px;align-items:flex-start;margin-top:20px;color:#b9b3d0;font-size:.95rem}
+  .agree input{margin-top:5px;width:18px;height:18px;flex:none;accent-color:#7c5cff}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:12px;font:inherit;font-weight:700;font-size:1rem;border:1px solid var(--stroke2);background:#1a1429;color:var(--text);cursor:pointer;text-decoration:none}
+  .btn:hover{text-decoration:none;border-color:#52467a;background:#241b3a}
+  .btn.primary{border-color:transparent;background:var(--grad)}
+  .btn:disabled{opacity:.45;cursor:not-allowed}
+  .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+  .row .btn{flex:1;min-width:200px}
+  .err{color:var(--red);font-size:.9rem;min-height:1.3em;margin-top:10px}
+  .count{color:var(--muted);font-size:.82rem;text-align:right;margin-top:4px}
+  .done h2{font-size:1.5rem;margin-bottom:8px}
+  .done .ok{color:var(--green);font-weight:800}
+  .done ol{margin:14px 0 0 22px;color:#b9b3d0;display:grid;gap:6px}
+  pre{white-space:pre-wrap;word-break:break-word;font-family:Consolas,ui-monospace,monospace;font-size:.88rem;background:#120d1f;border:1px solid var(--stroke2);border-radius:12px;padding:14px;margin-top:14px;color:#ddd6f3}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  [hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"><i></i><i></i></div>
+<header><div class="nav">
+  <a class="brand" href="./"><img src="logo.png" alt="F1zz Tweaks logo"><span>F1zz Tweaks</span></a>
+  <a class="back" href="./">&larr; Back to the website</a>
+</div></header>
+
+<main class="wrap">
+  <h1>Request a refund</h1>
+  <p class="lead">Fill this in, then make a ticket in our Discord. Refunds are for Premium bought in the last 7 days that didn't work for you. Read the <a href="terms.html#refunds" target="_blank" rel="noopener">refund policy</a>.</p>
+
+  <form class="card" id="form" novalidate>
+    <label class="lbl" for="device">Device ID <span class="req">*</span></label>
+    <input type="text" id="device" maxlength="9" placeholder="ABCD-EF01" autocomplete="off" spellcheck="false">
+    <p class="hint">In F1zz Tweaks: Premium page &rarr; COPY DEVICE ID.</p>
+
+    <label class="lbl" for="email">Email you used at checkout <span class="req">*</span></label>
+    <input type="email" id="email" maxlength="120" placeholder="you@example.com" autocomplete="email" spellcheck="false">
+
+    <label class="lbl" for="reason"><span class="why">State why you are refunding</span> <span class="req">*</span></label>
+    <textarea id="reason" maxlength="2000" placeholder="Tell us what went wrong. Requests without a real reason won't be refunded."></textarea>
+    <div class="count" id="count">0 / at least 20 characters</div>
+
+    <div class="hp" aria-hidden="true"><input type="text" id="website" tabindex="-1" autocomplete="off"></div>
+
+    <label class="agree">
+      <input type="checkbox" id="agree">
+      <span>I have read the <a href="terms.html#refunds" target="_blank" rel="noopener">Refund policy</a> and the <a href="terms.html#waiver" target="_blank" rel="noopener">Terms of Purchase &amp; Liability Waiver</a>. I understand Premium turns off if I'm refunded.</span>
+    </label>
+
+    <div class="err" id="err" aria-live="polite"></div>
+    <div class="row"><button class="btn primary" type="submit" id="send" disabled>Send refund request</button></div>
+  </form>
+
+  <div class="card done" id="done" hidden>
+    <h2><span class="ok">&#10003;</span> Request sent</h2>
+    <p class="lead" style="margin:0">One more step: <b>make a ticket in our Discord</b>. Your request isn't looked at until you do.</p>
+    <ol>
+      <li>Press <b>Copy</b> below.</li>
+      <li>Press <b>Open Discord</b> and make a ticket.</li>
+      <li>Paste it into the ticket (Ctrl+V).</li>
+    </ol>
+    <pre id="summary"></pre>
+    <div class="row">
+      <button class="btn" type="button" id="copy">Copy</button>
+      <a class="btn primary" id="discord" href="#" target="_blank" rel="noopener noreferrer">Open Discord</a>
+    </div>
+    <p class="hint" style="margin-top:14px">Once you're refunded, you'll get an email, and Premium turns off in the app.</p>
+  </div>
+</main>
+
+<script>/* always load the newest site-settings.js, never a cached copy */document.write('<script src="site-settings.js?v='+Date.now()+'"><\/script>')</script>
+<script>
+(function () {
+  var SITE = window.SITE || {};
+  var $ = function (id) { return document.getElementById(id); };
+  var device = $("device"), email = $("email"), reason = $("reason"), agree = $("agree"), send = $("send"), err = $("err");
+  var ID = /^[0-9A-F]{4}-[0-9A-F]{4}$/, MAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/, MIN = 20;
+  var params = new URLSearchParams(location.search);
+  var licenseId = (params.get("license") || "").toUpperCase().replace(/[^0-9A-F]/g, "").slice(0, 8);
+
+  function clean(v) {
+    var hex = v.toUpperCase().replace(/[^0-9A-F]/g, "").slice(0, 8);
+    return hex.length > 4 ? hex.slice(0, 4) + "-" + hex.slice(4) : hex;
+  }
+  device.value = clean(params.get("device") || (function () { try { return localStorage.getItem("f1zzDeviceId") || ""; } catch (e) { return ""; } })());
+
+  function check() {
+    var n = reason.value.trim().length;
+    $("count").textContent = n + (n >= MIN ? " characters" : " / at least " + MIN + " characters");
+    send.disabled = !(ID.test(device.value) && MAIL.test(email.value.trim()) && n >= MIN && agree.checked);
+  }
+  device.addEventListener("input", function () { device.value = clean(device.value); check(); });
+  device.addEventListener("blur", function () { device.classList.toggle("bad", device.value.length > 0 && !ID.test(device.value)); });
+  email.addEventListener("input", check);
+  email.addEventListener("blur", function () { email.classList.toggle("bad", email.value.trim().length > 0 && !MAIL.test(email.value.trim())); });
+  reason.addEventListener("input", check);
+  agree.addEventListener("change", check);
+  check();
+
+  $("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    check();
+    if (send.disabled) return;
+    var api = (SITE.ordersApi || "").replace(/\/+$/, "");
+    if (!/^https:\/\//.test(api)) { err.textContent = "Refund requests aren't set up yet. Make a ticket in our Discord instead."; return; }
+
+    var body = { deviceId: device.value, email: email.value.trim(), reason: reason.value.trim(), licenseId: licenseId, website: $("website").value };
+    send.disabled = true;
+    send.textContent = "Sending…";
+    err.textContent = "";
+    fetch(api + "/refund-request", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
+      .then(function (res) {
+        if (!res.ok) throw new Error(res.j.error || "We couldn't send your request. Try again in a minute.");
+        $("summary").textContent =
+          "REFUND REQUEST\n" +
+          "Device ID: " + body.deviceId + "\n" +
+          "Email used at checkout: " + body.email + "\n" +
+          (licenseId ? "License ID: " + licenseId + "\n" : "") +
+          "Reason: " + body.reason;
+        $("discord").href = (SITE.discordInvite || "#");
+        $("form").hidden = true;
+        $("done").hidden = false;
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      })
+      .catch(function (x) {
+        err.textContent = x.message || "We couldn't send your request. Try again in a minute.";
+        send.textContent = "Send refund request";
+        check();
+      });
+  });
+
+  $("copy").addEventListener("click", function () {
+    var t = $("summary").textContent, b = this;
+    function ok() { b.textContent = "Copied ✓"; }
+    if (navigator.clipboard) navigator.clipboard.writeText(t).then(ok, function () {});
+    else { var r = document.createRange(); r.selectNodeContents($("summary")); getSelection().removeAllRanges(); getSelection().addRange(r); document.execCommand("copy"); ok(); }
+  });
+})();
+</script>
+</body>
+</html>

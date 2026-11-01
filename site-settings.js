@@ -18,6 +18,7 @@ window.SITE = {
 
   buy30Url:        "https://buy.stripe.com/test_fZu3cvgh42O74GBgoz67S00",   // checkout link for "30 days of Premium" (Stripe TEST link: swap for the live one)
   buyLifetimeUrl:  "https://buy.stripe.com/test_6oUaEX4ym88r6OJ2xJ67S01",   // checkout link for "Lifetime Premium" (Stripe TEST link: swap for the live one)
+  ordersApi:       "https://f1zz-orders.f1zztweaks.workers.dev",   // the order Worker (refund.html sends refund requests here)
   price30:         "$5", // price shown for 30 days   (change to what you really charge)
   priceLifetime:   "$15",// price shown for lifetime  (change to what you really charge)
   sha256:          "",
