@@ -39,8 +39,8 @@
       h = mx === r ? (g2 - b) / d + (g2 < b ? 6 : 0) : mx === g2 ? (b - r) / d + 2 : (r - g2) / d + 4;
       h *= 60;
     }
-    if (sat < .08 || h < 230 || h >= 345) return null;           // not purple / pink
-    var pink = h >= 300;
+    if (sat < .08 || h < 212 || h >= 345) return null;           // not navy / purple / pink (the blue PlayStation badge stays)
+    var pink = h >= 300 || h < 217;                               // the lighter blues take the second color
     if (!XMAS) {
       if ((l < .30 && !pink) || sat < .35 || l > .82) return null;  // dark purples + soft text stay
       h = pink ? 272 : 26; if (!pink) sat = Math.max(sat, .9);

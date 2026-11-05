@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://f1zztweaks.com/xenon">
 <meta name="description" content="Xenon Crosshairs: a crosshair overlay with 2,600+ styles. Use it inside F1zz Tweaks, or download the standalone app.">
 <meta name="robots" content="index,follow">
-<meta name="theme-color" content="#03050b">
+<meta name="theme-color" content="#070c18">
 <meta property="og:title" content="Xenon Crosshairs">
 <meta property="og:description" content="2,600+ crosshair styles, live preview and a game-aware Discord status. Inside F1zz Tweaks or as a standalone app.">
 <meta property="og:url" content="https://f1zztweaks.com/xenon">
@@ -20,7 +20,7 @@
 <style>
   /* Xenon has its own look: black and navy, hard corners, HUD brackets, mono labels. */
   :root{
-    --black:#03050b; --navy:#091126; --navy2:#0d1938; --navy3:#13234c;
+    --black:#04060a; --navy:#091126; --navy2:#0d1938; --navy3:#13234c;
     --line:#16254e; --line2:#243c78; --blue:#4d8dff; --blue2:#8fb8ff;
     --text:#e8eefa; --muted:#8695b6; --dim:#4e5d80; --good:#4ade80;
     --mono:"JetBrains Mono",Consolas,monospace;
@@ -43,7 +43,7 @@
   .hud::after{bottom:-1px;right:-1px;border-left:0;border-top:0}
 
   /* top bar */
-  header{position:sticky;top:0;z-index:20;background:rgba(3,5,11,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  header{position:sticky;top:0;z-index:20;background:rgba(4,6,10,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .bar{display:flex;align-items:center;gap:22px;height:64px}
   .brand{display:flex;align-items:center;gap:10px;color:var(--text);font-family:var(--mono);font-weight:800;letter-spacing:.08em}
   .brand img{width:30px;height:30px;display:block}
@@ -143,7 +143,7 @@
   footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
 
   /* "needs Premium" notice before the standalone download */
-  .warn{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(3,5,11,.78);backdrop-filter:blur(6px)}
+  .warn{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(4,6,10,.78);backdrop-filter:blur(6px)}
   .warn.open{display:flex}
   .warn .box{width:min(460px,100%);background:var(--navy);border:1px solid var(--line2);padding:30px 28px 24px;position:relative}
   .warn h3{font-family:var(--mono);font-size:1.2rem;margin:12px 0 10px;letter-spacing:.02em}
@@ -164,6 +164,8 @@
   }
   @media (max-width:520px){.feats{grid-template-columns:1fr}.btn{width:100%}}
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site-modern.css?v=2">
 </head>
 <body>
 

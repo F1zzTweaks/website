@@ -1,3 +1,19 @@
+/* Every "Download F1zz Tweaks" button opens the download page in a new tab. The file itself is only offered there, after the agreement. */
+(function () {
+  var links = document.querySelectorAll('a[data-need="downloadUrl"][data-ready]');
+  links.forEach(function (a) {
+    a.href = "download";
+    a.removeAttribute("download");
+    a.target = "_blank";
+    a.rel = "noopener";
+  });
+  // runs before each page's own download click handlers, so they don't start the file or show "starting"
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest('a[data-need="downloadUrl"][data-ready]');
+    if (a) e.stopPropagation();
+  }, true);
+})();
+
 /* The phone menu button, and the Support link from site-settings.js */
 (function () {
   var button = document.querySelector(".site-menu"), nav = document.getElementById("site-nav");

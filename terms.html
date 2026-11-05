@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://f1zztweaks.com/terms">
 <meta name="description" content="F1zz Tweaks terms of use, refund policy and privacy information.">
 <meta name="robots" content="index,follow">
-<meta name="theme-color" content="#09060f">
+<meta name="theme-color" content="#070c18">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
@@ -20,9 +20,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#09060f; --panel:#110d1a; --panel2:#161022; --stroke:#271f38; --stroke2:#352c4c;
-    --text:#f1e7fa; --muted:#8e8ca6; --blue2:#b096ff; --violet:#ff5cc8; --green:#54d696;
-    --grad:linear-gradient(135deg,#7c5cff 0%,#ff5cc8 100%);
+    --bg:#06090f; --panel:#0d111a; --panel2:#101622; --stroke:#1f2738; --stroke2:#2c374c;
+    --text:#e7edfa; --muted:#8c95a6; --blue2:#9ebcf7; --violet:#68a4f3; --green:#54d696;
+    --grad:linear-gradient(135deg,#6896f3 0%,#68a4f3 100%);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;scroll-padding-top:98px}
@@ -33,8 +33,8 @@
   /* aurora background, same as the main page */
   .aurora{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
   .aurora i{position:absolute;border-radius:50%;filter:blur(100px);will-change:transform}
-  .aurora i:nth-child(1){width:640px;height:640px;left:-160px;top:-180px;background:#6a3dff;opacity:.5;animation:drift1 26s ease-in-out infinite alternate}
-  .aurora i:nth-child(2){width:560px;height:560px;right:-140px;top:4%;background:#ff3fb4;opacity:.28;animation:drift2 30s ease-in-out infinite alternate}
+  .aurora i:nth-child(1){width:640px;height:640px;left:-160px;top:-180px;background:#4c83f0;opacity:.5;animation:drift1 26s ease-in-out infinite alternate}
+  .aurora i:nth-child(2){width:560px;height:560px;right:-140px;top:4%;background:#4d94f1;opacity:.28;animation:drift2 30s ease-in-out infinite alternate}
   .aurora i:nth-child(3){width:520px;height:520px;left:28%;top:52%;background:#2d6bff;opacity:.2;animation:drift3 34s ease-in-out infinite alternate}
   @keyframes drift1{to{transform:translate(180px,140px) scale(1.15)}}
   @keyframes drift2{to{transform:translate(-160px,200px) scale(.9)}}
@@ -42,32 +42,32 @@
 
   /* glass nav pill */
   header{position:sticky;top:0;z-index:5;padding-top:12px}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:64px;width:min(1120px,92%);margin-inline:auto;padding:0 18px;border:1px solid var(--stroke2);border-radius:20px;background:rgba(14,10,24,.66);backdrop-filter:blur(18px);box-shadow:0 18px 44px -22px rgba(0,0,0,.85)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px;width:min(1120px,92%);margin-inline:auto;padding:0 18px;border:1px solid var(--stroke2);border-radius:20px;background:rgba(10,15,24,.66);backdrop-filter:blur(18px);box-shadow:0 18px 44px -22px rgba(0,0,0,.85)}
   .brand{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--text)}
   .brand:hover{text-decoration:none}
-  .brand img{width:36px;height:36px;border-radius:11px;background:linear-gradient(160deg,#2a1f52,#140f20);border:1px solid #473780;padding:5px}
-  .back{font-size:.92rem;font-weight:600;padding:9px 16px;border-radius:11px;border:1px solid var(--stroke2);background:#1a1429;color:var(--text);transition:transform .15s,border-color .15s,background .15s}
-  .back:hover{text-decoration:none;border-color:#52467a;background:#241b3a;transform:translateY(-1px)}
+  .brand img{width:36px;height:36px;border-radius:11px;background:linear-gradient(160deg,#1f3052,#0f1520);border:1px solid #374f80;padding:5px}
+  .back{font-size:.92rem;font-weight:600;padding:9px 16px;border-radius:11px;border:1px solid var(--stroke2);background:#141b29;color:var(--text);transition:transform .15s,border-color .15s,background .15s}
+  .back:hover{text-decoration:none;border-color:#46577a;background:#1b253a;transform:translateY(-1px)}
 
-  h1{font-size:clamp(2.2rem,5vw,3.2rem);letter-spacing:-1.6px;line-height:1.1;margin:54px 0 10px;background:linear-gradient(90deg,#8d6bff,#ff5cc8,#8d6bff);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite;display:inline-block}
+  h1{font-size:clamp(2.2rem,5vw,3.2rem);letter-spacing:-1.6px;line-height:1.1;margin:54px 0 10px;background:linear-gradient(90deg,#76a0f4,#68a4f3,#76a0f4);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite;display:inline-block}
   @keyframes shine{to{background-position:200% center}}
   .upd{color:var(--muted);font-size:.9rem;margin-bottom:26px}
   .toc{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px}
-  .toc a{padding:8px 16px;border-radius:99px;border:1px solid #2e2548;background:rgba(30,20,52,.7);font-size:.9rem;font-weight:600;transition:border-color .2s,transform .2s}
-  .toc a:hover{text-decoration:none;border-color:#6a52b8;transform:translateY(-1px)}
+  .toc a{padding:8px 16px;border-radius:99px;border:1px solid #253148;background:rgba(20,31,52,.7);font-size:.9rem;font-weight:600;transition:border-color .2s,transform .2s}
+  .toc a:hover{text-decoration:none;border-color:#5274b8;transform:translateY(-1px)}
 
   /* each part is a glass card */
-  section{padding:30px 32px 18px;margin-top:26px;border:1px solid var(--stroke);border-radius:24px;background:linear-gradient(180deg,rgba(22,16,34,.82),rgba(17,13,26,.82));backdrop-filter:blur(6px);position:relative;overflow:hidden}
+  section{padding:30px 32px 18px;margin-top:26px;border:1px solid var(--stroke);border-radius:24px;background:linear-gradient(180deg,rgba(16,22,34,.82),rgba(13,17,26,.82));backdrop-filter:blur(6px);position:relative;overflow:hidden}
   section::before{content:"";position:absolute;left:28px;right:28px;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent)}
   h2{font-size:1.6rem;letter-spacing:-.4px;margin-bottom:14px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}
   h3{font-size:1.06rem;margin:22px 0 6px}
-  p,li{color:#b9b3d0;font-size:1rem}
+  p,li{color:#b3bdd0;font-size:1rem}
   p{margin-bottom:12px}
   ul{margin:6px 0 14px 22px;display:grid;gap:6px}
   li::marker{color:var(--violet)}
   strong{color:#fff}
-  .box{margin:18px 0;padding:16px 20px;border-radius:16px;border:1px solid #40335f;background:rgba(30,22,56,.55)}
-  footer{margin:60px 0 50px;color:#6c6b85;font-size:.84rem;border-top:1px solid var(--stroke);padding-top:22px}
+  .box{margin:18px 0;padding:16px 20px;border-radius:16px;border:1px solid #33425f;background:rgba(22,33,56,.55)}
+  footer{margin:60px 0 50px;color:#6b7485;font-size:.84rem;border-top:1px solid var(--stroke);padding-top:22px}
 
   .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
   .js .reveal.in{opacity:1;transform:none}
@@ -80,15 +80,16 @@
   h1,h2{font-weight:800;letter-spacing:-.8px}
   .btn{border-radius:11px;font-weight:700;letter-spacing:.2px}
   .eyebrow{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.3em;font-weight:500}
-  header{background:rgba(7,6,13,.88);border-bottom:1px solid #1b1630}
+  header{background:rgba(6,8,13,.88);border-bottom:1px solid #161f30}
   header .wrap.nav{background:transparent;border:0;border-radius:0;box-shadow:none}
   .aurora{opacity:.42}
 </style>
 <script src="season.js"></script>
 <link rel="stylesheet" href="site-header.css?v=2">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site-modern.css?v=2">
 </head>
 <body>
-<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
 <header class="site-head">
   <div class="site-head-in">
     <a class="brand" href="./"><img src="logo.png" alt="F1zz Tweaks logo"><span>F1zz Tweaks</span></a>
@@ -108,8 +109,8 @@
 
 <main class="wrap">
   <h1>Terms, Refunds &amp; Privacy</h1>
-  <p class="upd">Last updated: October 29, 2026</p>
-  <div class="toc"><a href="#terms">Terms of use</a><a href="#waiver">Purchase &amp; liability waiver</a><a href="#refunds">Refund policy</a><a href="#privacy">Privacy</a></div>
+  <p class="upd">Last updated: November 5, 2026</p>
+  <div class="toc"><a href="#terms">Terms of use</a><a href="#waiver">Purchase &amp; liability waiver</a><a href="#download-waiver">Free download waiver</a><a href="#refunds">Refund policy</a><a href="#privacy">Privacy</a></div>
 
   <section class="reveal" id="terms">
     <h2>Terms of use</h2>
@@ -120,7 +121,7 @@
     <h3>3. Free and Premium</h3>
     <ul>
       <li>The free app is free to use for personal use.</li>
-      <li>Premium includes the Premium tweaks, the Premium tools (Tweak Guard, profiles, setup sharing and undo from the change history), unlimited F1zz Bot chats, the full PC report from F1zz Bot, the extra color themes and the extra Game Library games. Free users get the free tweaks and 5 F1zz Bot messages a day.</li>
+      <li>Premium includes the Premium tweaks, the Premium tools (Tweak Guard, profiles and undo from the change history), unlimited F1zz Bot chats, the full PC report from F1zz Bot, the extra color themes and the extra Game Library games. Free users get the free tweaks and 5 F1zz Bot messages a day.</li>
       <li>Tweak Guard only re-applies tweaks that F1zz Tweaks applied for you, and only while the app is open. You can switch it off at any time on the Premium page.</li>
       <li>A Premium code gives <strong>one person</strong> access to the Premium tweaks on <strong>one PC</strong>. Codes are locked to that PC's Device ID. You may not share, resell or publish your code.</li>
       <li>We may turn off a code that is shared, resold, refunded, charged back or used to abuse the service.</li>
@@ -128,12 +129,12 @@
     </ul>
     <h3>Premium Plus and Premium Ultimate</h3>
     <ul>
-      <li>Premium Plus and Premium Ultimate are lifetime Premium codes, under the same rules as other Premium codes. Plus also includes the PS5 Tweaks guide. Ultimate also includes the PS5 and Xbox Tweaks guides. The 30-day and Lifetime plans don't include console guides.</li>
-      <li>You read the guides in the F1zz Console Tweaks app for Windows, on the same PC your code is locked to. The app doesn't connect to your console or change it for you, so you make each change yourself. The guides don't include mods or jailbreaks, and aren't made or endorsed by Microsoft or Sony. Results depend on your console, TV and internet connection, and aren't guaranteed.</li>
+      <li>Premium Plus and Premium Ultimate are lifetime Premium codes, under the same rules as other Premium codes. Plus also includes the PS5 Tweaks and Console Extras guides. Ultimate also includes those, plus the Xbox Tweaks and PC Pro guides. The 30-day and Lifetime plans don't include these guides.</li>
+      <li>You read the guides in the F1zz Console Tweaks app for Windows, on the same PC your code is locked to. The app doesn't connect to your console or change it for you, so you make each change yourself. The guides don't include mods or jailbreaks, and aren't made or endorsed by Microsoft, Sony or any TV, router or hardware maker. The PC Pro guide includes driver and BIOS settings, which carry risk, so follow its warnings and use it at your own risk. Results depend on your hardware and internet connection, and aren't guaranteed.</li>
       <li>If you get a new PC, open a ticket and we'll move your code. You may not share, resell or publish your code or the guides. Your order ID shows in the guides, so a leaked copy can be traced to its order, and we may turn off a code that's shared, resold, published, refunded or charged back.</li>
     </ul>
     <h3>4. When Premium ends</h3>
-    <div class="box"><p style="margin:0">When a Premium license <strong>expires, is refunded, is charged back or is removed</strong>, the app tells you and then <strong>automatically restores the Premium tweaks it applied back to your original settings</strong>. This happens the next time the app is opened and can check your license. The Premium color themes go back to the default theme, F1zz Bot goes back to 5 messages a day, and the Premium tools (Tweak Guard, profiles, setup sharing and undo from the history) switch off. Saved profiles and the change history stay on your PC. Your free tweaks, and any settings you had before using F1zz Tweaks, are not touched. A few tweaks need the app to be run as administrator to be restored.</p></div>
+    <div class="box"><p style="margin:0">When a Premium license <strong>expires, is refunded, is charged back or is removed</strong>, the app tells you and then <strong>automatically restores the Premium tweaks it applied back to your original settings</strong>. This happens the next time the app is opened and can check your license. The Premium color themes go back to the default theme, F1zz Bot goes back to 5 messages a day, and the Premium tools (Tweak Guard, profiles and undo from the history) switch off. Saved profiles and the change history stay on your PC. Your free tweaks, and any settings you had before using F1zz Tweaks, are not touched. A few tweaks need the app to be run as administrator to be restored.</p></div>
     <h3>5. Not affiliated with Microsoft</h3>
     <p>F1zz Tweaks is not affiliated with or endorsed by Microsoft. Windows is a trademark of Microsoft Corporation.</p>
     <h3>6. Changes</h3>
@@ -145,6 +146,14 @@
     <div class="box"><p style="margin:0">You must agree to this before you buy Premium.</p></div>
     <p>By purchasing and utilizing this computer customization, you explicitly acknowledge and agree that all products, software, and services are provided on an "as-is" and "as-available" basis, without any warranties of any kind, either express or implied.</p>
     <p>To the maximum extent permitted by applicable law, F1zz Tweaks and its operators shall not be liable for any direct, indirect, incidental, consequential, or punitive damages. This includes, but is not limited to, hardware failure, system instability, data loss, software conflicts, blue-screen errors, or financial losses resulting from the installation, use, or performance of these customizations. You assume full responsibility and all associated risks for modifying your device's operating system, software, or components.</p>
+  </section>
+
+  <section class="reveal" id="download-waiver">
+    <h2>Free Download Terms &amp; Liability Waiver</h2>
+    <div class="box"><p style="margin:0">You must agree to this before you download F1zz Tweaks. It applies to the free app, and to Premium features if you add them later.</p></div>
+    <p>F1zz Tweaks is provided free of charge on an "as-is" and "as-available" basis, without any warranties of any kind, either express or implied. You choose what the app changes on your device, and you download, install and use it at your own risk.</p>
+    <p>To the maximum extent permitted by applicable law, F1zz Tweaks and its operators shall not be liable for any direct, indirect, incidental, consequential, or punitive damages. This includes, but is not limited to, hardware failure, system instability, data loss, software conflicts, blue-screen errors, or financial losses resulting from downloading, installing, or using the app. To that same extent, you agree not to bring any claim or lawsuit against F1zz Tweaks or its operators for those losses, and you assume full responsibility and all associated risks for modifying your device's operating system, software, or components.</p>
+    <p>Nothing here takes away any rights that the law in your country says can't be waived.</p>
   </section>
 
   <section class="reveal" id="refunds">
@@ -230,31 +239,6 @@
   var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.06});
   els.forEach(function(e){io.observe(e)});
   setTimeout(function(){els.forEach(function(e){e.classList.add('in')})},2500);
-})();
-</script>
-<script>
-/* LED light that drives around the edge of the page (skipped for people who prefer reduced motion) */
-(function(){
-  if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)return;
-  var NS="http://www.w3.org/2000/svg",svg=document.createElementNS(NS,"svg");
-  svg.setAttribute("aria-hidden","true");
-  svg.style.cssText=(window.F1zzRecolor||String)("position:fixed;left:0;top:0;width:100%;height:100%;z-index:9999;pointer-events:none;overflow:visible;filter:drop-shadow(0 0 5px #8d6bff) drop-shadow(0 0 12px #ff5cc8)");
-  var layers=[{L:26,o:.16,c:(window.F1zzRecolor||String)("#7c5cff")},{L:17,o:.35,c:(window.F1zzRecolor||String)("#a35cff")},{L:9,o:.7,c:(window.F1zzRecolor||String)("#ff5cc8")},{L:3,o:1,c:(window.F1zzRecolor||String)("#ffffff")}],rects=[];
-  layers.forEach(function(l){
-    var r=document.createElementNS(NS,"rect");
-    r.setAttribute("pathLength","100");r.setAttribute("fill","none");r.setAttribute("stroke",l.c);
-    r.setAttribute("stroke-width","3");r.setAttribute("stroke-linecap","round");r.setAttribute("stroke-opacity",l.o);
-    r.setAttribute("stroke-dasharray",l.L+" "+(100-l.L));r.setAttribute("rx","20");
-    svg.appendChild(r);rects.push(r);
-  });
-  document.body.appendChild(svg);
-  function size(){var w=document.documentElement.clientWidth,h=window.innerHeight;
-    rects.forEach(function(r){r.setAttribute("x","2");r.setAttribute("y","2");r.setAttribute("width",Math.max(10,w-4));r.setAttribute("height",Math.max(10,h-4))})}
-  size();addEventListener("resize",size);
-  var head=0,last=performance.now(),LAP=10; /* seconds per lap */
-  (function tick(t){head=(head+(t-last)/1000/LAP*100)%100;last=t;
-    for(var i=0;i<rects.length;i++)rects[i].setAttribute("stroke-dashoffset",(layers[i].L-head).toFixed(2));
-    requestAnimationFrame(tick)})(last);
 })();
 </script>
 <script src="site-header.js"></script>

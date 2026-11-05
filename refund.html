@@ -7,7 +7,7 @@
 <link rel="canonical" href="https://f1zztweaks.com/refund">
 <meta name="description" content="Request a refund for F1zz Tweaks Premium.">
 <meta name="robots" content="noindex,follow">
-<meta name="theme-color" content="#09060f">
+<meta name="theme-color" content="#070c18">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,9 +15,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#09060f; --panel:#110d1a; --stroke:#271f38; --stroke2:#352c4c;
-    --text:#f1e7fa; --muted:#8e8ca6; --blue2:#b096ff; --violet:#ff5cc8; --red:#ff7a7a; --green:#54d696;
-    --grad:linear-gradient(135deg,#7c5cff 0%,#ff5cc8 100%);
+    --bg:#06090f; --panel:#0d111a; --stroke:#1f2738; --stroke2:#2c374c;
+    --text:#e7edfa; --muted:#8c95a6; --blue2:#9ebcf7; --violet:#68a4f3; --red:#ff7a7a; --green:#54d696;
+    --grad:linear-gradient(135deg,#6896f3 0%,#68a4f3 100%);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{overflow-x:clip;font-family:"Archivo","Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -26,33 +26,33 @@
 
   .aurora{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;opacity:.42}
   .aurora i{position:absolute;border-radius:50%;filter:blur(100px)}
-  .aurora i:nth-child(1){width:640px;height:640px;left:-160px;top:-180px;background:#6a3dff;opacity:.5}
-  .aurora i:nth-child(2){width:560px;height:560px;right:-140px;top:4%;background:#ff3fb4;opacity:.28}
+  .aurora i:nth-child(1){width:640px;height:640px;left:-160px;top:-180px;background:#4c83f0;opacity:.5}
+  .aurora i:nth-child(2){width:560px;height:560px;right:-140px;top:4%;background:#4d94f1;opacity:.28}
 
-  header{position:sticky;top:0;z-index:5;background:rgba(7,6,13,.88);border-bottom:1px solid #1b1630}
+  header{position:sticky;top:0;z-index:5;background:rgba(6,8,13,.88);border-bottom:1px solid #161f30}
   .nav{display:flex;align-items:center;justify-content:space-between;height:64px;width:min(1120px,92%);margin-inline:auto}
   .brand{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--text)}
   .brand:hover{text-decoration:none}
   .brand img{width:36px;height:36px;border-radius:11px}
-  .back{font-size:.92rem;font-weight:600;padding:9px 16px;border-radius:11px;border:1px solid var(--stroke2);background:#1a1429;color:var(--text)}
-  .back:hover{text-decoration:none;border-color:#52467a;background:#241b3a}
+  .back{font-size:.92rem;font-weight:600;padding:9px 16px;border-radius:11px;border:1px solid var(--stroke2);background:#141b29;color:var(--text)}
+  .back:hover{text-decoration:none;border-color:#46577a;background:#1b253a}
 
   h1{font-size:clamp(2rem,5vw,2.6rem);font-weight:800;letter-spacing:-1px;line-height:1.15;margin:48px 0 10px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}
-  .lead{color:#b9b3d0;margin-bottom:26px}
-  .card{padding:28px;border:1px solid var(--stroke);border-radius:22px;background:linear-gradient(180deg,rgba(22,16,34,.86),rgba(17,13,26,.86));margin-bottom:60px}
+  .lead{color:#b3bdd0;margin-bottom:26px}
+  .card{padding:28px;border:1px solid var(--stroke);border-radius:22px;background:linear-gradient(180deg,rgba(16,22,34,.86),rgba(13,17,26,.86));margin-bottom:60px}
   label.lbl{display:block;font-weight:700;font-size:.95rem;margin:18px 0 6px}
   label.lbl:first-child{margin-top:0}
   .lbl .req{color:var(--red);font-weight:800}
   .hint{color:var(--muted);font-size:.86rem;margin-top:4px}
-  input[type=text],input[type=email],textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--stroke2);background:#120d1f;color:var(--text);font:inherit;font-size:1rem}
+  input[type=text],input[type=email],textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--stroke2);background:#0d131f;color:var(--text);font:inherit;font-size:1rem}
   textarea{min-height:140px;resize:vertical}
   input:focus,textarea:focus{outline:none;border-color:var(--blue2)}
   .bad{border-color:var(--red)!important}
   .why{color:var(--red);font-weight:800;letter-spacing:.2px}
-  .agree{display:flex;gap:10px;align-items:flex-start;margin-top:20px;color:#b9b3d0;font-size:.95rem}
-  .agree input{margin-top:5px;width:18px;height:18px;flex:none;accent-color:#7c5cff}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:12px;font:inherit;font-weight:700;font-size:1rem;border:1px solid var(--stroke2);background:#1a1429;color:var(--text);cursor:pointer;text-decoration:none}
-  .btn:hover{text-decoration:none;border-color:#52467a;background:#241b3a}
+  .agree{display:flex;gap:10px;align-items:flex-start;margin-top:20px;color:#b3bdd0;font-size:.95rem}
+  .agree input{margin-top:5px;width:18px;height:18px;flex:none;accent-color:#6896f3}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:12px;font:inherit;font-weight:700;font-size:1rem;border:1px solid var(--stroke2);background:#141b29;color:var(--text);cursor:pointer;text-decoration:none}
+  .btn:hover{text-decoration:none;border-color:#46577a;background:#1b253a}
   .btn.primary{border-color:transparent;background:var(--grad)}
   .btn:disabled{opacity:.45;cursor:not-allowed}
   .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
@@ -61,12 +61,14 @@
   .count{color:var(--muted);font-size:.82rem;text-align:right;margin-top:4px}
   .done h2{font-size:1.5rem;margin-bottom:8px}
   .done .ok{color:var(--green);font-weight:800}
-  .done ol{margin:14px 0 0 22px;color:#b9b3d0;display:grid;gap:6px}
-  pre{white-space:pre-wrap;word-break:break-word;font-family:Consolas,ui-monospace,monospace;font-size:.88rem;background:#120d1f;border:1px solid var(--stroke2);border-radius:12px;padding:14px;margin-top:14px;color:#ddd6f3}
+  .done ol{margin:14px 0 0 22px;color:#b3bdd0;display:grid;gap:6px}
+  pre{white-space:pre-wrap;word-break:break-word;font-family:Consolas,ui-monospace,monospace;font-size:.88rem;background:#0d131f;border:1px solid var(--stroke2);border-radius:12px;padding:14px;margin-top:14px;color:#d6e0f3}
   .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
   [hidden]{display:none!important}
 </style>
 <link rel="stylesheet" href="site-header.css?v=2">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site-modern.css?v=2">
 </head>
 <body>
 <div class="aurora" aria-hidden="true"><i></i><i></i></div>

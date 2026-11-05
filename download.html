@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.className+=' js'</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Download F1zz Tweaks</title>
+<link rel="canonical" href="https://f1zztweaks.com/download">
+<meta name="description" content="Download F1zz Tweaks free for Windows.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#070c18">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#06090f; --panel:#0d111a; --panel2:#101622; --stroke:#1f2738; --stroke2:#2c374c;
+    --text:#e7edfa; --muted:#8c95a6; --blue2:#9ebcf7; --violet:#68a4f3; --green:#54d696;
+    --grad:linear-gradient(135deg,#6896f3 0%,#68a4f3 100%);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:98px}
+  body{overflow-x:clip;font-family:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:var(--blue2);text-decoration:none}a:hover{text-decoration:underline}
+  .wrap{width:min(820px,92%);margin-inline:auto}
+
+  /* aurora background, same as the main page */
+  .aurora{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+  .aurora i{position:absolute;border-radius:50%;filter:blur(100px);will-change:transform}
+  .aurora i:nth-child(1){width:640px;height:640px;left:-160px;top:-180px;background:#4c83f0;opacity:.5;animation:drift1 26s ease-in-out infinite alternate}
+  .aurora i:nth-child(2){width:560px;height:560px;right:-140px;top:4%;background:#4d94f1;opacity:.28;animation:drift2 30s ease-in-out infinite alternate}
+  .aurora i:nth-child(3){width:520px;height:520px;left:28%;top:52%;background:#2d6bff;opacity:.2;animation:drift3 34s ease-in-out infinite alternate}
+  @keyframes drift1{to{transform:translate(180px,140px) scale(1.15)}}
+  @keyframes drift2{to{transform:translate(-160px,200px) scale(.9)}}
+  @keyframes drift3{to{transform:translate(120px,-160px) scale(1.2)}}
+
+  /* glass nav pill */
+  header{position:sticky;top:0;z-index:5;padding-top:12px}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px;width:min(1120px,92%);margin-inline:auto;padding:0 18px;border:1px solid var(--stroke2);border-radius:20px;background:rgba(10,15,24,.66);backdrop-filter:blur(18px);box-shadow:0 18px 44px -22px rgba(0,0,0,.85)}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--text)}
+  .brand:hover{text-decoration:none}
+  .brand img{width:36px;height:36px;border-radius:11px;background:linear-gradient(160deg,#1f3052,#0f1520);border:1px solid #374f80;padding:5px}
+  .back{font-size:.92rem;font-weight:600;padding:9px 16px;border-radius:11px;border:1px solid var(--stroke2);background:#141b29;color:var(--text);transition:transform .15s,border-color .15s,background .15s}
+  .back:hover{text-decoration:none;border-color:#46577a;background:#1b253a;transform:translateY(-1px)}
+
+  h1{font-size:clamp(2.2rem,5vw,3.2rem);letter-spacing:-1.6px;line-height:1.1;margin:54px 0 10px;background:linear-gradient(90deg,#76a0f4,#68a4f3,#76a0f4);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite;display:inline-block}
+  @keyframes shine{to{background-position:200% center}}
+  .upd{color:var(--muted);font-size:.9rem;margin-bottom:26px}
+  .toc{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px}
+  .toc a{padding:8px 16px;border-radius:99px;border:1px solid #253148;background:rgba(20,31,52,.7);font-size:.9rem;font-weight:600;transition:border-color .2s,transform .2s}
+  .toc a:hover{text-decoration:none;border-color:#5274b8;transform:translateY(-1px)}
+
+  /* each part is a glass card */
+  section{padding:30px 32px 18px;margin-top:26px;border:1px solid var(--stroke);border-radius:24px;background:linear-gradient(180deg,rgba(16,22,34,.82),rgba(13,17,26,.82));backdrop-filter:blur(6px);position:relative;overflow:hidden}
+  section::before{content:"";position:absolute;left:28px;right:28px;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent)}
+  h2{font-size:1.6rem;letter-spacing:-.4px;margin-bottom:14px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}
+  h3{font-size:1.06rem;margin:22px 0 6px}
+  p,li{color:#b3bdd0;font-size:1rem}
+  p{margin-bottom:12px}
+  ul{margin:6px 0 14px 22px;display:grid;gap:6px}
+  li::marker{color:var(--violet)}
+  strong{color:#fff}
+  .box{margin:18px 0;padding:16px 20px;border-radius:16px;border:1px solid #33425f;background:rgba(22,33,56,.55)}
+  footer{margin:60px 0 50px;color:#6b7485;font-size:.84rem;border-top:1px solid var(--stroke);padding-top:22px}
+
+  .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .js .reveal.in{opacity:1;transform:none}
+  @media (max-width:600px){section{padding:24px 20px 12px;border-radius:20px}}
+  @media (prefers-reduced-motion:reduce){.aurora i,h1{animation:none!important}.js .reveal{opacity:1;transform:none}}
+
+  /* ══════════════════════ V3 LOOK (shared) ══════════════════════ */
+  body{font-family:"Archivo","Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif}
+  h1,h2,h3,h4,.brand,.btn,.tprices b{font-family:"Archivo","Segoe UI",system-ui,sans-serif}
+  h1,h2{font-weight:800;letter-spacing:-.8px}
+  .btn{border-radius:11px;font-weight:700;letter-spacing:.2px}
+  .eyebrow{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.3em;font-weight:500}
+  header{background:rgba(6,8,13,.88);border-bottom:1px solid #161f30}
+  header .wrap.nav{background:transparent;border:0;border-radius:0;box-shadow:none}
+  .aurora{opacity:.42}
+</style>
+<script src="season.js"></script>
+<link rel="stylesheet" href="site-header.css?v=2">
+<style>
+  .dl-card{max-width:620px;margin:0 auto;padding:clamp(20px,4vw,32px);border:1px solid var(--stroke2);border-radius:16px;background:var(--panel)}
+  .dl-card h1{margin:0 0 4px}
+  .dl-sub{color:var(--muted)}
+  .dl-track{height:10px;margin:22px 0 8px;border-radius:99px;background:var(--panel2);border:1px solid var(--stroke);overflow:hidden}
+  .dl-fill{display:block;height:100%;width:0;border-radius:99px;background:var(--grad);transition:width .2s linear}
+  .dl-status{min-height:1.7em;color:var(--muted);font-size:.92rem}
+  .dl-status b{color:var(--text)}
+  .dl-terms{max-height:210px;margin:18px 0 14px;padding:14px 16px;overflow-y:auto;border:1px solid var(--stroke);border-radius:11px;background:var(--panel2);font-size:.9rem}
+  .dl-terms h2{margin:0 0 6px;font-size:1rem}
+  .dl-terms p{margin:0 0 9px}
+  .dl-terms p:last-child{margin:0}
+  .dl-agree{display:flex;align-items:flex-start;gap:10px;cursor:pointer}
+  .dl-agree input{flex:none;width:18px;height:18px;margin-top:4px;accent-color:var(--blue2);cursor:pointer}
+  .dl-go{display:block;width:100%;min-height:50px;margin-top:16px;border:0;border-radius:11px;background:var(--grad);color:#fff;font:inherit;font-size:1.05rem;font-weight:800;cursor:pointer}
+  .dl-go:hover{filter:brightness(1.08)}
+  .dl-go:focus-visible{outline:2px solid var(--text);outline-offset:2px}
+  .dl-go:disabled{background:#3a3a44;color:#9a9aa6;cursor:not-allowed;filter:none}
+  .dl-why{min-height:1.6em;margin-top:8px;color:var(--muted);font-size:.84rem;text-align:center}
+  .dl-done{margin-top:14px;padding:12px 14px;border:1px solid var(--stroke2);border-radius:11px;background:var(--panel2);font-size:.92rem}
+  .dl-done[hidden]{display:none}
+  .dl-done ol{margin:6px 0 0 20px}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site-modern.css?v=2">
+</head>
+<body>
+<header class="site-head">
+  <div class="site-head-in">
+    <a class="brand" href="./"><img src="logo.png" alt="F1zz Tweaks logo"><span>F1zz Tweaks</span></a>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <a href="./#features">Features</a>
+      <a href="tutorials">Tutorials</a>
+      <a href="xenon">Xenon</a>
+      <a href="./#downloads">Download</a>
+      <a href="about">About</a>
+      <a href="./#faq">FAQ</a>
+      <a data-support href="https://discord.gg/UBAZsf2PHt" target="_blank" rel="noopener noreferrer">Support</a>
+    </nav>
+    <a class="site-cta" href="shop">View Products</a>
+    <button class="site-menu" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="dl-card">
+    <h1>Download F1zz Tweaks</h1>
+    <p class="dl-sub">Free for Windows 10 and 11.</p>
+
+    <div class="dl-track" id="dl-track" role="progressbar" aria-label="Getting your download ready" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="dl-fill" id="dl-fill"></span></div>
+    <p class="dl-status" id="dl-status" aria-live="polite">Getting the latest version ready&hellip;</p>
+
+    <div class="dl-terms" tabindex="0" aria-label="Free download terms">
+      <h2>Free Download Terms &amp; Liability Waiver</h2>
+      <p>F1zz Tweaks is free and is provided "as-is", without any warranties. You choose what it changes on your device, and you download, install and use it at your own risk.</p>
+      <p>To the maximum extent the law allows, F1zz Tweaks and its operators are not liable for any damages from downloading, installing or using it, including hardware failure, system instability, data loss, software conflicts, blue-screen errors or financial losses. To that same extent, <b>you agree not to bring any claim or lawsuit against F1zz Tweaks or its operators for those losses</b>.</p>
+      <p>Nothing here takes away any rights that the law in your country says can't be waived.</p>
+    </div>
+
+    <label class="dl-agree">
+      <input type="checkbox" id="dl-ok">
+      <span>I have read and agree to the <a href="terms#download-waiver" target="_blank" rel="noopener">Free Download Terms &amp; Liability Waiver</a> and the <a href="terms#terms" target="_blank" rel="noopener">Terms of use</a>.</span>
+    </label>
+
+    <button class="dl-go" type="button" id="dl-go" disabled>Download for Windows</button>
+    <p class="dl-why" id="dl-why" aria-live="polite">Getting your download ready&hellip;</p>
+
+    <div class="dl-done" id="dl-done" role="status" hidden>
+      <b id="dl-done-title">Your download is starting&hellip;</b> If nothing happens, <a id="dl-retry" href="#">click here</a>. Windows may ask you to confirm it.
+      <ol>
+        <li>Open your Downloads folder.</li>
+        <li>Right-click <b>F1zzTweaks.exe</b> and choose <b>Run as administrator</b>.</li>
+      </ol>
+    </div>
+    <noscript><p class="dl-why">Please turn on JavaScript to download.</p></noscript>
+  </section>
+</main>
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.06});
+  els.forEach(function(e){io.observe(e)});
+  setTimeout(function(){els.forEach(function(e){e.classList.add('in')})},2500);
+})();
+</script>
+<script src="site-header.js"></script>
+<script>/* always load the newest site-settings.js, never a cached copy */document.write('<script src="site-settings.js?v='+Date.now()+'"><\/script>')</script>
+<script>
+(function () {
+  var SITE = window.SITE || {};
+  var fill = document.getElementById("dl-fill"), track = document.getElementById("dl-track"),
+      status = document.getElementById("dl-status"), ok = document.getElementById("dl-ok"),
+      go = document.getElementById("dl-go"), why = document.getElementById("dl-why"),
+      done = document.getElementById("dl-done"), retry = document.getElementById("dl-retry"),
+      title = document.getElementById("dl-done-title");
+  var LAST = "f1zz_dl_last", WAIT = 60 * 1000, ready = false;
+  var url = function () { return (SITE.downloadUrl || "").trim(); };
+
+  function refresh() {
+    go.disabled = !(ready && ok.checked && url());
+    why.textContent = !ready ? "Getting your download ready\u2026"
+      : !url() ? "The download isn't available right now."
+      : ok.checked ? "" : "Tick the box above to download.";
+  }
+  ok.addEventListener("change", refresh);
+  ok.checked = false;
+
+  // The bar waits for the real version and size from GitHub, and takes at least a moment so it can be read.
+  var info = null, asked = false, started = Date.now();
+  var repo = /^https:\/\/github\.com\/([A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+)\/releases\//i.exec(url());
+  function answered(found) { info = found; asked = true; }
+  if (repo && window.fetch) {
+    fetch("https://api.github.com/repos/" + repo[1] + "/releases/latest").then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
+      if (!j) return answered(null);
+      var name = url().split("/").pop(), asset = (j.assets || []).filter(function (a) { return a.name === name; })[0];
+      answered({ tag: j.tag_name, size: asset ? asset.size : 0 });
+    }).catch(function () { answered(null); });
+  } else {
+    asked = true;
+  }
+  setTimeout(function () { asked = true; }, 5000);            // never leave someone waiting on GitHub
+
+  var still = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var MIN = still ? 0 : 2200;
+  (function step() {
+    var part = Math.min(1, (Date.now() - started) / (MIN || 1));
+    var pct = asked ? Math.round(part * 100) : Math.min(90, Math.round(part * 90));
+    fill.style.width = pct + "%";
+    track.setAttribute("aria-valuenow", pct);
+    if (pct < 100) return setTimeout(step, 60);
+    ready = true;
+    var bits = [];
+    if (info && info.tag && /^[A-Za-z0-9._-]+$/.test(info.tag)) bits.push(info.tag);
+    if (info && info.size) bits.push((info.size / 1048576).toFixed(1) + " MB");
+    status.textContent = "";
+    var b = document.createElement("b");
+    b.textContent = "Ready to download";
+    status.appendChild(b);
+    if (bits.length) status.appendChild(document.createTextNode(" \u00b7 F1zz Tweaks " + bits.join(" \u00b7 ")));
+    refresh();
+  })();
+
+  // A second click within a minute doesn't start (and count) another download
+  go.addEventListener("click", function () {
+    if (go.disabled) return;
+    retry.href = url();
+    done.hidden = false;
+    if (done.scrollIntoView) done.scrollIntoView({ block: "nearest" });
+    var last = 0;
+    try { last = Number(localStorage.getItem(LAST)) || 0; } catch (x) {}
+    if (Date.now() - last < WAIT) { title.textContent = "Your download already started."; return; }
+    title.textContent = "Your download is starting\u2026";
+    try { localStorage.setItem(LAST, String(Date.now())); } catch (x) {}
+    location.href = url();
+  });
+})();
+</script>
+</body>
+</html>
