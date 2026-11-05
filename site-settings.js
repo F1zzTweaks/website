@@ -16,12 +16,19 @@ window.SITE = {
   xenonAddonUrl:      "XenonCrosshairs-for-F1zzTweaks.zip",   // switches Xenon on inside F1zz Tweaks (Premium)
   xenonStandaloneUrl: "XenonCrosshairs.exe",         // the standalone app (unlocks with F1zz Tweaks Premium)
 
-  buy30Url:        "https://buy.stripe.com/9B65kDf6UfK7ag20cJ9IQ03",   // checkout link for "30 days of Premium" (Stripe TEST link: swap for the live one)
-  buyLifetimeUrl:  "https://buy.stripe.com/3cI28r9MA1Th73Q5x39IQ02",   // checkout link for "Lifetime Premium" (Stripe TEST link: swap for the live one)
+  buy30Url:        "https://buy.stripe.com/9B65kDf6UfK7ag20cJ9IQ03",   // checkout link for "30 days of Premium" (Stripe live link)
+  buyLifetimeUrl:  "https://buy.stripe.com/3cI28r9MA1Th73Q5x39IQ02",   // checkout link for "Lifetime Premium" (Stripe live link)
   ordersApi:       "https://f1zz-orders.f1zztweaks.workers.dev",   // the order Worker (refund.html sends refund requests here)
   price30:         "$5", // price shown for 30 days   (change to what you really charge)
   priceLifetime:   "$15",// price shown for lifetime  (change to what you really charge)
   sha256:          "",
+
+  // PREMIUM PLUS AND ULTIMATE (premium-plus.html and premium-ultimate.html). Leave a link empty and its button says COMING SOON.
+  buyPlusUrl:       "",        // checkout link for Premium Plus (PC + PS5)
+  buyUltimateUrl:   "",        // checkout link for Premium Ultimate (PC + PS5 + Xbox)
+  pricePlus:        "$25",
+  priceUltimate:    "$35",
+  consoleAppUrl:    "https://github.com/F1zzTweaks/F1zzConsole/releases/latest/download/F1zzConsole.exe",
 
   // DOWNLOAD COUNTER. If downloadUrl is a GitHub release link, the page adds up GitHub's real download counts and shows
   // "downloads" next to the other numbers at the top. It stays hidden until the total reaches this number

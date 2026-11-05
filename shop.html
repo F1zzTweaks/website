@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Shop · F1zz Tweaks</title>
 <link rel="canonical" href="https://f1zztweaks.com/shop">
-<meta name="description" content="The F1zz Tweaks Shop: Premium for 30 days or lifetime. All 715 Windows tweaks, Tweak Guard, profiles, undo history, Fortnite Potato Mode and unlimited F1zz Bot. More coming soon.">
+<meta name="description" content="The F1zz Tweaks Shop: Premium for 30 days or lifetime. All 715 Windows tweaks, Tweak Guard, profiles, undo history, Fortnite Potato Mode and unlimited F1zz Bot. Plus PS5 and Xbox guides with Premium Plus and Ultimate.">
 <meta name="theme-color" content="#7c5cff">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
@@ -499,101 +499,181 @@
   .item.soon:hover{transform:none}
   .soon-ico{width:54px;height:54px;margin-top:18px;border-radius:16px;display:grid;place-items:center;background:rgba(124,92,255,.12);border:1px solid #3a2e5c}
   .soon-ico svg{width:26px;height:26px;fill:none;stroke:var(--blue2);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .item.console h3{color:var(--text)}
+  .item.console .soon-ico{border:0}
+  .item.console .soon-ico svg{fill:#fff;stroke:none}
+  .item.ultimate .soon-ico{width:auto;padding:0 12px;gap:10px;display:inline-flex;align-self:flex-start;align-items:center;background:linear-gradient(120deg,#107c10,#0070d1)}
+  .item.ultimate .soon-ico svg{width:24px;height:24px}
+  .item.ps .soon-ico{background:#0070d1}
   @media (max-width:1060px){.shop-grid{grid-template-columns:1fr 1fr}}
   @media (max-width:600px){.shop-grid{grid-template-columns:1fr}}
+
+  /* ═════════════ shop redesign ═════════════ */
+  .sx-wide{width:min(1240px,92%);margin-inline:auto}
+  .sx-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  .pgtop{padding-top:0}
+  .sx-hero{position:relative;padding:44px 0 54px}
+  .sx-hero::before{content:"";position:absolute;left:50%;top:-40px;width:min(1100px,100%);height:560px;transform:translateX(-50%);background:radial-gradient(ellipse at center,rgba(124,92,255,.3),rgba(255,92,200,.1) 42%,transparent 70%);pointer-events:none;z-index:-1}
+  .sx-head{max-width:1000px;margin:0 auto 38px;text-align:center}
+  .sx-head p{max-width:680px;margin-inline:auto}
+  .sx-pill{display:inline-flex;align-items:center;gap:9px;padding:7px 15px;border:1px solid rgba(255,255,255,.14);border-radius:99px;background:rgba(14,10,24,.7);color:#d6d2e6;font-size:.84rem;font-weight:600}
+  .sx-pill i{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
+  .sx-head h1{margin:18px 0 14px;font-size:clamp(2.7rem,6.4vw,5rem);line-height:1.02;letter-spacing:-2.6px}
+  .sx-head p{color:#b3afc7;font-size:clamp(1.02rem,1.5vw,1.18rem)}
+  .sx-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;align-items:stretch}
+  .sx-card{--x:50%;--y:0%;position:relative;display:flex;flex-direction:column;min-width:0;padding:26px 24px 24px;border:1px solid rgba(255,255,255,.1);border-radius:24px;background:radial-gradient(420px circle at var(--x) var(--y),rgba(150,110,255,.14),transparent 62%),linear-gradient(180deg,rgba(25,18,40,.94),rgba(13,9,22,.96));box-shadow:0 26px 60px -38px #000;transition:transform .22s cubic-bezier(.2,.7,.2,1),border-color .22s,box-shadow .22s}
+  .sx-card:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.24);box-shadow:0 36px 70px -36px rgba(120,80,255,.55)}
+  .sx-card h3{margin:16px 0 8px;font-size:1.32rem;letter-spacing:-.4px}
+  .sx-price{display:flex;align-items:baseline;gap:8px}
+  .sx-price>span{font-size:clamp(2.7rem,3.8vw,3.4rem);font-weight:900;letter-spacing:-2px;line-height:1}
+  .sx-price small{color:var(--muted);font-size:.84rem;font-weight:500}
+  .sx-tag{min-height:2.9em;margin:12px 0 16px;color:#b3afc7;font-size:.94rem;line-height:1.45}
+  .sx-list{display:grid;gap:10px;margin:0 0 24px;padding:16px 0 0;border-top:1px solid rgba(255,255,255,.08);list-style:none}
+  .sx-list li{position:relative;padding-left:25px;color:#d3cfe0;font-size:.92rem;line-height:1.4}
+  .sx-list li::before{content:"";position:absolute;left:0;top:2px;width:16px;height:16px;border-radius:50%;background:rgba(84,214,150,.16) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2354d696' stroke-width='3.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.500l4.500 4.500L19 7.500'/%3E%3C/svg%3E") center/10px no-repeat}
+  .sx-list b{color:#fff}
+  .sx-card .btn{margin-top:auto;padding:14px 18px}
+  .sx-card .btn.sx-later{background:#1a1429;border-color:var(--stroke2);box-shadow:none;color:#c9c5d8}
+  .sx-plats{display:flex;gap:6px}
+  .sx-plat{display:grid;place-items:center;width:34px;height:34px;border:1px solid rgba(255,255,255,.08);border-radius:10px;background:rgba(255,255,255,.025);color:#46425a}
+  .sx-plat svg{width:17px;height:17px;fill:currentColor}
+  .sx-plat.on{border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#fff}
+  .sx-badge{position:absolute;top:-12px;right:18px;padding:5px 12px;border-radius:99px;background:var(--grad);color:#fff;font-size:.68rem;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;box-shadow:0 8px 20px -8px rgba(255,92,200,.8)}
+  .sx-value{border-color:rgba(176,150,255,.42)}
+  .sx-ps .sx-plat.on:nth-child(2){border-color:transparent;background:#0070d1}
+  .sx-ultimate{border-color:transparent;background:radial-gradient(420px circle at var(--x) var(--y),rgba(255,120,220,.17),transparent 62%),linear-gradient(170deg,#2c1a58,#150e27 58%) padding-box,var(--grad) border-box;box-shadow:0 34px 90px -36px rgba(170,90,255,.85)}
+  .sx-ultimate:hover{border-color:transparent;box-shadow:0 44px 100px -34px rgba(190,100,255,.95)}
+  .sx-ultimate .sx-plat.on:nth-child(2){border-color:transparent;background:#0070d1}
+  .sx-ultimate .sx-plat.on:nth-child(3){border-color:transparent;background:#107c10}
+  .sx-trust{display:grid;grid-template-columns:repeat(4,1fr);margin:34px 0 0;padding:0;border:1px solid rgba(255,255,255,.09);border-radius:18px;background:rgba(13,9,22,.72);list-style:none}
+  .sx-trust li{padding:17px 22px;border-left:1px solid rgba(255,255,255,.07)}
+  .sx-trust li:first-child{border-left:0}
+  .sx-trust b{display:block;font-size:.94rem}
+  .sx-trust span{color:var(--muted);font-size:.84rem}
+  .sx-trust a,.sx-note a{color:var(--blue2);text-decoration:underline}
+  .sx-note{margin-top:14px;text-align:center;color:var(--muted);font-size:.86rem}
+  .sx-note b{color:#d3cfe0}
+  .sx-tablewrap{margin-top:30px;overflow-x:auto;border:1px solid rgba(255,255,255,.1);border-radius:22px;background:rgba(13,9,22,.82)}
+  .sx-table{width:100%;min-width:780px;border-collapse:collapse;font-size:.93rem}
+  .sx-table th,.sx-table td{padding:14px 16px;border-top:1px solid rgba(255,255,255,.06);text-align:center;color:#c9c5d8;font-weight:500}
+  .sx-table thead th,.sx-table thead td{border-top:0;color:#fff;font-size:.98rem;font-weight:800}
+  .sx-table tbody th{padding-left:24px;text-align:left;color:#f1edf8;font-weight:600}
+  .sx-table .sx-hl{background:rgba(150,90,255,.12);color:#fff}
+  .sx-table thead .sx-hl{background:linear-gradient(180deg,rgba(150,90,255,.34),rgba(150,90,255,.12))}
+  .sx-y{color:var(--green);font-size:1.1rem;font-weight:800}
+  .sx-n{color:#4b4760}
+  .sx-total th,.sx-total td{background:rgba(255,255,255,.025);font-size:1.02rem}
+  .sx-total b{color:#fff;font-weight:900}
+  .sx-final{padding:20px 0 70px}
+  .sx-finalbox{padding:44px 30px;border:1px solid rgba(176,150,255,.3);border-radius:26px;background:radial-gradient(ellipse at center,rgba(124,92,255,.2),transparent 72%),rgba(13,9,22,.8);text-align:center}
+  .sx-finalbox h2{margin:0 0 8px}
+  .sx-finalbox p{margin:0 0 20px;color:#b3afc7}
+  @media (max-width:1080px){.sx-grid{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:24px}.sx-trust{grid-template-columns:1fr 1fr}.sx-trust li:nth-child(3){border-left:0}.sx-trust li:nth-child(n+3){border-top:1px solid rgba(255,255,255,.07)}}
+  @media (max-width:620px){.sx-hero{padding-top:40px}.sx-grid{grid-template-columns:1fr}.sx-tag{min-height:0}.sx-head h1{letter-spacing:-1.6px}.sx-trust{grid-template-columns:1fr}.sx-trust li{border-left:0;border-top:1px solid rgba(255,255,255,.07)}.sx-trust li:first-child{border-top:0}}
+  @media (prefers-reduced-motion:reduce){.sx-card,.sx-card:hover{transition:none;transform:none}}
 </style>
 <script src="season.js"></script>
+<link rel="stylesheet" href="site-header.css">
 </head>
 <body>
 <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="./"><img src="data:image/png;base64,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" alt="F1zz Tweaks logo"><span>F1zz Tweaks</span></a>
-    <nav class="nav-links">
+<header class="site-head">
+  <div class="site-head-in">
+    <a class="brand" href="./"><img src="logo.png" alt="F1zz Tweaks logo"><span>F1zz Tweaks</span></a>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
       <a href="./#features">Features</a>
-      <a href="./#showcase" data-showcase-link hidden>Showcase</a>
       <a href="tutorials">Tutorials</a>
       <a href="xenon">Xenon</a>
-      <a href="./#bot">F1zz Bot</a>
-      <a href="shop">Shop</a>
-      <a href="shop#how">How to buy</a>
+      <a href="./#downloads">Download</a>
+      <a href="about">About</a>
       <a href="./#faq">FAQ</a>
-      <a href="terms">Terms</a>
+      <a data-support href="https://discord.gg/UBAZsf2PHt" target="_blank" rel="noopener noreferrer">Support</a>
     </nav>
-    <div class="nav-cta">
-      <a class="btn small" data-need="downloadUrl" data-download href="#">Download</a>
-      <a class="btn small primary" href="shop">Get Premium</a>
-    </div>
+    <a class="site-cta" href="shop">View Products</a>
+    <button class="site-menu" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </div>
 </header>
 
 <main id="top" class="pgtop">
   <!-- ===================== SHOP ===================== -->
-  <section id="shop">
-    <div class="wrap">
-      <div class="eyebrow">Shop</div>
-      <h2>The F1zz <span class="grad-text">Shop</span></h2>
-      <p class="sec-lead">Everything in the free app stays free. Premium unlocks all 715 tweaks and the tools that keep your setup the way you left it. More is on the way.</p>
+  <section id="shop" class="sx-hero">
+    <div class="sx-wide">
+      <div class="sx-head">
+        <span class="sx-pill"><i></i>Free to start. Upgrade when you want more.</span>
+        <h1>Pick your <span class="grad-text">F1zz setup.</span></h1>
+        <p>All 715 PC tweaks and the tools that keep them in place, with console guides on the plans that include them.</p>
+      </div>
 
-      <div class="shop-grid">
-        <!-- Premium: 30 days -->
-        <article class="item">
-          <span class="tag">PREMIUM</span>
-          <h3>30 days</h3>
-          <div class="price"><span data-price="price30">$5</span></div>
-          <p class="sub">Try every Premium tweak and tool for a month.</p>
-          <ul class="list">
-            <li>All <b>715 tweaks</b> (358 Premium)</li>
+      <div class="sx-grid">
+        <article class="sx-card ">
+          
+          <div class="sx-plats"><span class="sx-plat on" title="PC included"><svg viewBox="0 0 24 24"><path d="M3 5.500A1.500 1.500 0 014.500 4h15A1.500 1.500 0 0121 5.500v9a1.500 1.500 0 01-1.500 1.500h-15A1.500 1.500 0 013 14.500zM8 20h8v-2H8z"/></svg><span class="sx-vh">PC: included. </span></span><span class="sx-plat" title="PS5 not included"><svg viewBox="0 0 24 24"><path d="M8.984 2.596v17.547l3.915 1.261V6.688c0-.69.304-1.151.794-.991.636.18.76.814.76 1.505v5.875c2.441 1.193 4.362-.002 4.362-3.152 0-3.237-1.126-4.675-4.438-5.827-1.307-.448-3.728-1.186-5.39-1.502zm4.656 16.241l6.296-2.275c.715-.258.826-.625.246-.818-.586-.192-1.637-.139-2.357.123l-4.205 1.5V14.98l.24-.085s1.201-.42 2.913-.615c1.696-.18 3.785.03 5.437.661 1.848.601 2.04 1.472 1.576 2.072-.465.6-1.622 1.036-1.622 1.036l-8.544 3.107V18.86zM1.807 18.6c-1.9-.545-2.214-1.668-1.352-2.32.801-.586 2.16-1.052 2.16-1.052l5.615-2.013v2.313L4.205 17c-.705.271-.825.632-.239.826.586.195 1.637.15 2.343-.12L8.247 17v2.074c-.12.03-.256.044-.39.073-1.939.331-3.996.196-6.038-.479z"/></svg><span class="sx-vh">PS5: not included. </span></span><span class="sx-plat" title="Xbox not included"><svg viewBox="0 0 24 24"><path d="M4.102 21.033C6.211 22.881 8.977 24 12 24c3.026 0 5.789-1.119 7.902-2.967 1.877-1.912-4.316-8.709-7.902-11.417-3.582 2.708-9.779 9.505-7.898 11.417zm11.16-14.406c2.5 2.961 7.484 10.313 6.076 12.912C23.002 17.48 24 14.861 24 12.004c0-3.34-1.365-6.362-3.57-8.536 0 0-.027-.022-.082-.042-.063-.022-.152-.045-.281-.045-.592 0-1.985.434-4.805 3.246zM3.654 3.426c-.057.02-.082.041-.086.042C1.365 5.642 0 8.664 0 12.004c0 2.854.998 5.473 2.661 7.533-1.401-2.605 3.579-9.951 6.08-12.91-2.82-2.813-4.216-3.245-4.806-3.245-.131 0-.223.021-.281.046v-.002zM12 3.551S9.055 1.828 6.755 1.746c-.903-.033-1.454.295-1.521.339C7.379.646 9.659 0 11.984 0H12c2.334 0 4.605.646 6.766 2.085-.068-.046-.615-.372-1.52-.339C14.946 1.828 12 3.545 12 3.545v.006z"/></svg><span class="sx-vh">Xbox: not included. </span></span></div>
+          <h3>30 Days</h3>
+          <div class="sx-price"><span data-price="price30">$5</span><small>for 30 days</small></div>
+          <p class="sx-tag">Try every Premium tweak and tool.</p>
+          <ul class="sx-list">
+            <li>All <b>715 PC tweaks</b></li>
             <li>Tweak Guard, profiles &amp; undo</li>
+            <li>36 themes + Xenon Crosshairs</li>
             <li>Fortnite Potato Mode</li>
             <li>Unlimited F1zz Bot</li>
           </ul>
-          <a class="btn block" data-need="buy30Url" href="#">Buy 30 days</a>
+          <a class="btn block" href="premium-30">Purchase</a>
         </article>
 
-        <!-- Premium: Lifetime -->
-        <article class="item hot">
-          <span class="ribbon">Best value</span>
-          <span class="tag pro">PREMIUM</span>
+        <article class="sx-card sx-value">
+          <span class="sx-badge">Best value</span>
+          <div class="sx-plats"><span class="sx-plat on" title="PC included"><svg viewBox="0 0 24 24"><path d="M3 5.500A1.500 1.500 0 014.500 4h15A1.500 1.500 0 0121 5.500v9a1.500 1.500 0 01-1.500 1.500h-15A1.500 1.500 0 013 14.500zM8 20h8v-2H8z"/></svg><span class="sx-vh">PC: included. </span></span><span class="sx-plat" title="PS5 not included"><svg viewBox="0 0 24 24"><path d="M8.984 2.596v17.547l3.915 1.261V6.688c0-.69.304-1.151.794-.991.636.18.76.814.76 1.505v5.875c2.441 1.193 4.362-.002 4.362-3.152 0-3.237-1.126-4.675-4.438-5.827-1.307-.448-3.728-1.186-5.39-1.502zm4.656 16.241l6.296-2.275c.715-.258.826-.625.246-.818-.586-.192-1.637-.139-2.357.123l-4.205 1.5V14.98l.24-.085s1.201-.42 2.913-.615c1.696-.18 3.785.03 5.437.661 1.848.601 2.04 1.472 1.576 2.072-.465.6-1.622 1.036-1.622 1.036l-8.544 3.107V18.86zM1.807 18.6c-1.9-.545-2.214-1.668-1.352-2.32.801-.586 2.16-1.052 2.16-1.052l5.615-2.013v2.313L4.205 17c-.705.271-.825.632-.239.826.586.195 1.637.15 2.343-.12L8.247 17v2.074c-.12.03-.256.044-.39.073-1.939.331-3.996.196-6.038-.479z"/></svg><span class="sx-vh">PS5: not included. </span></span><span class="sx-plat" title="Xbox not included"><svg viewBox="0 0 24 24"><path d="M4.102 21.033C6.211 22.881 8.977 24 12 24c3.026 0 5.789-1.119 7.902-2.967 1.877-1.912-4.316-8.709-7.902-11.417-3.582 2.708-9.779 9.505-7.898 11.417zm11.16-14.406c2.5 2.961 7.484 10.313 6.076 12.912C23.002 17.48 24 14.861 24 12.004c0-3.34-1.365-6.362-3.57-8.536 0 0-.027-.022-.082-.042-.063-.022-.152-.045-.281-.045-.592 0-1.985.434-4.805 3.246zM3.654 3.426c-.057.02-.082.041-.086.042C1.365 5.642 0 8.664 0 12.004c0 2.854.998 5.473 2.661 7.533-1.401-2.605 3.579-9.951 6.08-12.91-2.82-2.813-4.216-3.245-4.806-3.245-.131 0-.223.021-.281.046v-.002zM12 3.551S9.055 1.828 6.755 1.746c-.903-.033-1.454.295-1.521.339C7.379.646 9.659 0 11.984 0H12c2.334 0 4.605.646 6.766 2.085-.068-.046-.615-.372-1.52-.339C14.946 1.828 12 3.545 12 3.545v.006z"/></svg><span class="sx-vh">Xbox: not included. </span></span></div>
           <h3>Lifetime</h3>
-          <div class="price"><span data-price="priceLifetime">$15</span> <small>one time</small></div>
-          <p class="sub">Pay once, keep Premium forever, with every future update.</p>
-          <ul class="list">
-            <li>Everything in 30 days, <b>forever</b></li>
-            <li>All 36 themes + your own gradient</li>
-            <li>Xenon Crosshairs unlocked</li>
-            <li>5 more Game Library BOOSTs</li>
+          <div class="sx-price"><span data-price="priceLifetime">$15</span><small>one time</small></div>
+          <p class="sx-tag">Pay once and keep Premium forever.</p>
+          <ul class="sx-list">
+            <li>Everything in 30 Days</li>
+            <li><b>Never expires</b></li>
+            <li>Every future update</li>
+            <li>Your code, locked to your PC</li>
           </ul>
-          <a class="btn primary block" data-need="buyLifetimeUrl" href="#">Buy lifetime</a>
+          <a class="btn primary block" href="premium-lifetime">Purchase</a>
         </article>
 
-        <!-- Coming soon -->
-        <article class="item soon" aria-label="Coming soon">
-          <span class="tag">COMING SOON</span>
-          <div class="soon-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg></div>
-          <h3>Coming soon</h3>
-          <p class="sub">Something new is on the way. Join the Discord to hear first.</p>
-          <a class="btn block" data-need="discordInvite" href="#">Get notified</a>
+        <article class="sx-card sx-ps">
+          
+          <div class="sx-plats"><span class="sx-plat on" title="PC included"><svg viewBox="0 0 24 24"><path d="M3 5.500A1.500 1.500 0 014.500 4h15A1.500 1.500 0 0121 5.500v9a1.500 1.500 0 01-1.500 1.500h-15A1.500 1.500 0 013 14.500zM8 20h8v-2H8z"/></svg><span class="sx-vh">PC: included. </span></span><span class="sx-plat on" title="PS5 included"><svg viewBox="0 0 24 24"><path d="M8.984 2.596v17.547l3.915 1.261V6.688c0-.69.304-1.151.794-.991.636.18.76.814.76 1.505v5.875c2.441 1.193 4.362-.002 4.362-3.152 0-3.237-1.126-4.675-4.438-5.827-1.307-.448-3.728-1.186-5.39-1.502zm4.656 16.241l6.296-2.275c.715-.258.826-.625.246-.818-.586-.192-1.637-.139-2.357.123l-4.205 1.5V14.98l.24-.085s1.201-.42 2.913-.615c1.696-.18 3.785.03 5.437.661 1.848.601 2.04 1.472 1.576 2.072-.465.6-1.622 1.036-1.622 1.036l-8.544 3.107V18.86zM1.807 18.6c-1.9-.545-2.214-1.668-1.352-2.32.801-.586 2.16-1.052 2.16-1.052l5.615-2.013v2.313L4.205 17c-.705.271-.825.632-.239.826.586.195 1.637.15 2.343-.12L8.247 17v2.074c-.12.03-.256.044-.39.073-1.939.331-3.996.196-6.038-.479z"/></svg><span class="sx-vh">PS5: included. </span></span><span class="sx-plat" title="Xbox not included"><svg viewBox="0 0 24 24"><path d="M4.102 21.033C6.211 22.881 8.977 24 12 24c3.026 0 5.789-1.119 7.902-2.967 1.877-1.912-4.316-8.709-7.902-11.417-3.582 2.708-9.779 9.505-7.898 11.417zm11.16-14.406c2.5 2.961 7.484 10.313 6.076 12.912C23.002 17.48 24 14.861 24 12.004c0-3.34-1.365-6.362-3.57-8.536 0 0-.027-.022-.082-.042-.063-.022-.152-.045-.281-.045-.592 0-1.985.434-4.805 3.246zM3.654 3.426c-.057.02-.082.041-.086.042C1.365 5.642 0 8.664 0 12.004c0 2.854.998 5.473 2.661 7.533-1.401-2.605 3.579-9.951 6.08-12.91-2.82-2.813-4.216-3.245-4.806-3.245-.131 0-.223.021-.281.046v-.002zM12 3.551S9.055 1.828 6.755 1.746c-.903-.033-1.454.295-1.521.339C7.379.646 9.659 0 11.984 0H12c2.334 0 4.605.646 6.766 2.085-.068-.046-.615-.372-1.52-.339C14.946 1.828 12 3.545 12 3.545v.006z"/></svg><span class="sx-vh">Xbox: not included. </span></span></div>
+          <h3>Premium Plus</h3>
+          <div class="sx-price"><span data-price="pricePlus">$25</span><small>one time</small></div>
+          <p class="sx-tag">Lifetime Premium, plus your PS5.</p>
+          <ul class="sx-list">
+            <li>Everything in Lifetime</li>
+            <li><b>PS5 Tweaks</b> guide</li>
+            <li>Console progress dashboard</li>
+            <li>One code for both apps</li>
+          </ul>
+          <a class="btn block" data-needs-link="buyPlusUrl" href="premium-plus">Purchase</a>
         </article>
 
-        <!-- Coming soon -->
-        <article class="item soon" aria-label="Coming soon">
-          <span class="tag">COMING SOON</span>
-          <div class="soon-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg></div>
-          <h3>Coming soon</h3>
-          <p class="sub">Something new is on the way. Join the Discord to hear first.</p>
-          <a class="btn block" data-need="discordInvite" href="#">Get notified</a>
+        <article class="sx-card sx-ultimate">
+          <span class="sx-badge">Everything</span>
+          <div class="sx-plats"><span class="sx-plat on" title="PC included"><svg viewBox="0 0 24 24"><path d="M3 5.500A1.500 1.500 0 014.500 4h15A1.500 1.500 0 0121 5.500v9a1.500 1.500 0 01-1.500 1.500h-15A1.500 1.500 0 013 14.500zM8 20h8v-2H8z"/></svg><span class="sx-vh">PC: included. </span></span><span class="sx-plat on" title="PS5 included"><svg viewBox="0 0 24 24"><path d="M8.984 2.596v17.547l3.915 1.261V6.688c0-.69.304-1.151.794-.991.636.18.76.814.76 1.505v5.875c2.441 1.193 4.362-.002 4.362-3.152 0-3.237-1.126-4.675-4.438-5.827-1.307-.448-3.728-1.186-5.39-1.502zm4.656 16.241l6.296-2.275c.715-.258.826-.625.246-.818-.586-.192-1.637-.139-2.357.123l-4.205 1.5V14.98l.24-.085s1.201-.42 2.913-.615c1.696-.18 3.785.03 5.437.661 1.848.601 2.04 1.472 1.576 2.072-.465.6-1.622 1.036-1.622 1.036l-8.544 3.107V18.86zM1.807 18.6c-1.9-.545-2.214-1.668-1.352-2.32.801-.586 2.16-1.052 2.16-1.052l5.615-2.013v2.313L4.205 17c-.705.271-.825.632-.239.826.586.195 1.637.15 2.343-.12L8.247 17v2.074c-.12.03-.256.044-.39.073-1.939.331-3.996.196-6.038-.479z"/></svg><span class="sx-vh">PS5: included. </span></span><span class="sx-plat on" title="Xbox included"><svg viewBox="0 0 24 24"><path d="M4.102 21.033C6.211 22.881 8.977 24 12 24c3.026 0 5.789-1.119 7.902-2.967 1.877-1.912-4.316-8.709-7.902-11.417-3.582 2.708-9.779 9.505-7.898 11.417zm11.16-14.406c2.5 2.961 7.484 10.313 6.076 12.912C23.002 17.48 24 14.861 24 12.004c0-3.34-1.365-6.362-3.57-8.536 0 0-.027-.022-.082-.042-.063-.022-.152-.045-.281-.045-.592 0-1.985.434-4.805 3.246zM3.654 3.426c-.057.02-.082.041-.086.042C1.365 5.642 0 8.664 0 12.004c0 2.854.998 5.473 2.661 7.533-1.401-2.605 3.579-9.951 6.08-12.91-2.82-2.813-4.216-3.245-4.806-3.245-.131 0-.223.021-.281.046v-.002zM12 3.551S9.055 1.828 6.755 1.746c-.903-.033-1.454.295-1.521.339C7.379.646 9.659 0 11.984 0H12c2.334 0 4.605.646 6.766 2.085-.068-.046-.615-.372-1.52-.339C14.946 1.828 12 3.545 12 3.545v.006z"/></svg><span class="sx-vh">Xbox: included. </span></span></div>
+          <h3>Premium Ultimate</h3>
+          <div class="sx-price"><span data-price="priceUltimate">$35</span><small>one time</small></div>
+          <p class="sx-tag">Your PC, PS5 and Xbox, all covered.</p>
+          <ul class="sx-list">
+            <li>Everything in Lifetime</li>
+            <li><b>PS5 + Xbox Tweaks</b> guides</li>
+            <li>Console progress dashboard</li>
+            <li>One code for both apps</li>
+          </ul>
+          <a class="btn primary block" data-needs-link="buyUltimateUrl" href="premium-ultimate">Purchase</a>
         </article>
       </div>
 
-      <div class="wait-notice" role="note">
-        <div class="wait-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg></div>
-        <div>
-          <p class="wait-big">Your code is <span class="grad-text">emailed to you</span>, usually within minutes.</p>
-          <p class="wait-big" style="font-size:1rem;margin-top:8px"><b>Not there?</b> Check your <b>spam / junk</b> folder first. Using Hotmail or Outlook? Those can block new senders, so if nothing arrives within 10 minutes, open a ticket and we'll send it right away.</p>
-          <a class="btn primary" data-need="discordInvite" href="#">Open a ticket in Discord</a>
-        </div>
-      </div>
+      <ul class="sx-trust">
+        <li><b>Code emailed fast</b><span>Usually within minutes</span></li>
+        <li><b>Secure checkout</b><span>Handled by Stripe</span></li>
+        <li><b>Undo any tweak</b><span>Your originals are saved first</span></li>
+        <li><b>Real support</b><span>Tickets in our <a data-need="discordInvite" href="#">Discord</a></span></li>
+      </ul>
+      <p class="sx-note"><b>No code after 10 minutes?</b> Check spam or junk first. Hotmail and Outlook can block new senders, so <a data-need="discordInvite" href="#">open a ticket</a> and we'll send it right away.</p>
     </div>
   </section>
 
@@ -614,23 +694,30 @@
     </div>
   </section>
 
-  <!-- ===================== FREE VS PREMIUM ===================== -->
+  <!-- ===================== COMPARE PLANS ===================== -->
   <section id="compare">
-    <div class="wrap">
+    <div class="sx-wide">
       <div class="eyebrow">Side by side</div>
-      <h2>Free vs Premium.</h2>
-      <div class="cmp" role="table" aria-label="Free and Premium compared">
-        <div class="cmp-row cmp-head" role="row"><span role="columnheader"></span><span role="columnheader">Free</span><span role="columnheader">Premium</span></div>
-        <div class="cmp-row" role="row"><span role="rowheader">Tweaks</span><span role="cell">357</span><span role="cell"><b>All 715</b></span></div>
-        <div class="cmp-row" role="row"><span role="rowheader">Tweak Guard</span><span role="cell" class="no">—</span><span role="cell"><b>✓</b> Puts tweaks back after Windows updates</span></div>
-        <div class="cmp-row" role="row"><span role="rowheader">Profiles</span><span role="cell" class="no">—</span><span role="cell"><b>✓</b> 3 saved setups</span></div>
-        <div class="cmp-row" role="row"><span role="rowheader">Share setup</span><span role="cell" class="no">—</span><span role="cell"><b>✓</b> Export and import</span></div>
-        <div class="cmp-row" role="row"><span role="rowheader">History &amp; undo</span><span role="cell" class="no">—</span><span role="cell"><b>✓</b> Every change, undo the last</span></div>
-        <div class="cmp-row" role="row"><span role="rowheader">Fortnite Potato Mode</span><span role="cell" class="no">—</span><span role="cell"><b>✓</b> Potato &amp; Ultra Potato</span></div>
-        <div class="cmp-row" role="row"><span role="rowheader">F1zz Bot</span><span role="cell">5 messages a day</span><span role="cell"><b>Unlimited</b> + full PC report</span></div>
-        <div class="cmp-row" role="row"><span role="rowheader">Themes</span><span role="cell">11</span><span role="cell"><b>36</b> + your own gradient</span></div>
-        <div class="cmp-row" role="row"><span role="rowheader">Game Library BOOST</span><span role="cell">12 games</span><span role="cell"><b>17 games</b></span></div>
-        <div class="cmp-row" role="row"><span role="rowheader">Dashboard, Task Manager, Game Boost, restore</span><span role="cell">✓</span><span role="cell">✓</span></div>
+      <h2>Compare <span class="grad-text">every plan.</span></h2>
+      <div class="sx-tablewrap" tabindex="0" role="region" aria-label="Plans compared, scrolls sideways on small screens">
+        <table class="sx-table">
+          <thead><tr><td></td><th scope="col">Free</th><th scope="col">30 Days</th><th scope="col">Lifetime</th><th scope="col">Plus</th><th scope="col" class="sx-hl">Ultimate</th></tr></thead>
+          <tbody>
+          <tr><th scope="row">PC tweaks</th><td>357</td><td>All 715</td><td>All 715</td><td>All 715</td><td class="sx-hl">All 715</td></tr>
+          <tr><th scope="row">Access</th><td>Always free</td><td>30 days</td><td>Forever</td><td>Forever</td><td class="sx-hl">Forever</td></tr>
+          <tr><th scope="row">Tweak Guard</th><td><span class="sx-n" aria-label="Not included">—</span></td><td><span class="sx-y" aria-label="Included">✓</span></td><td><span class="sx-y" aria-label="Included">✓</span></td><td><span class="sx-y" aria-label="Included">✓</span></td><td class="sx-hl"><span class="sx-y" aria-label="Included">✓</span></td></tr>
+          <tr><th scope="row">Profiles and setup sharing</th><td><span class="sx-n" aria-label="Not included">—</span></td><td><span class="sx-y" aria-label="Included">✓</span></td><td><span class="sx-y" aria-label="Included">✓</span></td><td><span class="sx-y" aria-label="Included">✓</span></td><td class="sx-hl"><span class="sx-y" aria-label="Included">✓</span></td></tr>
+          <tr><th scope="row">History and undo</th><td><span class="sx-n" aria-label="Not included">—</span></td><td><span class="sx-y" aria-label="Included">✓</span></td><td><span class="sx-y" aria-label="Included">✓</span></td><td><span class="sx-y" aria-label="Included">✓</span></td><td class="sx-hl"><span class="sx-y" aria-label="Included">✓</span></td></tr>
+          <tr><th scope="row">Fortnite Potato Mode</th><td><span class="sx-n" aria-label="Not included">—</span></td><td><span class="sx-y" aria-label="Included">✓</span></td><td><span class="sx-y" aria-label="Included">✓</span></td><td><span class="sx-y" aria-label="Included">✓</span></td><td class="sx-hl"><span class="sx-y" aria-label="Included">✓</span></td></tr>
+          <tr><th scope="row">F1zz Bot</th><td>5 a day</td><td>Unlimited</td><td>Unlimited</td><td>Unlimited</td><td class="sx-hl">Unlimited</td></tr>
+          <tr><th scope="row">Themes</th><td>11</td><td>36</td><td>36</td><td>36</td><td class="sx-hl">36</td></tr>
+          <tr><th scope="row">Game Library BOOST</th><td>12 games</td><td>17 games</td><td>17 games</td><td>17 games</td><td class="sx-hl">17 games</td></tr>
+          <tr><th scope="row">PS5 Tweaks guide</th><td><span class="sx-n" aria-label="Not included">—</span></td><td><span class="sx-n" aria-label="Not included">—</span></td><td><span class="sx-n" aria-label="Not included">—</span></td><td><span class="sx-y" aria-label="Included">✓</span></td><td class="sx-hl"><span class="sx-y" aria-label="Included">✓</span></td></tr>
+          <tr><th scope="row">Xbox Tweaks guide</th><td><span class="sx-n" aria-label="Not included">—</span></td><td><span class="sx-n" aria-label="Not included">—</span></td><td><span class="sx-n" aria-label="Not included">—</span></td><td><span class="sx-n" aria-label="Not included">—</span></td><td class="sx-hl"><span class="sx-y" aria-label="Included">✓</span></td></tr>
+          <tr><th scope="row">Console progress dashboard</th><td><span class="sx-n" aria-label="Not included">—</span></td><td><span class="sx-n" aria-label="Not included">—</span></td><td><span class="sx-n" aria-label="Not included">—</span></td><td><span class="sx-y" aria-label="Included">✓</span></td><td class="sx-hl"><span class="sx-y" aria-label="Included">✓</span></td></tr>
+          <tr class="sx-total"><th scope="row">Price</th><td>Free</td><td><b data-price="price30">$5</b></td><td><b data-price="priceLifetime">$15</b></td><td><b data-price="pricePlus">$25</b></td><td class="sx-hl"><b data-price="priceUltimate">$35</b></td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -641,7 +728,7 @@
       <div class="eyebrow">How to buy</div>
       <h2>Three steps. <span class="grad-text">Usually just a few minutes.</span></h2>
       <div class="steps">
-        <div class="step"><h3>Enter your details</h3><p>Pick a plan above, enter your <b>Device ID</b> (in the app: Premium &rarr; Copy Device ID) and your <b>email</b>, and agree to the <a href="terms#waiver" style="color:var(--blue2)">purchase terms</a>.</p></div>
+        <div class="step"><h3>Enter your details</h3><p>Pick a plan above, press Purchase, then enter your <b>Device ID</b> (in the app: Premium &rarr; Copy Device ID) and your <b>email</b>, and agree to the <a href="terms#waiver" style="color:var(--blue2)">purchase terms</a>.</p></div>
         <div class="step"><h3>Pay at checkout</h3><p>Pay on the secure Stripe checkout page. Your details are filled in for you, so keep the <b>same email</b>.</p></div>
         <div class="step"><h3>Get your code</h3><p>Your code is emailed to you, usually within minutes. Paste it on the Premium page in the app and press <b>Activate</b>.</p></div>
       </div>
@@ -660,15 +747,25 @@
       <h2>Before you buy.</h2>
       <div class="faq">
         <details><summary>Can I see Premium before I pay?</summary><p>Yes. The free app shows every Premium tweak with a description, the Premium tools running on your own PC and your score with and without Premium.</p></details>
-        <details><summary>Is 30 days or lifetime better?</summary><p>If you just want to try the advanced tweaks, 30 days is enough. Lifetime costs about three months of the 30-day plan and never runs out, so it's the better deal if you'll keep using the app.</p></details>
+        <details><summary>Is 30 Days or Lifetime better?</summary><p>They unlock the same Premium features. If you just want to try them, 30 Days is enough. Lifetime costs the same as three months of the 30-day plan and never runs out, so it's the better deal if you'll keep using the app.</p></details>
         <details><summary>I didn't get my code</summary><p>Check your spam or junk folder first. Hotmail and Outlook can block new senders, so if nothing arrives within 10 minutes, open a ticket in our Discord with the email you used and we'll send it right away.</p></details>
         <details><summary>What happens when my Premium ends?</summary><p>The app tells you, then restores the Premium tweaks it applied back to your original settings. Your free tweaks and your own settings are not touched.</p></details>
+        <details><summary>Got a coupon code?</summary><p>Enter it on the secure Stripe checkout page, after you press Purchase. Look for the promotion code field in your order summary.</p></details>
         <details><summary>Can I get a refund?</summary><p>If Premium doesn't work on your PC, press <b>REFUND</b> on the Premium page in the app within 7 days, or read the full <a href="terms#refunds" style="color:var(--blue2)">refund policy</a>.</p></details>
-        <details><summary>What's coming soon?</summary><p>New things for the shop are on the way. Join our Discord to hear about them first.</p></details>
+        <details><summary>Which plan includes console tweaks?</summary><p>Premium Plus includes PS5 Tweaks, and Premium Ultimate includes PS5 and Xbox Tweaks. The 30-day and Lifetime plans are for your PC only. Plus and Ultimate use one code: activate it in F1zz Tweaks, then enter it in the F1zz Console Tweaks app on the same PC.</p></details>
       </div>
     </div>
   </section>
 
+  <section class="sx-final">
+    <div class="sx-wide">
+      <div class="sx-finalbox">
+        <h2>Not sure yet? <span class="grad-text">Start free.</span></h2>
+        <p>The free app shows every Premium tweak, so you can look around before you decide.</p>
+        <a class="btn primary" data-need="downloadUrl" data-download href="#">Download for Windows</a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
@@ -686,40 +783,13 @@
         <a data-need="discordInvite" href="#">Discord</a>
       </nav>
     </div>
-    <p class="legal">F1zz Tweaks changes Windows settings. Use it at your own risk and create a restore point first. Performance results vary by PC and are not guaranteed. F1zz Tweaks is not affiliated with or endorsed by Microsoft. Windows is a trademark of Microsoft Corporation. &copy; <span id="yr">2026</span> F1zz Tweaks.</p>
+    <p class="legal">F1zz Tweaks changes Windows settings. Use it at your own risk and create a restore point first. Performance results vary by PC and are not guaranteed. F1zz Tweaks is not affiliated with or endorsed by Microsoft. Windows and Xbox are trademarks of Microsoft Corporation. PlayStation and PS5 are trademarks of Sony Interactive Entertainment Inc., which is not affiliated with F1zz Tweaks. &copy; <span id="yr">2026</span> F1zz Tweaks.</p>
   </div>
 </footer>
 
 <div class="dl-notice" id="dl-notice" role="status" aria-live="polite">
   <b>Your download is starting&hellip;</b>
   <span>If nothing happens, <a id="dl-retry" href="#" download>click here</a>. Windows may ask you to confirm it.</span>
-</div>
-
-<div class="buy-gate" id="buy-gate" role="dialog" aria-modal="true" aria-labelledby="bg-title">
-  <div class="bg-box">
-    <h3 id="bg-title">Before you buy</h3>
-    <div class="bg-plan" id="bg-plan"></div>
-    <ol>
-      <li>Open <b>F1zz Tweaks</b> on the PC you want Premium on. Don't have it yet? <a data-need="downloadUrl" data-download href="#" style="color:var(--blue2);text-decoration:underline">Download it free</a>.</li>
-      <li>Go to the <b>Premium</b> page in the app.</li>
-      <li>Press <b>COPY DEVICE ID</b> and paste it below. It looks like <b>ABCD-EF01</b>.</li>
-    </ol>
-    <label class="bg-lbl" for="bg-id">Your Device ID</label>
-    <input type="text" id="bg-id" maxlength="9" placeholder="ABCD-EF01" autocomplete="off" spellcheck="false">
-    <div class="bg-err" id="bg-err" aria-live="polite"></div>
-    <label class="bg-lbl" for="bg-mail">Your email (where we send your code)</label>
-    <input type="email" id="bg-mail" maxlength="120" placeholder="you@example.com" autocomplete="email" spellcheck="false">
-    <div class="bg-err" id="bg-mail-err" aria-live="polite"></div>
-    <label class="bg-agree">
-      <input type="checkbox" id="bg-ok">
-      <span>I have read and agree to the <a href="terms#waiver" target="_blank" rel="noopener">Terms of Purchase &amp; Liability Waiver</a> and the <a href="terms#terms" target="_blank" rel="noopener">Terms of use</a>.</span>
-    </label>
-    <div class="bg-btns">
-      <button class="btn" type="button" id="bg-cancel">Cancel</button>
-      <button class="btn primary" type="button" id="bg-go" disabled>Continue to checkout</button>
-    </div>
-    <p class="bg-after">Your Device ID and email are sent to checkout for you. Keep the <b>same email</b> at checkout. Your code is emailed to you, usually within minutes, and is locked to this PC.</p>
-  </div>
 </div>
 
 
@@ -774,72 +844,26 @@ document.querySelectorAll("[data-need]").forEach(function (el) {
 });
 document.querySelectorAll("[data-price]").forEach(function (el) { el.textContent = SITE[el.dataset.price]; });
 
-/* Buy buttons open the "Before you buy" step first: the Device ID and the agreement are required for checkout. */
+document.getElementById("yr") && (document.getElementById("yr").textContent = new Date().getFullYear());
+</script>
+<script>
+/* Shop: a plan without its checkout link yet says so, and the cards catch the light under the cursor */
 (function () {
-  var gate = document.getElementById("buy-gate"), idBox = document.getElementById("bg-id"),
-      mail = document.getElementById("bg-mail"), mailErr = document.getElementById("bg-mail-err"),
-      ok = document.getElementById("bg-ok"), go = document.getElementById("bg-go"),
-      err = document.getElementById("bg-err"), plan = document.getElementById("bg-plan"), target = "";
-  var ID = /^[0-9A-F]{4}-[0-9A-F]{4}$/, MAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-
-  function clean(v) {                               // "abcdef01", "abcd ef01" or "ABCD-EF01" -> "ABCD-EF01"
-    var hex = v.toUpperCase().replace(/[^0-9A-F]/g, "").slice(0, 8);
-    return hex.length > 4 ? hex.slice(0, 4) + "-" + hex.slice(4) : hex;
-  }
-  function check(showError) {
-    var id = idBox.value, good = ID.test(id);
-    idBox.classList.toggle("bad", showError && id.length > 0 && !good);
-    err.textContent = showError && id.length > 0 && !good ? "That doesn't look right. A Device ID is 8 letters and numbers, like ABCD-EF01." : "";
-    var m = mail.value.trim(), mailGood = MAIL.test(m), showMail = mail.dataset.touched === "1" && m.length > 0 && !mailGood;
-    mail.classList.toggle("bad", showMail);
-    mailErr.textContent = showMail ? "Check your email. It should look like you@example.com." : "";
-    go.disabled = !(good && mailGood && ok.checked);
-    return good && mailGood;
-  }
-  function open(url, name) {
-    target = url;
-    plan.textContent = name;
-    try { idBox.value = clean(localStorage.getItem("f1zzDeviceId") || ""); } catch (e) {}
-    mail.value = "";                                // the email is never saved on this site
-    mail.dataset.touched = "";
-    ok.checked = false;
-    check(false);
-    gate.classList.add("show");
-    setTimeout(function () { idBox.focus(); }, 50);
-  }
-  function close() { gate.classList.remove("show"); }
-
-  document.querySelectorAll('a[data-need^="buy"][data-ready]').forEach(function (a) {
-    a.addEventListener("click", function (e) {
-      e.preventDefault();
-      open(a.href, a.dataset.need === "buyLifetimeUrl" ? "Lifetime Premium" : "30 days of Premium");
+  var S = window.SITE || {};
+  document.querySelectorAll("[data-needs-link]").forEach(function (a) {
+    if ((S[a.dataset.needsLink] || "").trim()) return;
+    a.textContent = "Coming soon";
+    a.classList.add("sx-later");
+  });
+  if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  document.querySelectorAll(".sx-card").forEach(function (card) {
+    card.addEventListener("pointermove", function (e) {
+      var r = card.getBoundingClientRect();
+      card.style.setProperty("--x", (e.clientX - r.left) + "px");
+      card.style.setProperty("--y", (e.clientY - r.top) + "px");
     });
   });
-  idBox.addEventListener("input", function () { idBox.value = clean(idBox.value); check(idBox.value.length >= 9); });
-  idBox.addEventListener("blur", function () { check(true); });
-  mail.addEventListener("input", function () { check(true); });
-  mail.addEventListener("blur", function () { mail.dataset.touched = "1"; check(true); });
-  ok.addEventListener("change", function () { check(true); });
-  document.getElementById("bg-cancel").addEventListener("click", close);
-  gate.addEventListener("click", function (e) { if (e.target === gate) close(); });
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && gate.classList.contains("show")) close(); });
-  go.addEventListener("click", function () {
-    mail.dataset.touched = "1";
-    if (!check(true) || !ok.checked) return;
-    var id = idBox.value, url = target;
-    try { localStorage.setItem("f1zzDeviceId", id); } catch (e) {}
-    if (/^https:\/\/buy\.stripe\.com\//i.test(url)) {
-      // Stripe hands these to the order Worker, which emails the code locked to this Device ID
-      url += (url.indexOf("?") < 0 ? "?" : "&") + "client_reference_id=" + encodeURIComponent(id) +
-             "&prefilled_email=" + encodeURIComponent(mail.value.trim());
-    } else {
-      try { navigator.clipboard && navigator.clipboard.writeText("Device ID: " + id + "  |  Email: " + mail.value.trim()); } catch (e) {}
-    }
-    window.open(url, "_blank", "noopener");
-    close();
-  });
 })();
-document.getElementById("yr") && (document.getElementById("yr").textContent = new Date().getFullYear());
 </script>
 <script>
 /* LED light that drives around the edge of the page (skipped for people who prefer reduced motion) */
@@ -866,5 +890,6 @@ document.getElementById("yr") && (document.getElementById("yr").textContent = ne
     requestAnimationFrame(tick)})(last);
 })();
 </script>
+<script src="site-header.js"></script>
 </body>
 </html>
