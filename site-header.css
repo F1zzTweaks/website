@@ -1,24 +1,28 @@
 /* The header on every F1zz Tweaks page (loaded after each page's own styles) */
 html{scroll-padding-top:92px}
-header.site-head{position:sticky;top:0;z-index:60;padding:0;background:rgba(9,6,15,.88);border:0;border-bottom:1px solid rgba(255,255,255,.1);border-radius:0;box-shadow:none;-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
-.site-head-in{position:relative;display:flex;align-items:center;gap:20px;width:min(1320px,92%);height:74px;margin:0 auto}
-header.site-head .brand{display:flex;align-items:center;gap:11px;margin:0;color:#fff;font-size:1.08rem;font-weight:800;letter-spacing:.2px;text-decoration:none;white-space:nowrap}
-header.site-head .brand img{width:36px;height:36px;padding:4px;border:1px solid rgba(255,255,255,.16);border-radius:10px;background:#16102a}
-.site-nav{display:flex;align-items:center;gap:30px;margin-left:auto}
-.site-nav a{position:relative;padding:6px 0;color:#a8a4bd;font-size:.86rem;font-weight:700;text-decoration:none;white-space:nowrap;transition:color .15s}
-.site-nav a:hover,.site-nav a:focus-visible,.site-nav a[aria-current=page]{color:#fff}
-.site-cta{flex:none;padding:13px 20px;border-radius:7px;background:var(--grad,linear-gradient(135deg,#7c5cff,#ff5cc8));color:#fff;font-size:.86rem;font-weight:800;text-decoration:none;white-space:nowrap;transition:filter .15s,transform .15s}
-.site-cta:hover{filter:brightness(1.1);transform:translateY(-1px)}
-.site-menu{display:none;flex:none;width:46px;height:46px;place-items:center;border:1px solid rgba(255,255,255,.18);border-radius:8px;background:none;color:#fff;cursor:pointer}
+header.site-head{position:sticky;top:0;z-index:60;padding:0;background:linear-gradient(180deg,rgba(9,6,15,.96),rgba(9,6,15,.78));border:0;border-radius:0;box-shadow:0 14px 34px -24px #000;-webkit-backdrop-filter:blur(20px) saturate(1.3);backdrop-filter:blur(20px) saturate(1.3)}
+header.site-head::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--grad,linear-gradient(90deg,#7c5cff,#ff5cc8));opacity:.85;pointer-events:none}
+.site-head-in{position:relative;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:18px;width:min(1400px,94%);height:76px;margin:0 auto}
+header.site-head .brand{justify-self:start;display:flex;align-items:center;gap:11px;margin:0;color:#fff;font-size:1.1rem;font-weight:800;letter-spacing:.2px;text-decoration:none;white-space:nowrap}
+header.site-head .brand img{width:40px;height:40px;padding:5px;border:1px solid rgba(255,255,255,.2);border-radius:50%;background:#16102a;box-shadow:0 0 18px -3px rgba(170,110,255,.8);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+header.site-head .brand:hover img{transform:rotate(-10deg) scale(1.06)}
+.site-nav{display:flex;align-items:center;gap:2px;padding:5px;border:1px solid rgba(255,255,255,.13);border-radius:99px;background:rgba(255,255,255,.045);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+.site-nav a{padding:8px 15px;border-radius:99px;color:#b9b5cc;font-size:.86rem;font-weight:600;text-decoration:none;white-space:nowrap;transition:color .15s,background .15s}
+.site-nav a:hover,.site-nav a:focus-visible{color:#fff;background:rgba(255,255,255,.1)}
+.site-nav a[aria-current=page]{color:#fff;background:var(--grad,linear-gradient(135deg,#7c5cff,#ff5cc8))}
+.site-cta{justify-self:end;display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:99px;background:#fff;color:#0d0916;font-size:.86rem;font-weight:800;text-decoration:none;white-space:nowrap;box-shadow:0 8px 24px -10px rgba(255,255,255,.65);transition:transform .15s,box-shadow .15s}
+.site-cta::after{content:"\2192";transition:transform .15s}
+.site-cta:hover{transform:translateY(-1px);box-shadow:0 12px 30px -10px rgba(255,255,255,.85)}
+.site-cta:hover::after{transform:translateX(3px)}
+.site-menu{display:none;width:46px;height:46px;place-items:center;border:1px solid rgba(255,255,255,.18);border-radius:50%;background:rgba(255,255,255,.05);color:#fff;cursor:pointer}
 .site-menu svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
 .site-head :focus-visible{outline:2px solid #b096ff;outline-offset:3px}
-@media (max-width:980px){
-  .site-head-in{height:68px}
-  .site-menu{display:grid;margin-left:0}
-  .site-cta{margin-left:auto;padding:11px 14px;font-size:.8rem}
-  .site-nav{position:absolute;top:100%;left:-4.35%;right:-4.35%;display:none;flex-direction:column;align-items:stretch;gap:0;margin:0;padding:8px 4.35% 14px;background:rgba(9,6,15,.98);border-bottom:1px solid rgba(255,255,255,.1)}
+@media (max-width:1120px){
+  .site-head-in{display:flex;height:68px;gap:12px}
+  .site-menu{display:grid;flex:none}
+  .site-cta{margin-left:auto;padding:11px 15px;font-size:.8rem}
+  .site-nav{position:absolute;top:100%;left:-3.2%;right:-3.2%;display:none;flex-direction:column;align-items:stretch;gap:2px;padding:10px 3.2% 16px;border:0;border-radius:0 0 20px 20px;background:rgba(9,6,15,.98);box-shadow:0 26px 44px -22px #000}
   .site-nav.open{display:flex}
-  .site-nav a{padding:13px 0;font-size:1rem;border-bottom:1px solid rgba(255,255,255,.06)}
-  .site-nav a:last-child{border-bottom:0}
+  .site-nav a{padding:13px 14px;border-radius:12px;font-size:1rem}
 }
-@media (max-width:400px){header.site-head .brand span{display:none}}
+@media (max-width:420px){header.site-head .brand span{display:none}.site-cta::after{display:none}}
